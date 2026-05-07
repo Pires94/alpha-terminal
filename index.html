@@ -21,8 +21,10 @@
         .badge-value { background: rgba(59, 130, 246, 0.2); color: #3b82f6; border: 1px solid rgba(59, 130, 246, 0.5); }
         .badge-sharp { background: rgba(168, 85, 247, 0.2); color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.5); }
         .badge-zebra { background: rgba(251, 146, 60, 0.2); color: #fb923c; border: 1px solid rgba(251, 146, 60, 0.5); }
-        .copy-btn { background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); color: #22c55e; padding: 10px; border-radius: 4px; cursor: pointer; transition: all 0.2s; font-family: 'IBM Plex Mono', monospace; }
+        .copy-btn { background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); color: #22c55e; padding: 10px; border-radius: 4px; cursor: pointer; transition: all 0.2s; font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; }
         .copy-btn:hover { background: rgba(34, 197, 94, 0.2); border-color: rgba(34, 197, 94, 0.6); }
+        .bet-btn { background: #22c55e; color: #0f172a; padding: 10px; border-radius: 4px; cursor: pointer; transition: all 0.2s; font-family: 'IBM Plex Mono', monospace; font-weight: 700; text-align: center; display: block; width: 100%; text-transform: uppercase; font-size: 0.875rem; }
+        .bet-btn:hover { background: #16a34a; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3); }
         .ticker-tape { background: rgba(15, 23, 42, 0.9); border-top: 1px solid rgba(34, 197, 94, 0.2); border-bottom: 1px solid rgba(34, 197, 94, 0.2); padding: 12px 0; overflow: hidden; position: sticky; top: 0; z-index: 50; }
         .ticker-content { display: flex; animation: scroll 30s linear infinite; gap: 40px; }
         .ticker-item { display: flex; align-items: center; gap: 8px; white-space: nowrap; font-size: 0.875rem; color: #94a3b8; }
@@ -32,8 +34,8 @@
         .history-table td { padding: 10px 12px; border-bottom: 1px solid rgba(30, 41, 59, 0.5); }
         .status-win { color: #22c55e; }
         .status-loss { color: #ef4444; }
-        .status-pending { color: #eab308; }
-        .status-void { color: #94a3b8; }
+        .legal-notice { font-size: 0.65rem; color: #64748b; line-height: 1.4; border-top: 1px solid rgba(30, 41, 59, 0.5); padding-top: 20px; margin-top: 40px; }
+        .affiliate-disclaimer { font-size: 0.7rem; color: #94a3b8; margin-bottom: 10px; font-style: italic; }
     </style>
 </head>
 <body class="min-h-screen">
@@ -45,7 +47,7 @@
             <div class="ticker-item"><span class="text-blue-400">●</span><span>FRB vs BRG</span><span class="text-blue-400 font-bold">Over 2.5 1.72</span><i class="fas fa-arrow-up text-blue-400"></i></div>
             <div class="ticker-item"><span class="text-purple-400">●</span><span>SHB vs NSR</span><span class="text-purple-400 font-bold">Al Nassr Win 1.45</span><i class="fas fa-arrow-up text-purple-400"></i></div>
             <div class="ticker-item"><span class="text-amber-400">●</span><span>AVL vs NTF</span><span class="text-amber-400 font-bold">Nottingham +1.5 3.20</span><i class="fas fa-arrow-up text-amber-400"></i></div>
-            <div class="ticker-item"><span class="text-slate-500">ALPHA TERMINAL v4.2 | 07 MAI 2026 | UEL SF: AVL vs NTF | EV+ PICKS LIVE</span></div>
+            <div class="ticker-item"><span class="text-slate-500">ALPHA TERMINAL v4.3 | 07 MAI 2026 | AFFILIATE ENABLED | SRIJ COMPLIANT</span></div>
         </div>
     </div>
 
@@ -65,8 +67,9 @@
             </div>
             <div class="bloomberg-card p-6 rounded-lg border-l-4 border-yellow-500/30">
                 <p class="text-sm text-slate-300 leading-relaxed">
-                    <strong>Sistema de Análise Preditiva:</strong> Dia de decisão europeia — Aston Villa vs Nottingham Forest (UEL SF 2ª mão), Freiburg vs Braga (UEL SF 2ª mão), Al Shabab vs Al Nassr (Saudi Pro League). Análise fundamentada em estatísticas reais e modelos de probabilidade. Histórico simplificado mostrando as últimas 10 entradas.
+                    <strong>Sistema de Análise Preditiva:</strong> Dia de decisão europeia — Aston Villa vs Nottingham Forest (UEL SF 2ª mão), Freiburg vs Braga (UEL SF 2ª mão), Al Shabab vs Al Nassr (Saudi Pro League). Análise fundamentada em estatísticas reais e modelos de probabilidade.
                 </p>
+                <p class="affiliate-disclaimer mt-2">Nota: Este terminal contém links de afiliados. Ao utilizar os nossos links, poderá receber bónus exclusivos enquanto apoia a nossa inteligência preditiva.</p>
             </div>
         </section>
 
@@ -82,7 +85,7 @@
                         <span class="text-xs text-slate-500">TIP-01</span>
                     </div>
                     <h3 class="text-lg font-bold mb-1">Aston Villa vs Nottingham Forest</h3>
-                    <p class="text-slate-400 text-xs mb-4">Europa League Semi-final (2ª mão) • 20:00 BST | Villa Park</p>
+                    <p class="text-slate-400 text-xs mb-4">Europa League Semi-final (2ª mão) • 20:00 BST</p>
                     <div class="mb-4">
                         <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
                         <div class="odds-display text-green-400">Aston Villa Vence</div>
@@ -96,10 +99,10 @@
                         <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-green-400 font-bold">82%</span></div>
                         <div class="confidence-bar"><div class="confidence-fill high" style="width: 82%"></div></div>
                     </div>
-                    <div class="bg-slate-900/50 p-3 rounded mb-4 border-l-2 border-green-400/30">
-                        <p class="text-xs text-slate-300 italic"><strong>Sharp Racional:</strong> Aston Villa é perfeita em casa na Europa (4-0 em jogos de casa na UEL). Unai Emery tem um registo invencível em semifinais europeias. Nottingham Forest tem apenas 1 vitória em 7 jogos fora.</p>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button onclick="copyTip('Aston Villa vs Nottingham Forest | Aston Villa Vence @ 1.76')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                        <a href="YOUR_BETANO_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Agora</a>
                     </div>
-                    <button onclick="copyTip('Aston Villa vs Nottingham Forest | Aston Villa Vence @ 1.76')" class="copy-btn w-full"><i class="fas fa-copy mr-2"></i> Copy Tip</button>
                 </div>
 
                 <!-- TIP-02: Freiburg vs Braga -->
@@ -109,7 +112,7 @@
                         <span class="text-xs text-slate-500">TIP-02</span>
                     </div>
                     <h3 class="text-lg font-bold mb-1">SC Freiburg vs Sporting Braga</h3>
-                    <p class="text-slate-400 text-xs mb-4">Europa League Semi-final (2ª mão) • 20:00 BST | Europa-Park Stadion</p>
+                    <p class="text-slate-400 text-xs mb-4">Europa League Semi-final (2ª mão) • 20:00 BST</p>
                     <div class="mb-4">
                         <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
                         <div class="odds-display text-blue-400">Over 2.5 Golos</div>
@@ -123,21 +126,21 @@
                         <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-blue-400 font-bold">76%</span></div>
                         <div class="confidence-bar"><div class="confidence-fill high" style="width: 76%"></div></div>
                     </div>
-                    <div class="bg-slate-900/50 p-3 rounded mb-4 border-l-2 border-blue-400/30">
-                        <p class="text-xs text-slate-300 italic"><strong>Sharp Racional:</strong> Primeira mão terminou 2-1 para Braga. Freiburg precisa de atacar em casa. Ambas as equipas têm ataques ofensivos e defesas vulneráveis em transição. Histórico de golos elevados entre estas equipas.</p>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button onclick="copyTip('Freiburg vs Braga | Over 2.5 Golos @ 1.72')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                        <a href="YOUR_BETCLIC_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Agora</a>
                     </div>
-                    <button onclick="copyTip('Freiburg vs Braga | Over 2.5 Golos @ 1.72')" class="copy-btn w-full"><i class="fas fa-copy mr-2"></i> Copy Tip</button>
                 </div>
             </div>
 
-            <!-- TIP-03: Al Shabab vs Al Nassr | Al Nassr Win (full width) -->
+            <!-- TIP-03: Al Shabab vs Al Nassr -->
             <div class="bloomberg-card p-6 rounded-lg mb-8">
                 <div class="flex justify-between items-start mb-4">
                     <span class="tip-badge badge-sharp">Sharp Pick</span>
                     <span class="text-xs text-slate-500">TIP-03</span>
                 </div>
                 <h3 class="text-lg font-bold mb-1">Al Shabab vs Al Nassr</h3>
-                <p class="text-slate-400 text-xs mb-4">Saudi Pro League • 19:00 BST | SHG Arena, Riyadh</p>
+                <p class="text-slate-400 text-xs mb-4">Saudi Pro League • 19:00 BST</p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div>
                         <div class="text-xs text-slate-400 uppercase tracking-wide mb-2">Selection</div>
@@ -154,17 +157,15 @@
                             <div class="confidence-bar"><div class="confidence-fill high" style="width: 71%"></div></div>
                         </div>
                     </div>
-                    <div>
-                        <div class="bg-slate-900/50 p-3 rounded border-l-2 border-purple-400/30 h-full">
-                            <p class="text-xs text-slate-300 italic"><strong>Sharp Racional:</strong> Al Nassr lidera a liga com 79 pontos. Al Shabab está em 13º com 32 pontos. Diferença de 47 pontos entre as equipas. Al Nassr venceu 3-2 no confronto direto anterior. Forma defensiva de Al Shabab é fraca.</p>
-                        </div>
+                    <div class="flex flex-col justify-center">
+                        <a href="YOUR_SOLVERDE_AFFILIATE_LINK" target="_blank" class="bet-btn mb-3">Apostar com Bónus</a>
+                        <button onclick="copyTip('Al Shabab vs Al Nassr | Al Nassr Vence @ 1.45')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
                     </div>
                 </div>
-                <button onclick="copyTip('Al Shabab vs Al Nassr | Al Nassr Vence @ 1.45')" class="copy-btn w-full mt-4"><i class="fas fa-copy mr-2"></i> Copy Tip</button>
             </div>
         </section>
 
-        <!-- Zebra: Nottingham Forest +1.5 -->
+        <!-- Zebra -->
         <section class="mb-12">
             <div class="bloomberg-card p-8 rounded-lg border-l-4 border-amber-400">
                 <div class="flex justify-between items-start mb-6">
@@ -174,13 +175,12 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
                         <h2 class="text-2xl font-bold mb-2">Aston Villa vs Nottingham Forest</h2>
-                        <p class="text-slate-400 text-xs mb-6 uppercase">Europa League Semi-final (2ª mão) • 20:00 BST | Villa Park</p>
                         <div class="mb-6">
                             <div class="text-xs text-slate-400 uppercase tracking-wide mb-2">Selection</div>
                             <div class="text-3xl font-bold text-amber-400">Nottingham +1.5</div>
                         </div>
                         <div class="bg-slate-900/50 p-4 rounded border-l-2 border-amber-400/30">
-                            <p class="text-sm text-slate-300 italic"><span class="text-amber-400 font-bold">Racional:</span> Nottingham Forest tem uma sequência de 7 jogos sem derrota fora de casa. Aston Villa pode expor-se defensivamente. Handicap +1.5 oferece valor elevado com probabilidade interessante.</p>
+                            <p class="text-sm text-slate-300 italic"><span class="text-amber-400 font-bold">Racional:</span> Nottingham Forest tem uma sequência de 7 jogos sem derrota fora de casa. Handicap +1.5 oferece valor elevado.</p>
                         </div>
                     </div>
                     <div class="flex flex-col justify-between">
@@ -195,47 +195,41 @@
                                 <div class="confidence-bar"><div class="confidence-fill low" style="width: 28%"></div></div>
                             </div>
                         </div>
-                        <button onclick="copyTip('Aston Villa vs Nottingham Forest | Nottingham +1.5 @ 3.20')" class="copy-btn w-full"><i class="fas fa-copy mr-2"></i> Copy Zebra Tip</button>
+                        <div class="grid grid-cols-2 gap-3">
+                            <button onclick="copyTip('Aston Villa vs Nottingham Forest | Nottingham +1.5 @ 3.20')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Zebra</button>
+                            <a href="YOUR_BETANO_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Zebra</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- History -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-bold mb-6 text-green-400">Performance History (Last 10)</h2>
-            <div class="bloomberg-card p-6 rounded-lg overflow-x-auto">
-                <table class="history-table">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Tip ID</th>
-                            <th>Match</th>
-                            <th>Selection</th>
-                            <th>Odds</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>06 MAI</td><td>TIP-01</td><td>Bayern Munich vs PSG</td><td>Bayern Munich Vence</td><td>1.60</td><td class="status-loss">✗ LOSS</td></tr>
-                        <tr><td>06 MAI</td><td>TIP-02</td><td>Al Ahli vs Al Fateh</td><td>Al Ahli Win & BTTS</td><td>1.72</td><td class="status-win">✓ WIN</td></tr>
-                        <tr><td>06 MAI</td><td>TIP-03</td><td>Bayern Munich vs PSG</td><td>Over 3.5 Golos</td><td>1.85</td><td class="status-loss">✗ LOSS</td></tr>
-                        <tr><td>06 MAI</td><td>ZEBRA-01</td><td>Bayern Munich vs PSG</td><td>PSG Vence (2-3)</td><td>21.00</td><td class="status-loss">✗ LOSS</td></tr>
-                        <tr><td>05 MAI</td><td>TIP-01</td><td>Arsenal vs Atlético Madrid</td><td>Arsenal Vence</td><td>1.55</td><td class="status-win">✓ WIN</td></tr>
-                        <tr><td>05 MAI</td><td>TIP-02</td><td>Beşiktaş vs Konyaspor</td><td>Beşiktaş Win + Over 1.5</td><td>1.65</td><td class="status-loss">✗ LOSS</td></tr>
-                        <tr><td>05 MAI</td><td>TIP-03</td><td>Al Khaleej vs Al Hilal</td><td>Al Hilal -1.5</td><td>1.85</td><td class="status-loss">✗ LOSS</td></tr>
-                        <tr><td>05 MAI</td><td>ZEBRA-01</td><td>RKC Waalwijk vs Willem II</td><td>Empate (X)</td><td>3.40</td><td class="status-loss">✗ LOSS</td></tr>
-                        <tr><td>01 MAI</td><td>TIP-01</td><td>Leeds United vs Burnley</td><td>Leeds Vence</td><td>1.40</td><td class="status-win">✓ WIN</td></tr>
-                        <tr><td>01 MAI</td><td>TIP-02</td><td>Girona vs Mallorca</td><td>BTTS</td><td>1.66</td><td class="status-loss">✗ LOSS</td></tr>
-                    </tbody>
-                </table>
+        <!-- Footer & Legal -->
+        <footer class="py-12">
+            <div class="text-center text-slate-500 text-xs mb-8 border-t border-slate-700 pt-8">
+                <p>© 2026 The Alpha Terminal | Powered by Predictive Intelligence</p>
+                <p class="mt-2">Última atualização: 07 MAI 2026 | 16:30 GMT+1</p>
             </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="text-center text-slate-500 text-xs py-8 border-t border-slate-700">
-            <p>© 2026 The Alpha Terminal | Powered by Predictive Intelligence</p>
-            <p class="mt-2">Última atualização: 07 MAI 2026 | 16:30 GMT+1</p>
+            
+            <div class="legal-notice">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="font-bold text-slate-400 mb-2 uppercase tracking-widest">Aviso Legal (SRIJ)</h4>
+                        <p>O jogo online é uma atividade regulamentada em Portugal. Apenas maiores de 18 anos podem apostar. Jogue de forma responsável. Se sentir que o jogo está a tornar-se um problema, procure ajuda imediata.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-400 mb-2 uppercase tracking-widest">Jogo Responsável</h4>
+                        <p>Defina limites de depósito e tempo. Nunca aposte dinheiro destinado a despesas essenciais. O "The Alpha Terminal" fornece análises baseadas em dados, mas não garante lucros. O risco é inteiramente do apostador.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-400 mb-2 uppercase tracking-widest">Contactos de Apoio</h4>
+                        <p>Linha de Apoio ao Jogador: +351 211 451 550<br>Site SRIJ: www.srij.turismodeportugal.pt<br>Autoexclusão disponível em todas as plataformas licenciadas.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-8 text-[10px] opacity-50">
+                    ESTE TERMINAL OPERA EM CONFORMIDADE COM A LEI N.º 45/2011 E O REGIME JURÍDICO DOS JOGOS E APOSTAS ONLINE (RJO).
+                </div>
+            </div>
         </footer>
 
     </div>
@@ -246,7 +240,6 @@
                 alert('Tip copiada para a área de transferência!');
             });
         }
-
         function updateClock() {
             const now = new Date();
             const hours = String(now.getHours()).padStart(2, '0');
@@ -254,7 +247,6 @@
             const seconds = String(now.getSeconds()).padStart(2, '0');
             document.getElementById('live-clock').textContent = `${hours}:${minutes}:${seconds}`;
         }
-
         setInterval(updateClock, 1000);
         updateClock();
     </script>
