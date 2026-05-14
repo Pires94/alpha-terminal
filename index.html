@@ -3,314 +3,345 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="ga-site-verification" content="Ap6341qRXXGxFpOOzCNKhhob" />
     <title>The Alpha Terminal | Predictive Sports Intelligence</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&display=swap');
-        body { font-family: 'IBM Plex Mono', monospace; background: linear-gradient(135deg, #0f172a 0%, #1a2847 100%); color: #e2e8f0; }
+        body { font-family: 'IBM Plex Mono', monospace; background: linear-gradient(135deg, #0f172a 0%, #1a2847 100%); color: #e2e8f0; min-height: 100vh; }
         .bloomberg-card { background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(34, 197, 94, 0.1); backdrop-filter: blur(10px); }
-        .odds-display { font-size: 1.5rem; font-weight: 700; letter-spacing: 2px; color: #22c55e; }
+        .odds-display { font-size: 1.5rem; font-weight: 700; letter-spacing: 2px; }
         .confidence-bar { height: 8px; background: rgba(30, 41, 59, 0.8); border-radius: 4px; overflow: hidden; }
         .confidence-fill { height: 100%; border-radius: 4px; transition: width 0.3s ease; }
         .confidence-fill.high { background: linear-gradient(90deg, #22c55e, #16a34a); }
-        .confidence-fill.low { background: linear-gradient(90deg, #f97316, #ea580c); }
+        .confidence-fill.med  { background: linear-gradient(90deg, #3b82f6, #2563eb); }
+        .confidence-fill.low  { background: linear-gradient(90deg, #f97316, #ea580c); }
         .tip-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
-        .badge-top { background: rgba(34, 197, 94, 0.2); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.5); }
-        .badge-value { background: rgba(59, 130, 246, 0.2); color: #3b82f6; border: 1px solid rgba(59, 130, 246, 0.5); }
-        .badge-sharp { background: rgba(168, 85, 247, 0.2); color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.5); }
-        .badge-zebra { background: rgba(251, 146, 60, 0.2); color: #fb923c; border: 1px solid rgba(251, 146, 60, 0.5); }
-        .copy-btn { background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); color: #22c55e; padding: 10px; border-radius: 4px; cursor: pointer; transition: all 0.2s; font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; }
-        .copy-btn:hover { background: rgba(34, 197, 94, 0.2); border-color: rgba(34, 197, 94, 0.6); }
-        .bet-btn { background: #22c55e; color: #0f172a; padding: 10px; border-radius: 4px; cursor: pointer; transition: all 0.2s; font-family: 'IBM Plex Mono', monospace; font-weight: 700; text-align: center; display: block; width: 100%; text-transform: uppercase; font-size: 0.875rem; }
-        .bet-btn:hover { background: #16a34a; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3); }
-        .ticker-tape { background: rgba(15, 23, 42, 0.9); border-top: 1px solid rgba(34, 197, 94, 0.2); border-bottom: 1px solid rgba(34, 197, 94, 0.2); padding: 12px 0; overflow: hidden; position: sticky; top: 0; z-index: 50; }
-        .ticker-content { display: flex; animation: scroll 30s linear infinite; gap: 40px; }
-        .ticker-item { display: flex; align-items: center; gap: 8px; white-space: nowrap; font-size: 0.875rem; color: #94a3b8; }
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
-        .history-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
-        .history-table th { background: rgba(34, 197, 94, 0.1); color: #22c55e; padding: 12px; text-align: left; border-bottom: 1px solid rgba(34, 197, 94, 0.2); font-weight: 600; }
-        .history-table td { padding: 10px 12px; border-bottom: 1px solid rgba(30, 41, 59, 0.5); }
-        .status-win { color: #22c55e; }
-        .status-loss { color: #ef4444; }
-        .legal-notice { font-size: 0.65rem; color: #64748b; line-height: 1.4; border-top: 1px solid rgba(30, 41, 59, 0.5); padding-top: 20px; margin-top: 40px; }
-        .affiliate-disclaimer { font-size: 0.7rem; color: #94a3b8; margin-bottom: 10px; font-style: italic; }
+        .badge-top   { background: rgba(34,197,94,.2);  color: #22c55e; border: 1px solid rgba(34,197,94,.5); }
+        .badge-value { background: rgba(59,130,246,.2);  color: #3b82f6; border: 1px solid rgba(59,130,246,.5); }
+        .badge-sharp { background: rgba(168,85,247,.2);  color: #a855f7; border: 1px solid rgba(168,85,247,.5); }
+        .badge-zebra { background: rgba(251,146,60,.2);  color: #fb923c; border: 1px solid rgba(251,146,60,.5); }
+        .copy-btn { background: rgba(34,197,94,.1); border: 1px solid rgba(34,197,94,.3); color: #22c55e; padding: 10px; border-radius: 4px; cursor: pointer; transition: all .2s; font-family: 'IBM Plex Mono', monospace; font-size: .75rem; width: 100%; }
+        .copy-btn:hover { background: rgba(34,197,94,.2); border-color: rgba(34,197,94,.6); }
+        .bet-btn { background: #22c55e; color: #0f172a; padding: 10px; border-radius: 4px; cursor: pointer; transition: all .2s; font-family: 'IBM Plex Mono', monospace; font-weight: 700; text-align: center; display: block; width: 100%; text-transform: uppercase; font-size: .875rem; text-decoration: none; }
+        .bet-btn:hover { background: #16a34a; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(34,197,94,.3); }
+        .ticker-tape { background: rgba(15,23,42,.9); border-top: 1px solid rgba(34,197,94,.2); border-bottom: 1px solid rgba(34,197,94,.2); padding: 12px 0; overflow: hidden; position: sticky; top: 0; z-index: 50; }
+        .ticker-wrap { display: flex; width: max-content; animation: ticker 40s linear infinite; gap: 60px; }
+        .ticker-item { display: flex; align-items: center; gap: 8px; white-space: nowrap; font-size: .875rem; color: #94a3b8; }
+        @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .history-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+        .history-table th { background: rgba(34,197,94,.1); color: #22c55e; padding: 12px; text-align: left; border-bottom: 1px solid rgba(34,197,94,.2); font-weight: 600; }
+        .history-table td { padding: 10px 12px; border-bottom: 1px solid rgba(30,41,59,.5); }
+        .status-win  { color: #22c55e; font-weight: 700; }
+        .status-loss { color: #ef4444; font-weight: 700; }
+        .legal-notice { font-size: .65rem; color: #64748b; line-height: 1.4; border-top: 1px solid rgba(30,41,59,.5); padding-top: 20px; margin-top: 40px; }
+        .affiliate-disclaimer { font-size: .7rem; color: #94a3b8; margin-bottom: 10px; font-style: italic; }
+        .racional-box { background: rgba(15,23,42,.6); padding: 12px; border-radius: 4px; margin-bottom: 16px; }
     </style>
 </head>
-<body class="min-h-screen">
+<body>
 
-    <!-- Ticker Tape -->
-    <div class="ticker-tape">
-            <div class="ticker-content">
-                            <div class="ticker-item"><span class="text-green-400">●</span><span>BAR vs RMA</span><span class="text-green-400 font-bold">Barcelona Win 1.64</span><i class="fas fa-arrow-up text-green-400"></i></div>
-                            <div class="ticker-item"><span class="text-blue-400">●</span><span>WHU vs ARS</span><span class="text-blue-400 font-bold">Arsenal Win 1.55</span><i class="fas fa-arrow-up text-blue-400"></i></div>
-                            <div class="ticker-item"><span class="text-purple-400">●</span><span>MIL vs ATA</span><span class="text-purple-400 font-bold">Under 2.5 1.95</span><i class="fas fa-arrow-up text-purple-400"></i></div>
-                            <div class="ticker-item"><span class="text-amber-400">●</span><span>AVS vs POR</span><span class="text-amber-400 font-bold">Draw 4.50</span><i class="fas fa-arrow-up text-amber-400"></i></div>
-                            <div class="ticker-item"><span class="text-slate-500">ALPHA TERMINAL v4.6 | 10 MAI 2026 | AFFILIATE ENABLED | SRIJ COMPLIANT</span></div>
-                        </div>
+<!-- ═══ TICKER ═══ -->
+<div class="ticker-tape">
+    <div class="ticker-wrap">
+        <!-- set 1 -->
+        <span class="ticker-item"><span class="text-green-400">●</span><span>VLC vs RAY</span><span class="text-green-400 font-bold">Under 2.5 Golos 1.75</span><i class="fas fa-arrow-up text-green-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-blue-400">●</span><span>RMA vs OVI</span><span class="text-blue-400 font-bold">Real Madrid Vence 1.45</span><i class="fas fa-arrow-up text-blue-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-purple-400">●</span><span>GIR vs RSO</span><span class="text-purple-400 font-bold">Real Sociedad +0 1.90</span><i class="fas fa-arrow-up text-purple-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-amber-400">●</span><span>RMA vs OVI</span><span class="text-amber-400 font-bold">Ambas Marcam 3.20 (ZEBRA)</span><i class="fas fa-arrow-up text-amber-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-slate-500">◈ ALPHA TERMINAL v4.6 ◈ 14 MAI 2026 ◈ LA LIGA JORNADA 36 ◈ SRIJ COMPLIANT ◈</span></span>
+        <!-- set 2 (duplicate for loop) -->
+        <span class="ticker-item"><span class="text-green-400">●</span><span>VLC vs RAY</span><span class="text-green-400 font-bold">Under 2.5 Golos 1.75</span><i class="fas fa-arrow-up text-green-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-blue-400">●</span><span>RMA vs OVI</span><span class="text-blue-400 font-bold">Real Madrid Vence 1.45</span><i class="fas fa-arrow-up text-blue-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-purple-400">●</span><span>GIR vs RSO</span><span class="text-purple-400 font-bold">Real Sociedad +0 1.90</span><i class="fas fa-arrow-up text-purple-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-amber-400">●</span><span>RMA vs OVI</span><span class="text-amber-400 font-bold">Ambas Marcam 3.20 (ZEBRA)</span><i class="fas fa-arrow-up text-amber-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-slate-500">◈ ALPHA TERMINAL v4.6 ◈ 14 MAI 2026 ◈ LA LIGA JORNADA 36 ◈ SRIJ COMPLIANT ◈</span></span>
     </div>
+</div>
 
-    <div class="max-w-6xl mx-auto px-4 py-12">
+<div class="max-w-6xl mx-auto px-4 py-12">
 
-        <!-- Header -->
-        <section class="mb-12">
-            <div class="flex justify-between items-start mb-8">
-                <div>
-                    <h1 class="text-5xl md:text-6xl font-bold text-green-400 mb-2 tracking-tight">THE ALPHA TERMINAL</h1>
-                    <p class="text-slate-400 text-sm uppercase tracking-widest">Institutional Grade Predictive Intelligence | 10 MAI 2026</p>
-                </div>
-                <div class="text-right">
-                    <div class="text-3xl font-bold text-green-400" id="live-clock">00:00:00</div>
-                    <div class="text-xs text-slate-500 uppercase">GMT+1</div>
-                </div>
+    <!-- ═══ HEADER ═══ -->
+    <section class="mb-12">
+        <div class="flex justify-between items-start mb-8 flex-wrap gap-4">
+            <div>
+                <h1 class="text-5xl md:text-6xl font-bold text-green-400 mb-2 tracking-tight">THE ALPHA TERMINAL</h1>
+                <p class="text-slate-400 text-sm uppercase tracking-widest">Institutional Grade Predictive Intelligence | 14 MAI 2026</p>
             </div>
-            <div class="bloomberg-card p-6 rounded-lg border-l-4 border-yellow-500/30">
-                <p class="text-sm text-slate-300 leading-relaxed">
-                    <strong>Sistema de Análise Preditiva:</strong> Domingo decisivo nas ligas europeias — Barcelona vs Real Madrid (La Liga), West Ham vs Arsenal (Premier League), AC Milan vs Atalanta (Serie A). Análise fundamentada em estatísticas reais, modelos de probabilidade e performance histórica.
-                </p>
-                <p class="affiliate-disclaimer mt-2">Nota: Este terminal contém links de afiliados. Ao utilizar os nossos links, poderá receber bónus exclusivos enquanto apoia a nossa inteligência preditiva.</p>
+            <div class="text-right">
+                <div class="text-3xl font-bold text-green-400" id="live-clock">00:00:00</div>
+                <div class="text-xs text-slate-500 uppercase">GMT+1</div>
             </div>
-        </section>
+        </div>
+        <div class="bloomberg-card p-6 rounded-lg border-l-4 border-yellow-500/30">
+            <p class="text-sm text-slate-300 leading-relaxed">
+                <strong class="text-yellow-400">Quinta-feira de La Liga — Jornada 36:</strong> Três duelos de alto impacto em Espanha. Valencia vs Rayo Vallecano (sobrevivência vs aspirações europeias), Real Madrid vs Real Oviedo (Bernabéu quer reabilitar-se pós-Clásico), e Girona vs Real Sociedad (aposta value numa batalha equilibrada). Análise fundamentada em H2H, forma recente, xG e posição na tabela.
+            </p>
+            <p class="affiliate-disclaimer mt-2">Nota: Este terminal contém links de afiliados. Ao utilizar os nossos links, poderá receber bónus exclusivos enquanto apoia a nossa inteligência preditiva.</p>
+        </div>
+    </section>
 
-        <!-- Tips -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-bold mb-6 text-green-400">Top Picks (10 MAI 2026)</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+    <!-- ═══ TIPS ═══ -->
+    <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-6 text-green-400">⚡ Top Picks (14 MAI 2026)</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 
-                <!-- TIP-01: Barcelona vs Real Madrid -->
-                <div class="bloomberg-card p-6 rounded-lg">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="tip-badge badge-top">Top Pick</span>
-                        <span class="text-xs text-slate-500">TIP-01</span>
-                    </div>
-                    <h3 class="text-lg font-bold mb-1">Barcelona vs Real Madrid</h3>
-                    <p class="text-slate-400 text-xs mb-4">La Liga • 20:00 CEST</p>
-                    <div class="mb-4">
-                        <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
-                        <div class="odds-display text-green-400">Barcelona Vence</div>
-                    </div>
-                    <div class="flex justify-between mb-4 text-sm">
-                        <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-green-400">1.64</div></div>
-                        <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">9/10</div></div>
-                        <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-green-400">+18%</div></div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-green-400 font-bold">85%</span></div>
-                        <div class="confidence-bar"><div class="confidence-fill high" style="width: 85%"></div></div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-3">
-                        <button onclick="copyTip('Barcelona vs Real Madrid | Barcelona Vence @ 1.64')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
-                        <a href="YOUR_BETANO_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Agora</a>
-                    </div>
-                </div>
-
-                <!-- TIP-02: West Ham vs Arsenal -->
-                <div class="bloomberg-card p-6 rounded-lg">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="tip-badge badge-value">Value Pick</span>
-                        <span class="text-xs text-slate-500">TIP-02</span>
-                    </div>
-                    <h3 class="text-lg font-bold mb-1">West Ham vs Arsenal</h3>
-                    <p class="text-slate-400 text-xs mb-4">Premier League • 16:30 CEST</p>
-                    <div class="mb-4">
-                        <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
-                        <div class="odds-display text-blue-400">Arsenal Vence</div>
-                    </div>
-                    <div class="flex justify-between mb-4 text-sm">
-                        <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-blue-400">1.55</div></div>
-                        <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">8/10</div></div>
-                        <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-blue-400">+12%</div></div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-blue-400 font-bold">81%</span></div>
-                        <div class="confidence-bar"><div class="confidence-fill high" style="width: 81%"></div></div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-3">
-                        <button onclick="copyTip('West Ham vs Arsenal | Arsenal Vence @ 1.55')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
-                        <a href="YOUR_BETCLIC_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Agora</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TIP-03: AC Milan vs Atalanta -->
-            <div class="bloomberg-card p-6 rounded-lg mb-8">
+            <!-- TIP-01: Valencia vs Rayo Vallecano -->
+            <div class="bloomberg-card p-6 rounded-lg">
                 <div class="flex justify-between items-start mb-4">
-                    <span class="tip-badge badge-sharp">Sharp Pick</span>
-                    <span class="text-xs text-slate-500">TIP-03</span>
+                    <span class="tip-badge badge-top">Top Pick</span>
+                    <span class="text-xs text-slate-500">TIP-01</span>
                 </div>
-                <h3 class="text-lg font-bold mb-1">AC Milan vs Atalanta</h3>
-                <p class="text-slate-400 text-xs mb-4">Serie A • 19:45 CEST</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div>
+                <h3 class="text-lg font-bold mb-1">Valencia vs Rayo Vallecano</h3>
+                <p class="text-slate-400 text-xs mb-4">La Liga • Jornada 36 • 19:00 CEST</p>
+                <div class="mb-4">
+                    <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
+                    <div class="odds-display text-green-400">Under 2.5 Golos</div>
+                </div>
+                <div class="flex justify-between mb-4 text-sm">
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-green-400">1.75</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">8/10</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-green-400">+14%</div></div>
+                </div>
+                <div class="mb-4">
+                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-green-400 font-bold">79%</span></div>
+                    <div class="confidence-bar"><div class="confidence-fill high" style="width:79%"></div></div>
+                </div>
+                <div class="racional-box border-l-2 border-green-400/40">
+                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> Os últimos 6 H2H Valencia–Rayo terminaram todos Under 2.5. Rayo está em forma mas sem desgastar — 1.03 golos/jogo em média. Valencia defende bem em casa apesar das dificuldades. Contexto de sobrevivência gera cautela e blocos defensivos. Previsão: 0-0 ou 1-0.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="copyTip('Valencia vs Rayo Vallecano | Under 2.5 Golos @ 1.75')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <a href="YOUR_BETANO_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Agora</a>
+                </div>
+            </div>
+
+            <!-- TIP-02: Real Madrid vs Real Oviedo -->
+            <div class="bloomberg-card p-6 rounded-lg">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="tip-badge badge-value">Value Pick</span>
+                    <span class="text-xs text-slate-500">TIP-02</span>
+                </div>
+                <h3 class="text-lg font-bold mb-1">Real Madrid vs Real Oviedo</h3>
+                <p class="text-slate-400 text-xs mb-4">La Liga • Jornada 36 • 21:30 CEST</p>
+                <div class="mb-4">
+                    <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
+                    <div class="odds-display text-blue-400">Real Madrid Vence</div>
+                </div>
+                <div class="flex justify-between mb-4 text-sm">
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-blue-400">1.45</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">8/10</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-blue-400">+11%</div></div>
+                </div>
+                <div class="mb-4">
+                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-blue-400 font-bold">76%</span></div>
+                    <div class="confidence-bar"><div class="confidence-fill med" style="width:76%"></div></div>
+                </div>
+                <div class="racional-box border-l-2 border-blue-400/40">
+                    <p class="text-xs text-slate-300"><span class="text-blue-400 font-bold">Racional:</span> Oviedo já relegado (2 vitórias fora em toda a época). Madrid em casa: 14V-1E-2D. Madrid quer reabilitar-se pós-derrota no Clásico. Mbappé de regresso ao treino (24 golos na época). H2H esmagador (54-14 em 84 jogos). Efeito Santiago Bernabéu com plantel humilhado a mostrar orgulho.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="copyTip('Real Madrid vs Real Oviedo | Real Madrid Vence @ 1.45')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <a href="YOUR_BETCLIC_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Agora</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- TIP-03: Girona vs Real Sociedad -->
+        <div class="bloomberg-card p-6 rounded-lg mb-8">
+            <div class="flex justify-between items-start mb-4">
+                <span class="tip-badge badge-sharp">Sharp Pick</span>
+                <span class="text-xs text-slate-500">TIP-03</span>
+            </div>
+            <h3 class="text-lg font-bold mb-1">Girona vs Real Sociedad</h3>
+            <p class="text-slate-400 text-xs mb-4">La Liga • Jornada 36 • 19:00 CEST</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                    <div class="text-xs text-slate-400 uppercase tracking-wide mb-2">Selection</div>
+                    <div class="text-2xl font-bold text-purple-400">Real Sociedad Não Perde<br><span class="text-lg">(Dupla Hipótese X2)</span></div>
+                    <div class="racional-box border-l-2 border-purple-400/40 mt-3">
+                        <p class="text-xs text-slate-300"><span class="text-purple-400 font-bold">Racional:</span> Girona 18º — relegação quase certa, desmotivado. Real Sociedad luta por lugar europeu (7º posto). Stuani (39 anos!) marcou para Girona recentemente, mas equipa sem força coletiva. Sociedad tem histórico de não perder em visitas a Girona. Value na dupla hipótese.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between text-sm mb-4">
+                        <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-purple-400">1.60</div></div>
+                        <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">7/10</div></div>
+                        <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-purple-400">+17%</div></div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-purple-400 font-bold">72%</span></div>
+                        <div class="confidence-bar"><div class="confidence-fill high" style="width:72%"></div></div>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center">
+                    <a href="YOUR_SOLVERDE_AFFILIATE_LINK" target="_blank" class="bet-btn mb-3">Apostar com Bónus</a>
+                    <button onclick="copyTip('Girona vs Real Sociedad | Real Sociedad Não Perde (X2) @ 1.60')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ ZEBRA ═══ -->
+    <section class="mb-12">
+        <div class="bloomberg-card p-8 rounded-lg border-l-4 border-amber-400">
+            <div class="flex justify-between items-start mb-6">
+                <span class="tip-badge badge-zebra">High Risk / High Reward</span>
+                <span class="text-xs text-slate-500">ZEBRA-01</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h2 class="text-2xl font-bold mb-2">Real Madrid vs Real Oviedo</h2>
+                    <p class="text-slate-400 text-xs mb-4">La Liga • Jornada 36 • 21:30 CEST</p>
+                    <div class="mb-6">
                         <div class="text-xs text-slate-400 uppercase tracking-wide mb-2">Selection</div>
-                        <div class="text-2xl font-bold text-purple-400">Under 2.5 Golos</div>
+                        <div class="text-3xl font-bold text-amber-400">Ambas Marcam (BTTS)</div>
                     </div>
-                    <div>
-                        <div class="flex justify-between text-sm mb-4">
-                            <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-purple-400">1.95</div></div>
-                            <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">8/10</div></div>
-                            <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-purple-400">+22%</div></div>
-                        </div>
-                        <div class="mb-4">
-                            <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-purple-400 font-bold">79%</span></div>
-                            <div class="confidence-bar"><div class="confidence-fill high" style="width: 75%"></div></div>
-                        </div>
-                    </div>
-                    <div class="flex flex-col justify-center">
-                        <a href="YOUR_SOLVERDE_AFFILIATE_LINK" target="_blank" class="bet-btn mb-3">Apostar com Bónus</a>
-                        <button onclick="copyTip('Lazio vs Inter | Inter Vence @ 1.68')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <div class="bg-slate-900/50 p-4 rounded border-l-2 border-amber-400/30">
+                        <p class="text-sm text-slate-300 italic"><span class="text-amber-400 font-bold">Racional:</span> Madrid sofreu golo em 6 dos últimos 7 jogos em casa — equipa desorientada defensivamente. Oviedo não tem nada a perder e tem golos (Fede Viñas: 8 golos desde janeiro; Chaira: 6 na liga). O guarda-redes Escandell lidera La Liga em defesas (4.1/jogo), sinal que Oviedo cria oportunidades. Odd de 3.20 compensa o risco.</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Zebra -->
-        <section class="mb-12">
-            <div class="bloomberg-card p-8 rounded-lg border-l-4 border-amber-400">
-                <div class="flex justify-between items-start mb-6">
-                    <span class="tip-badge badge-zebra">High Risk / High Reward</span>
-                    <span class="text-xs text-slate-500">ZEBRA-01</span>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="flex flex-col justify-between">
                     <div>
-                        <h2 class="text-2xl font-bold mb-2">AVS vs FC Porto</h2>
+                        <div class="flex justify-between mb-6 text-lg">
+                            <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-amber-400">3.20</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">1/10</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-amber-400">+38%</div></div>
+                        </div>
                         <div class="mb-6">
-                            <div class="text-xs text-slate-400 uppercase tracking-wide mb-2">Selection</div>
-                            <div class="text-3xl font-bold text-amber-400">Empate</div>
-                        </div>
-                        <div class="bg-slate-900/50 p-4 rounded border-l-2 border-amber-400/30">
-                            <p class="text-sm text-slate-300 italic"><span class="text-amber-400 font-bold">Racional:</span> O AVS tem sido sólido em casa na Liga Portugal e o FC Porto pode estar desgastado por competições europeias. Odds altas para um resultado plausível em contexto doméstico.</p>
+                            <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-amber-400 font-bold">27%</span></div>
+                            <div class="confidence-bar"><div class="confidence-fill low" style="width:27%"></div></div>
                         </div>
                     </div>
-                    <div class="flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between mb-6 text-lg">
-                                <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-amber-400">4.50</div></div>
-                                <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">1/10</div></div>
-                                <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-amber-400">+40%</div></div>
-                            </div>
-                            <div class="mb-6">
-                                <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-amber-400 font-bold">25%</span></div>
-                                <div class="confidence-bar"><div class="confidence-fill low" style="width: 25%"></div></div>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-3">
-                            <button onclick="copyTip('AVS vs FC Porto | Empate @ 4.50')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Zebra</button>
-                            <a href="YOUR_BETANO_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Zebra</a>
-                        </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button onclick="copyTip('Real Madrid vs Real Oviedo | Ambas Marcam (BTTS) @ 3.20')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Zebra</button>
+                        <a href="YOUR_BETANO_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Zebra</a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Performance History -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-bold mb-6 text-green-400">Histórico de Performance (09 MAI 2026)</h2>
-            <div class="bloomberg-card p-6 rounded-lg overflow-x-auto">
-                <table class="history-table">
-                    <thead>
-                        <tr>
-                            <th>Jogo</th>
-                            <th>Competição</th>
-                            <th>Seleção</th>
-                            <th>Odds</th>
-                            <th>Resultado</th>
-                            <th>Status</th>
-                            <th>EV+</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Liverpool vs Chelsea</td>
-                            <td>Premier League</td>
-                            <td>Liverpool Vence</td>
-                            <td>1.83</td>
-                            <td>1-1</td>
-                            <td class="status-loss font-bold">✗ LOSS</td>
-                            <td>+15%</td>
-                        </tr>
-                        <tr>
-                            <td>Brighton vs Wolverhampton</td>
-                            <td>Premier League</td>
-                            <td>Brighton Vence</td>
-                            <td>1.95</td>
-                            <td>3-0</td>
-                            <td class="status-win font-bold">✓ WIN</td>
-                            <td>+18%</td>
-                        </tr>
-                        <tr>
-                            <td>Lazio vs Inter Milan</td>
-                            <td>Serie A</td>
-                            <td>Inter Vence</td>
-                            <td>1.68</td>
-                            <td>0-3</td>
-                            <td class="status-win font-bold">✓ WIN</td>
-                            <td>+12%</td>
-                        </tr>
-                        <tr>
-                            <td>Atletico Madrid vs Celta Vigo</td>
-                            <td>La Liga</td>
-                            <td>Empate (Zebra)</td>
-                            <td>4.50</td>
-                            <td>0-1</td>
-                            <td class="status-loss font-bold">✗ LOSS</td>
-                            <td>+35%</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="mt-4 text-sm text-slate-400">
-                    <p><strong>Resumo do Dia:</strong> 2 Vitórias | 2 Derrotas | Taxa de Sucesso: 50% | ROI Estimado: +80% (Bruto das vitórias: 3.63 - 4 stakes = -0.37 unidades)</p>
+    <!-- ═══ HISTÓRICO ═══ -->
+    <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-6 text-green-400">📊 Histórico de Performance (13 MAI 2026)</h2>
+        <div class="bloomberg-card p-6 rounded-lg overflow-x-auto">
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Jogo</th>
+                        <th>Competição</th>
+                        <th>Seleção</th>
+                        <th>Odds</th>
+                        <th>Resultado</th>
+                        <th>Status</th>
+                        <th>EV+</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Villarreal vs Sevilla</td>
+                        <td>La Liga</td>
+                        <td>Ambas Marcam (BTTS)</td>
+                        <td>1.65</td>
+                        <td>2-3 ✓</td>
+                        <td class="status-win">✓ WIN</td>
+                        <td>+16%</td>
+                    </tr>
+                    <tr>
+                        <td>Alavés vs Barcelona</td>
+                        <td>La Liga</td>
+                        <td>Barcelona Vence</td>
+                        <td>1.50</td>
+                        <td>1-0 (Alavés)</td>
+                        <td class="status-loss">✗ LOSS</td>
+                        <td>+14%</td>
+                    </tr>
+                    <tr>
+                        <td>Espanyol vs Athletic Club</td>
+                        <td>La Liga</td>
+                        <td>Over 2.5 Golos</td>
+                        <td>1.80</td>
+                        <td>2-0 (2 golos)</td>
+                        <td class="status-loss">✗ LOSS</td>
+                        <td>+19%</td>
+                    </tr>
+                    <tr>
+                        <td>Getafe vs Mallorca</td>
+                        <td>La Liga (Zebra)</td>
+                        <td>Empate @ 3.40</td>
+                        <td>3.40</td>
+                        <td>—</td>
+                        <td class="status-loss">✗ LOSS</td>
+                        <td>+35%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Acumulado dos dias anteriores -->
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                <div class="bg-slate-900/50 p-4 rounded border border-slate-700/50">
+                    <p class="text-xs text-slate-400 uppercase mb-1">13 Mai 2026</p>
+                    <p class="font-bold">1W / 2L <span class="text-slate-400 font-normal text-xs">| BTTS WIN ✓ | Barça e O2.5 LOSS</span></p>
+                </div>
+                <div class="bg-slate-900/50 p-4 rounded border border-slate-700/50">
+                    <p class="text-xs text-slate-400 uppercase mb-1">10 Mai 2026</p>
+                    <p class="font-bold">2W / 2L <span class="text-slate-400 font-normal text-xs">| Barça 2-0 + Arsenal 1-0 WIN</span></p>
+                </div>
+                <div class="bg-green-900/20 p-4 rounded border border-green-700/30">
+                    <p class="text-xs text-green-400 uppercase mb-1">Acumulado Semana</p>
+                    <p class="font-bold text-green-400">5W / 6L <span class="text-slate-400 font-normal text-xs">| ROI estimado: –3 un.</span></p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Footer & Legal -->
-        <footer class="py-12">
-            <div class="text-center text-slate-500 text-xs mb-8 border-t border-slate-700 pt-8">
-                <p>© 2026 The Alpha Terminal | Powered by Predictive Intelligence</p>
-                <p class="mt-2">Última atualização: 10 MAI 2026 | 06:30 GMT+1</p>
-            </div>
-            
-            <div class="legal-notice">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div>
-                        <h4 class="font-bold text-slate-400 mb-2 uppercase tracking-widest">Aviso Legal (SRIJ)</h4>
-                        <p>O jogo online é uma atividade regulamentada em Portugal. Apenas maiores de 18 anos podem apostar. Jogue de forma responsável. Se sentir que o jogo está a tornar-se um problema, procure ajuda imediata.</p>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-slate-400 mb-2 uppercase tracking-widest">Jogo Responsável</h4>
-                        <p>Defina limites de depósito e tempo. Nunca aposte dinheiro destinado a despesas essenciais. O "The Alpha Terminal" fornece análises baseadas em dados, mas não garante lucros. O risco é inteiramente do apostador.</p>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-slate-400 mb-2 uppercase tracking-widest">Contactos de Apoio</h4>
-                        <p>Linha de Apoio ao Jogador: +351 211 451 550<br>Site SRIJ: www.srij.turismodeportugal.pt<br>Autoexclusão disponível em todas as plataformas licenciadas.</p>
-                    </div>
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="py-12">
+        <div class="text-center text-slate-500 text-xs mb-8 border-t border-slate-700 pt-8">
+            <p>© 2026 The Alpha Terminal | Powered by Predictive Intelligence</p>
+            <p class="mt-2">Última atualização: 14 MAI 2026 | 07:00 GMT+1</p>
+        </div>
+        <div class="legal-notice">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="font-bold text-slate-400 mb-2 uppercase tracking-widest">Aviso Legal (SRIJ)</h4>
+                    <p>O jogo online é uma atividade regulamentada em Portugal. Apenas maiores de 18 anos podem apostar. Jogue de forma responsável. Se sentir que o jogo está a tornar-se um problema, procure ajuda imediata.</p>
                 </div>
-                <div class="text-center mt-8 text-[10px] opacity-50">
-                    ESTE TERMINAL OPERA EM CONFORMIDADE COM A LEI N.º 45/2011 E O REGIME JURÍDICO DOS JOGOS E APOSTAS ONLINE (RJO).
+                <div>
+                    <h4 class="font-bold text-slate-400 mb-2 uppercase tracking-widest">Jogo Responsável</h4>
+                    <p>Defina limites de depósito e tempo. Nunca aposte dinheiro destinado a despesas essenciais. O "The Alpha Terminal" fornece análises baseadas em dados, mas não garante lucros. O risco é inteiramente do apostador.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-400 mb-2 uppercase tracking-widest">Contactos de Apoio</h4>
+                    <p>Linha de Apoio ao Jogador: +351 211 451 550<br>Site SRIJ: www.srij.turismodeportugal.pt<br>Autoexclusão disponível em todas as plataformas licenciadas.</p>
                 </div>
             </div>
-        </footer>
+            <div class="text-center mt-8 text-[10px] opacity-50">
+                ESTE TERMINAL OPERA EM CONFORMIDADE COM A LEI N.º 45/2011 E O REGIME JURÍDICO DOS JOGOS E APOSTAS ONLINE (RJO).
+            </div>
+        </div>
+    </footer>
 
-    </div>
+</div>
 
-    <script>
-        function copyTip(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                alert('Tip copiada para a área de transferência!');
-            });
-        }
-        function updateClock() {
-            const now = new Date();
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-            document.getElementById('live-clock').textContent = `${hours}:${minutes}:${seconds}`;
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
-    </script>
-
+<script>
+    function copyTip(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            alert('Tip copiada para a área de transferência!');
+        }).catch(() => {
+            prompt('Copia este texto:', text);
+        });
+    }
+    function updateClock() {
+        const now = new Date();
+        document.getElementById('live-clock').textContent =
+            String(now.getHours()).padStart(2,'0') + ':' +
+            String(now.getMinutes()).padStart(2,'0') + ':' +
+            String(now.getSeconds()).padStart(2,'0');
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+</script>
 </body>
 </html>
