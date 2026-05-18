@@ -9,22 +9,25 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&display=swap');
         body { font-family: 'IBM Plex Mono', monospace; background: linear-gradient(135deg, #0f172a 0%, #1a2847 100%); color: #e2e8f0; min-height: 100vh; }
-        .bloomberg-card { background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(34, 197, 94, 0.1); backdrop-filter: blur(10px); }
+        .bloomberg-card { background: rgba(15,23,42,0.8); border: 1px solid rgba(34,197,94,0.1); backdrop-filter: blur(10px); }
         .odds-display { font-size: 1.5rem; font-weight: 700; letter-spacing: 2px; }
-        .confidence-bar { height: 8px; background: rgba(30, 41, 59, 0.8); border-radius: 4px; overflow: hidden; }
+        .confidence-bar { height: 8px; background: rgba(30,41,59,0.8); border-radius: 4px; overflow: hidden; }
         .confidence-fill { height: 100%; border-radius: 4px; transition: width 0.3s ease; }
         .confidence-fill.high { background: linear-gradient(90deg, #22c55e, #16a34a); }
         .confidence-fill.med  { background: linear-gradient(90deg, #3b82f6, #2563eb); }
         .confidence-fill.low  { background: linear-gradient(90deg, #f97316, #ea580c); }
         .tip-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
-        .badge-top   { background: rgba(34,197,94,.2);  color: #22c55e; border: 1px solid rgba(34,197,94,.5); }
-        .badge-value { background: rgba(59,130,246,.2);  color: #3b82f6; border: 1px solid rgba(59,130,246,.5); }
-        .badge-sharp { background: rgba(168,85,247,.2);  color: #a855f7; border: 1px solid rgba(168,85,247,.5); }
-        .badge-zebra { background: rgba(251,146,60,.2);  color: #fb923c; border: 1px solid rgba(251,146,60,.5); }
+        .badge-top    { background: rgba(34,197,94,.2);  color: #22c55e; border: 1px solid rgba(34,197,94,.5); }
+        .badge-value  { background: rgba(59,130,246,.2);  color: #3b82f6; border: 1px solid rgba(59,130,246,.5); }
+        .badge-sharp  { background: rgba(168,85,247,.2);  color: #a855f7; border: 1px solid rgba(168,85,247,.5); }
+        .badge-zebra  { background: rgba(251,146,60,.2);  color: #fb923c; border: 1px solid rgba(251,146,60,.5); }
+        .badge-europa { background: rgba(250,204,21,.2);  color: #fbbf24; border: 1px solid rgba(250,204,21,.5); }
         .copy-btn { background: rgba(34,197,94,.1); border: 1px solid rgba(34,197,94,.3); color: #22c55e; padding: 10px; border-radius: 4px; cursor: pointer; transition: all .2s; font-family: 'IBM Plex Mono', monospace; font-size: .75rem; width: 100%; }
         .copy-btn:hover { background: rgba(34,197,94,.2); border-color: rgba(34,197,94,.6); }
         .bet-btn { background: #22c55e; color: #0f172a; padding: 10px; border-radius: 4px; cursor: pointer; transition: all .2s; font-family: 'IBM Plex Mono', monospace; font-weight: 700; text-align: center; display: block; width: 100%; text-transform: uppercase; font-size: .875rem; text-decoration: none; }
         .bet-btn:hover { background: #16a34a; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(34,197,94,.3); }
+        .bet-btn-gold { background: #d97706; color: #fff; padding: 10px; border-radius: 4px; cursor: pointer; transition: all .2s; font-family: 'IBM Plex Mono', monospace; font-weight: 700; text-align: center; display: block; width: 100%; text-transform: uppercase; font-size: .875rem; text-decoration: none; }
+        .bet-btn-gold:hover { background: #b45309; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(217,119,6,.4); }
         .ticker-tape { background: rgba(15,23,42,.9); border-top: 1px solid rgba(34,197,94,.2); border-bottom: 1px solid rgba(34,197,94,.2); padding: 12px 0; overflow: hidden; position: sticky; top: 0; z-index: 50; }
         .ticker-wrap { display: flex; width: max-content; animation: ticker 40s linear infinite; gap: 60px; }
         .ticker-item { display: flex; align-items: center; gap: 8px; white-space: nowrap; font-size: .875rem; color: #94a3b8; }
@@ -37,6 +40,10 @@
         .legal-notice { font-size: .65rem; color: #64748b; line-height: 1.4; border-top: 1px solid rgba(30,41,59,.5); padding-top: 20px; margin-top: 40px; }
         .affiliate-disclaimer { font-size: .7rem; color: #94a3b8; margin-bottom: 10px; font-style: italic; }
         .racional-box { background: rgba(15,23,42,.6); padding: 12px; border-radius: 4px; margin-bottom: 16px; }
+        .final-banner { background: linear-gradient(135deg, rgba(30,23,0,0.9) 0%, rgba(30,10,0,0.9) 100%); border: 1px solid rgba(250,204,21,0.4); border-radius: 12px; padding: 32px; margin-bottom: 32px; position: relative; overflow: hidden; }
+        .final-banner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #d97706, #fbbf24, #d97706); }
+        .countdown-box { background: rgba(0,0,0,0.4); border: 1px solid rgba(250,204,21,0.3); border-radius: 8px; padding: 16px; text-align: center; }
+        .team-badge { background: rgba(15,23,42,0.6); border: 1px solid rgba(250,204,21,0.2); border-radius: 8px; padding: 16px; text-align: center; }
     </style>
 </head>
 <body>
@@ -44,145 +51,194 @@
 <!-- ═══ TICKER ═══ -->
 <div class="ticker-tape">
     <div class="ticker-wrap">
-        <!-- set 1 -->
-        <span class="ticker-item"><span class="text-green-400">●</span><span>VLC vs RAY</span><span class="text-green-400 font-bold">Under 2.5 Golos 1.75</span><i class="fas fa-arrow-up text-green-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-blue-400">●</span><span>RMA vs OVI</span><span class="text-blue-400 font-bold">Real Madrid Vence 1.45</span><i class="fas fa-arrow-up text-blue-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-purple-400">●</span><span>GIR vs RSO</span><span class="text-purple-400 font-bold">Real Sociedad +0 1.90</span><i class="fas fa-arrow-up text-purple-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-amber-400">●</span><span>RMA vs OVI</span><span class="text-amber-400 font-bold">Ambas Marcam 3.20 (ZEBRA)</span><i class="fas fa-arrow-up text-amber-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-slate-500">◈ ALPHA TERMINAL v4.6 ◈ 14 MAI 2026 ◈ LA LIGA JORNADA 36 ◈ SRIJ COMPLIANT ◈</span></span>
-        <!-- set 2 (duplicate for loop) -->
-        <span class="ticker-item"><span class="text-green-400">●</span><span>VLC vs RAY</span><span class="text-green-400 font-bold">Under 2.5 Golos 1.75</span><i class="fas fa-arrow-up text-green-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-blue-400">●</span><span>RMA vs OVI</span><span class="text-blue-400 font-bold">Real Madrid Vence 1.45</span><i class="fas fa-arrow-up text-blue-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-purple-400">●</span><span>GIR vs RSO</span><span class="text-purple-400 font-bold">Real Sociedad +0 1.90</span><i class="fas fa-arrow-up text-purple-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-amber-400">●</span><span>RMA vs OVI</span><span class="text-amber-400 font-bold">Ambas Marcam 3.20 (ZEBRA)</span><i class="fas fa-arrow-up text-amber-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-slate-500">◈ ALPHA TERMINAL v4.6 ◈ 14 MAI 2026 ◈ LA LIGA JORNADA 36 ◈ SRIJ COMPLIANT ◈</span></span>
+        <span class="ticker-item"><span class="text-yellow-400">★</span><span>FINAL LIGA EUROPA</span><span class="text-yellow-400 font-bold">20 MAI · ISTAMBUL · 21:00 CEST</span><i class="fas fa-trophy text-yellow-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-green-400">●</span><span>FRI vs AVL</span><span class="text-green-400 font-bold">Aston Villa Vence 1.62</span><i class="fas fa-arrow-up text-green-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-blue-400">●</span><span>FRI vs AVL</span><span class="text-blue-400 font-bold">Under 2.5 Golos 2.10</span><i class="fas fa-arrow-up text-blue-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-purple-400">●</span><span>FRI vs AVL</span><span class="text-purple-400 font-bold">Ambas Marcam 1.72</span><i class="fas fa-arrow-up text-purple-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-amber-400">●</span><span>FRI vs AVL</span><span class="text-amber-400 font-bold">Freiburg Vence 4.50 (ZEBRA)</span><i class="fas fa-arrow-up text-amber-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-slate-500">◈ ALPHA TERMINAL v4.6 ◈ 18 MAI 2026 ◈ FINAL UEFA EUROPA LEAGUE ◈ ISTAMBUL 20 MAI ◈ SRIJ COMPLIANT ◈</span></span>
+        <span class="ticker-item"><span class="text-yellow-400">★</span><span>FINAL LIGA EUROPA</span><span class="text-yellow-400 font-bold">20 MAI · ISTAMBUL · 21:00 CEST</span><i class="fas fa-trophy text-yellow-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-green-400">●</span><span>FRI vs AVL</span><span class="text-green-400 font-bold">Aston Villa Vence 1.62</span><i class="fas fa-arrow-up text-green-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-blue-400">●</span><span>FRI vs AVL</span><span class="text-blue-400 font-bold">Under 2.5 Golos 2.10</span><i class="fas fa-arrow-up text-blue-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-purple-400">●</span><span>FRI vs AVL</span><span class="text-purple-400 font-bold">Ambas Marcam 1.72</span><i class="fas fa-arrow-up text-purple-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-amber-400">●</span><span>FRI vs AVL</span><span class="text-amber-400 font-bold">Freiburg Vence 4.50 (ZEBRA)</span><i class="fas fa-arrow-up text-amber-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-slate-500">◈ ALPHA TERMINAL v4.6 ◈ 18 MAI 2026 ◈ FINAL UEFA EUROPA LEAGUE ◈ ISTAMBUL 20 MAI ◈ SRIJ COMPLIANT ◈</span></span>
     </div>
 </div>
 
 <div class="max-w-6xl mx-auto px-4 py-12">
 
-    <!-- ═══ HEADER ═══ -->
+    <!-- HEADER -->
     <section class="mb-12">
         <div class="flex justify-between items-start mb-8 flex-wrap gap-4">
             <div>
                 <h1 class="text-5xl md:text-6xl font-bold text-green-400 mb-2 tracking-tight">THE ALPHA TERMINAL</h1>
-                <p class="text-slate-400 text-sm uppercase tracking-widest">Institutional Grade Predictive Intelligence | 14 MAI 2026</p>
+                <p class="text-slate-400 text-sm uppercase tracking-widest">Institutional Grade Predictive Intelligence | 18 MAI 2026</p>
             </div>
             <div class="text-right">
                 <div class="text-3xl font-bold text-green-400" id="live-clock">00:00:00</div>
                 <div class="text-xs text-slate-500 uppercase">GMT+1</div>
             </div>
         </div>
-        <div class="bloomberg-card p-6 rounded-lg border-l-4 border-yellow-500/30">
+        <div class="bloomberg-card p-6 rounded-lg border-l-4 border-yellow-500/50">
             <p class="text-sm text-slate-300 leading-relaxed">
-                <strong class="text-yellow-400">Quinta-feira de La Liga — Jornada 36:</strong> Três duelos de alto impacto em Espanha. Valencia vs Rayo Vallecano (sobrevivência vs aspirações europeias), Real Madrid vs Real Oviedo (Bernabéu quer reabilitar-se pós-Clásico), e Girona vs Real Sociedad (aposta value numa batalha equilibrada). Análise fundamentada em H2H, forma recente, xG e posição na tabela.
+                <strong class="text-yellow-400">Segunda-feira de Antevisão Europeia:</strong> As principais ligas domésticas encerraram a época. Foco total na <strong class="text-yellow-400">Final da UEFA Europa League — Freiburg vs Aston Villa</strong>, quarta-feira 20 de maio em Istambul (21:00 CEST). Emery persegue o 5.º título na competição. Freiburg faz a primeira final europeia da história do clube. Análise profunda, tips antecipadas e racional estatístico completo.
             </p>
             <p class="affiliate-disclaimer mt-2">Nota: Este terminal contém links de afiliados. Ao utilizar os nossos links, poderá receber bónus exclusivos enquanto apoia a nossa inteligência preditiva.</p>
         </div>
     </section>
 
-    <!-- ═══ TIPS ═══ -->
+    <!-- FINAL BANNER -->
     <section class="mb-12">
-        <h2 class="text-2xl font-bold mb-6 text-green-400">⚡ Top Picks (14 MAI 2026)</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-
-            <!-- TIP-01: Valencia vs Rayo Vallecano -->
-            <div class="bloomberg-card p-6 rounded-lg">
-                <div class="flex justify-between items-start mb-4">
-                    <span class="tip-badge badge-top">Top Pick</span>
-                    <span class="text-xs text-slate-500">TIP-01</span>
+        <div class="final-banner">
+            <div class="text-center mb-8">
+                <div class="text-xs text-yellow-400 uppercase tracking-widest mb-2">UEFA Europa League 2025/26 · Final · Beşiktaş Stadium, Istambul</div>
+                <div class="text-xl text-yellow-300 font-bold mb-1">Quarta-feira, 20 de Maio de 2026 · 21:00 CEST</div>
+            </div>
+            <div class="grid grid-cols-3 gap-4 items-center mb-8">
+                <div class="team-badge">
+                    <div class="text-3xl font-bold text-white mb-1">SC Freiburg</div>
+                    <div class="text-xs text-slate-400">Bundesliga • 7.º lugar</div>
+                    <div class="text-xs text-yellow-400 mt-2">1.ª final europeia na história</div>
+                    <div class="text-xs text-slate-500 mt-1">Forma: V D V E D D</div>
                 </div>
-                <h3 class="text-lg font-bold mb-1">Valencia vs Rayo Vallecano</h3>
-                <p class="text-slate-400 text-xs mb-4">La Liga • Jornada 36 • 19:00 CEST</p>
-                <div class="mb-4">
-                    <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
-                    <div class="odds-display text-green-400">Under 2.5 Golos</div>
+                <div class="text-center">
+                    <div class="text-5xl font-bold text-yellow-400 mb-2">VS</div>
+                    <div class="text-xs text-slate-400 uppercase tracking-widest">Final</div>
+                    <i class="fas fa-trophy text-yellow-400 text-2xl mt-2 block"></i>
                 </div>
-                <div class="flex justify-between mb-4 text-sm">
-                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-green-400">1.75</div></div>
-                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">8/10</div></div>
-                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-green-400">+14%</div></div>
-                </div>
-                <div class="mb-4">
-                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-green-400 font-bold">79%</span></div>
-                    <div class="confidence-bar"><div class="confidence-fill high" style="width:79%"></div></div>
-                </div>
-                <div class="racional-box border-l-2 border-green-400/40">
-                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> Os últimos 6 H2H Valencia–Rayo terminaram todos Under 2.5. Rayo está em forma mas sem desgastar — 1.03 golos/jogo em média. Valencia defende bem em casa apesar das dificuldades. Contexto de sobrevivência gera cautela e blocos defensivos. Previsão: 0-0 ou 1-0.</p>
-                </div>
-                <div class="grid grid-cols-2 gap-3">
-                    <button onclick="copyTip('Valencia vs Rayo Vallecano | Under 2.5 Golos @ 1.75')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
-                    <a href="YOUR_BETANO_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Agora</a>
+                <div class="team-badge">
+                    <div class="text-3xl font-bold text-white mb-1">Aston Villa</div>
+                    <div class="text-xs text-slate-400">Premier League • 4.º lugar</div>
+                    <div class="text-xs text-yellow-400 mt-2">1.ª final europeia em 44 anos</div>
+                    <div class="text-xs text-slate-500 mt-1">Forma: V E V D D D</div>
                 </div>
             </div>
-
-            <!-- TIP-02: Real Madrid vs Real Oviedo -->
-            <div class="bloomberg-card p-6 rounded-lg">
-                <div class="flex justify-between items-start mb-4">
-                    <span class="tip-badge badge-value">Value Pick</span>
-                    <span class="text-xs text-slate-500">TIP-02</span>
+            <!-- Odds snapshot -->
+            <div class="grid grid-cols-3 gap-3 text-center">
+                <div class="countdown-box">
+                    <div class="text-xs text-slate-400 uppercase mb-1">Freiburg Vence</div>
+                    <div class="text-2xl font-bold text-amber-400">4.50</div>
                 </div>
-                <h3 class="text-lg font-bold mb-1">Real Madrid vs Real Oviedo</h3>
-                <p class="text-slate-400 text-xs mb-4">La Liga • Jornada 36 • 21:30 CEST</p>
-                <div class="mb-4">
-                    <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
-                    <div class="odds-display text-blue-400">Real Madrid Vence</div>
+                <div class="countdown-box">
+                    <div class="text-xs text-slate-400 uppercase mb-1">Empate (90')</div>
+                    <div class="text-2xl font-bold text-slate-300">3.40</div>
                 </div>
-                <div class="flex justify-between mb-4 text-sm">
-                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-blue-400">1.45</div></div>
-                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">8/10</div></div>
-                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-blue-400">+11%</div></div>
-                </div>
-                <div class="mb-4">
-                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-blue-400 font-bold">76%</span></div>
-                    <div class="confidence-bar"><div class="confidence-fill med" style="width:76%"></div></div>
-                </div>
-                <div class="racional-box border-l-2 border-blue-400/40">
-                    <p class="text-xs text-slate-300"><span class="text-blue-400 font-bold">Racional:</span> Oviedo já relegado (2 vitórias fora em toda a época). Madrid em casa: 14V-1E-2D. Madrid quer reabilitar-se pós-derrota no Clásico. Mbappé de regresso ao treino (24 golos na época). H2H esmagador (54-14 em 84 jogos). Efeito Santiago Bernabéu com plantel humilhado a mostrar orgulho.</p>
-                </div>
-                <div class="grid grid-cols-2 gap-3">
-                    <button onclick="copyTip('Real Madrid vs Real Oviedo | Real Madrid Vence @ 1.45')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
-                    <a href="YOUR_BETCLIC_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Agora</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- TIP-03: Girona vs Real Sociedad -->
-        <div class="bloomberg-card p-6 rounded-lg mb-8">
-            <div class="flex justify-between items-start mb-4">
-                <span class="tip-badge badge-sharp">Sharp Pick</span>
-                <span class="text-xs text-slate-500">TIP-03</span>
-            </div>
-            <h3 class="text-lg font-bold mb-1">Girona vs Real Sociedad</h3>
-            <p class="text-slate-400 text-xs mb-4">La Liga • Jornada 36 • 19:00 CEST</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div>
-                    <div class="text-xs text-slate-400 uppercase tracking-wide mb-2">Selection</div>
-                    <div class="text-2xl font-bold text-purple-400">Real Sociedad Não Perde<br><span class="text-lg">(Dupla Hipótese X2)</span></div>
-                    <div class="racional-box border-l-2 border-purple-400/40 mt-3">
-                        <p class="text-xs text-slate-300"><span class="text-purple-400 font-bold">Racional:</span> Girona 18º — relegação quase certa, desmotivado. Real Sociedad luta por lugar europeu (7º posto). Stuani (39 anos!) marcou para Girona recentemente, mas equipa sem força coletiva. Sociedad tem histórico de não perder em visitas a Girona. Value na dupla hipótese.</p>
-                    </div>
-                </div>
-                <div>
-                    <div class="flex justify-between text-sm mb-4">
-                        <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-purple-400">1.60</div></div>
-                        <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">7/10</div></div>
-                        <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-purple-400">+17%</div></div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-purple-400 font-bold">72%</span></div>
-                        <div class="confidence-bar"><div class="confidence-fill high" style="width:72%"></div></div>
-                    </div>
-                </div>
-                <div class="flex flex-col justify-center">
-                    <a href="YOUR_SOLVERDE_AFFILIATE_LINK" target="_blank" class="bet-btn mb-3">Apostar com Bónus</a>
-                    <button onclick="copyTip('Girona vs Real Sociedad | Real Sociedad Não Perde (X2) @ 1.60')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                <div class="countdown-box">
+                    <div class="text-xs text-slate-400 uppercase mb-1">Aston Villa Vence</div>
+                    <div class="text-2xl font-bold text-green-400">1.62</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ═══ ZEBRA ═══ -->
+    <!-- TIPS -->
+    <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-2 text-green-400">⚡ Tips Antecipadas — Final Liga Europa (20 MAI)</h2>
+        <p class="text-xs text-slate-500 uppercase tracking-widest mb-6">Apostas abertas · Odds válidas à data de publicação · Verificar antes de apostar</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+
+            <!-- TIP-01: Aston Villa Vence -->
+            <div class="bloomberg-card p-6 rounded-lg border-t-2 border-yellow-500/30">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="tip-badge badge-top">Top Pick</span>
+                    <span class="text-xs text-slate-500">TIP-01</span>
+                </div>
+                <h3 class="text-lg font-bold mb-1">Freiburg vs Aston Villa</h3>
+                <p class="text-slate-400 text-xs mb-4">Final UEFA Europa League • 20 Mai • 21:00 CEST • Istambul</p>
+                <div class="mb-4">
+                    <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
+                    <div class="odds-display text-green-400">Aston Villa Vence (90')</div>
+                </div>
+                <div class="flex justify-between mb-4 text-sm">
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-green-400">1.62</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">7/10</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-green-400">+13%</div></div>
+                </div>
+                <div class="mb-4">
+                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-green-400 font-bold">72%</span></div>
+                    <div class="confidence-bar"><div class="confidence-fill high" style="width:72%"></div></div>
+                </div>
+                <div class="racional-box border-l-2 border-green-400/40">
+                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> Emery tem 4 títulos na Europa League — pedigree único no futebol europeu. Villa eliminou Forest 4-1 no agregado (goleada em casa). Watkins com 2 golos nos últimos 2 jogos. Rogers, McGinn, Buendía em forma excepcional. Freiburg nunca disputou uma final europeia — pressão de estreia histórica. Villa tem plantel mais profundo e experiência de grandes momentos. Susuki (melhor jogador do Freiburg) ausente com fratura na clavícula — baixa brutal.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="copyTip('Freiburg vs Aston Villa | Aston Villa Vence (90min) @ 1.62')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <a href="YOUR_BETANO_AFFILIATE_LINK" target="_blank" class="bet-btn-gold">Apostar Agora</a>
+                </div>
+            </div>
+
+            <!-- TIP-02: Under 2.5 -->
+            <div class="bloomberg-card p-6 rounded-lg border-t-2 border-blue-500/30">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="tip-badge badge-value">Value Pick</span>
+                    <span class="text-xs text-slate-500">TIP-02</span>
+                </div>
+                <h3 class="text-lg font-bold mb-1">Freiburg vs Aston Villa</h3>
+                <p class="text-slate-400 text-xs mb-4">Final UEFA Europa League • 20 Mai • 21:00 CEST • Istambul</p>
+                <div class="mb-4">
+                    <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
+                    <div class="odds-display text-blue-400">Under 2.5 Golos</div>
+                </div>
+                <div class="flex justify-between mb-4 text-sm">
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-blue-400">2.10</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">6/10</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-blue-400">+21%</div></div>
+                </div>
+                <div class="mb-4">
+                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-blue-400 font-bold">67%</span></div>
+                    <div class="confidence-bar"><div class="confidence-fill med" style="width:67%"></div></div>
+                </div>
+                <div class="racional-box border-l-2 border-blue-400/40">
+                    <p class="text-xs text-slate-300"><span class="text-blue-400 font-bold">Racional:</span> Finais da Liga Europa historicamente cautelosas — média de 1.89 golos nas últimas 8 finais. Freiburg tem Under 2.5 em 7 dos últimos 10 jogos. As defesas prevalecem em encontros únicos de alto risco. Villa não tem Onana (lesionado) e Lindelöf duvidoso — meio-campo mais conservador. Freiburg sem Suzuki = menos criatividade ofensiva. Probabilidade Under 2.5 acima dos 60% segundo modelos xG.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="copyTip('Freiburg vs Aston Villa | Under 2.5 Golos @ 2.10')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <a href="YOUR_BETCLIC_AFFILIATE_LINK" target="_blank" class="bet-btn-gold">Apostar Agora</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- TIP-03: Ambas Marcam -->
+        <div class="bloomberg-card p-6 rounded-lg mb-8 border-t-2 border-purple-500/30">
+            <div class="flex justify-between items-start mb-4">
+                <span class="tip-badge badge-sharp">Sharp Pick</span>
+                <span class="text-xs text-slate-500">TIP-03</span>
+            </div>
+            <h3 class="text-lg font-bold mb-1">Freiburg vs Aston Villa</h3>
+            <p class="text-slate-400 text-xs mb-4">Final UEFA Europa League • 20 Mai • 21:00 CEST • Istambul</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                    <div class="text-xs text-slate-400 uppercase tracking-wide mb-2">Selection</div>
+                    <div class="text-2xl font-bold text-purple-400">Ambas Marcam (BTTS)</div>
+                    <div class="racional-box border-l-2 border-purple-400/40 mt-3">
+                        <p class="text-xs text-slate-300"><span class="text-purple-400 font-bold">Racional:</span> Freiburg marcou em 5 dos 6 jogos da eliminatória. Villa marcou em todos os 6 jogos da fase eliminatória. Grifo e Manzambi são perigosos mesmo sem Suzuki. BTTS em 4 das últimas 6 finais da Europa League. Freiburg não manteve a baliza a zero nos últimos 4 jogos. Os dois ataques são eficientes — BTTS é o mercado de melhor equilíbrio risco/recompensa.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between text-sm mb-4">
+                        <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-purple-400">1.72</div></div>
+                        <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">6/10</div></div>
+                        <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-purple-400">+15%</div></div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-purple-400 font-bold">65%</span></div>
+                        <div class="confidence-bar"><div class="confidence-fill high" style="width:65%"></div></div>
+                    </div>
+                    <div class="bg-slate-800/40 rounded p-3 text-xs text-slate-400 border-l-2 border-purple-400/20">
+                        <i class="fas fa-lightbulb text-purple-400 mr-1"></i>
+                        TIP-02 (Under 2.5) e TIP-03 (BTTS) são contraditórias — escolher uma ou considerar o cenário mais provável: 1-0 ou 2-0 para Villa.
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center">
+                    <a href="YOUR_SOLVERDE_AFFILIATE_LINK" target="_blank" class="bet-btn-gold mb-3">Apostar com Bónus</a>
+                    <button onclick="copyTip('Freiburg vs Aston Villa | Ambas Marcam (BTTS) @ 1.72')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ZEBRA -->
     <section class="mb-12">
         <div class="bloomberg-card p-8 rounded-lg border-l-4 border-amber-400">
             <div class="flex justify-between items-start mb-6">
@@ -191,30 +247,30 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                    <h2 class="text-2xl font-bold mb-2">Real Madrid vs Real Oviedo</h2>
-                    <p class="text-slate-400 text-xs mb-4">La Liga • Jornada 36 • 21:30 CEST</p>
+                    <h2 class="text-2xl font-bold mb-2">Freiburg vs Aston Villa</h2>
+                    <p class="text-slate-400 text-xs mb-4">Final UEFA Europa League • 20 Mai • 21:00 CEST • Istambul</p>
                     <div class="mb-6">
                         <div class="text-xs text-slate-400 uppercase tracking-wide mb-2">Selection</div>
-                        <div class="text-3xl font-bold text-amber-400">Ambas Marcam (BTTS)</div>
+                        <div class="text-3xl font-bold text-amber-400">Freiburg Vence</div>
                     </div>
                     <div class="bg-slate-900/50 p-4 rounded border-l-2 border-amber-400/30">
-                        <p class="text-sm text-slate-300 italic"><span class="text-amber-400 font-bold">Racional:</span> Madrid sofreu golo em 6 dos últimos 7 jogos em casa — equipa desorientada defensivamente. Oviedo não tem nada a perder e tem golos (Fede Viñas: 8 golos desde janeiro; Chaira: 6 na liga). O guarda-redes Escandell lidera La Liga em defesas (4.1/jogo), sinal que Oviedo cria oportunidades. Odd de 3.20 compensa o risco.</p>
+                        <p class="text-sm text-slate-300 italic"><span class="text-amber-400 font-bold">Racional:</span> Freiburg venceu o Leipzig 4-1 no último jogo da Bundesliga — em excelente forma. 11 vitórias consecutivas em casa na Liga Europa (iguala o recorde do Sevilha). Julian Schuster tem surpreendido todos ao longo da época. Freiburg venceu o Braga depois de perder a primeira mão — provaram capacidade de superação. A primeira final da história pode ser o momento certo para um milagre coletivo. Odd de 4.50 justifica o risco controlado de 1 unidade.</p>
                     </div>
                 </div>
                 <div class="flex flex-col justify-between">
                     <div>
                         <div class="flex justify-between mb-6 text-lg">
-                            <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-amber-400">3.20</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-amber-400">4.50</div></div>
                             <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">1/10</div></div>
-                            <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-amber-400">+38%</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-amber-400">+42%</div></div>
                         </div>
                         <div class="mb-6">
-                            <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-amber-400 font-bold">27%</span></div>
-                            <div class="confidence-bar"><div class="confidence-fill low" style="width:27%"></div></div>
+                            <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-amber-400 font-bold">22%</span></div>
+                            <div class="confidence-bar"><div class="confidence-fill low" style="width:22%"></div></div>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-3">
-                        <button onclick="copyTip('Real Madrid vs Real Oviedo | Ambas Marcam (BTTS) @ 3.20')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Zebra</button>
+                        <button onclick="copyTip('Freiburg vs Aston Villa | Freiburg Vence (90min) @ 4.50')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Zebra</button>
                         <a href="YOUR_BETANO_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Zebra</a>
                     </div>
                 </div>
@@ -222,9 +278,9 @@
         </div>
     </section>
 
-    <!-- ═══ HISTÓRICO ═══ -->
+    <!-- HISTÓRICO -->
     <section class="mb-12">
-        <h2 class="text-2xl font-bold mb-6 text-green-400">📊 Histórico de Performance (13 MAI 2026)</h2>
+        <h2 class="text-2xl font-bold mb-6 text-green-400">📊 Histórico de Performance (15–16 MAI 2026)</h2>
         <div class="bloomberg-card p-6 rounded-lg overflow-x-auto">
             <table class="history-table">
                 <thead>
@@ -239,68 +295,86 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- 15 Maio -->
                     <tr>
-                        <td>Villarreal vs Sevilla</td>
-                        <td>La Liga</td>
+                        <td>Porto B vs Benfica B</td>
+                        <td>Liga Portugal 2</td>
                         <td>Ambas Marcam (BTTS)</td>
                         <td>1.65</td>
-                        <td>2-3 ✓</td>
-                        <td class="status-win">✓ WIN</td>
+                        <td>2-0 (Benfica B não marcou)</td>
+                        <td class="status-loss">✗ LOSS</td>
                         <td>+16%</td>
                     </tr>
                     <tr>
-                        <td>Alavés vs Barcelona</td>
-                        <td>La Liga</td>
-                        <td>Barcelona Vence</td>
-                        <td>1.50</td>
-                        <td>1-0 (Alavés)</td>
-                        <td class="status-loss">✗ LOSS</td>
-                        <td>+14%</td>
+                        <td>Porto B vs Benfica B</td>
+                        <td>Liga Portugal 2 (Zebra)</td>
+                        <td>Porto B Vence @ 2.40</td>
+                        <td>2.40</td>
+                        <td>2-0 ✓ (Sousa 51', Cunha 79')</td>
+                        <td class="status-win">✓ WIN</td>
+                        <td>+30%</td>
                     </tr>
                     <tr>
-                        <td>Espanyol vs Athletic Club</td>
-                        <td>La Liga</td>
-                        <td>Over 2.5 Golos</td>
-                        <td>1.80</td>
-                        <td>2-0 (2 golos)</td>
+                        <td>Aston Villa vs Liverpool</td>
+                        <td>Premier League</td>
+                        <td>Empate @ 3.90</td>
+                        <td>3.90</td>
+                        <td>4-2 (Villa goleou)</td>
                         <td class="status-loss">✗ LOSS</td>
-                        <td>+19%</td>
+                        <td>+24%</td>
                     </tr>
                     <tr>
-                        <td>Getafe vs Mallorca</td>
-                        <td>La Liga (Zebra)</td>
-                        <td>Empate @ 3.40</td>
-                        <td>3.40</td>
-                        <td>—</td>
+                        <td>Aston Villa vs Liverpool</td>
+                        <td>Premier League</td>
+                        <td>Liverpool Não Perde X2</td>
+                        <td>1.55</td>
+                        <td>4-2 (Villa venceu)</td>
                         <td class="status-loss">✗ LOSS</td>
-                        <td>+35%</td>
+                        <td>+12%</td>
+                    </tr>
+                    <!-- 16 Maio -->
+                    <tr class="bg-green-900/10">
+                        <td>Sporting vs Gil Vicente</td>
+                        <td>Liga Portugal</td>
+                        <td>Sporting Vence @ 1.22</td>
+                        <td>1.22</td>
+                        <td>3-0 ✓ (Quaresma, Suárez, Hjulmand)</td>
+                        <td class="status-win">✓ WIN</td>
+                        <td>+11%</td>
+                    </tr>
+                    <tr class="bg-green-900/10">
+                        <td>Estoril vs Benfica</td>
+                        <td>Liga Portugal</td>
+                        <td>Benfica Vence @ 1.30</td>
+                        <td>1.30</td>
+                        <td>1-3 ✓ (Ríos, Bah, Rafa)</td>
+                        <td class="status-win">✓ WIN</td>
+                        <td>+10%</td>
                     </tr>
                 </tbody>
             </table>
-
-            <!-- Acumulado dos dias anteriores -->
             <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                 <div class="bg-slate-900/50 p-4 rounded border border-slate-700/50">
-                    <p class="text-xs text-slate-400 uppercase mb-1">13 Mai 2026</p>
-                    <p class="font-bold">1W / 2L <span class="text-slate-400 font-normal text-xs">| BTTS WIN ✓ | Barça e O2.5 LOSS</span></p>
-                </div>
-                <div class="bg-slate-900/50 p-4 rounded border border-slate-700/50">
-                    <p class="text-xs text-slate-400 uppercase mb-1">10 Mai 2026</p>
-                    <p class="font-bold">2W / 2L <span class="text-slate-400 font-normal text-xs">| Barça 2-0 + Arsenal 1-0 WIN</span></p>
+                    <p class="text-xs text-slate-400 uppercase mb-1">15 Mai 2026</p>
+                    <p class="font-bold">1W / 3L <span class="text-slate-400 font-normal text-xs">| Zebra Porto B WIN @ 2.40 salva o dia</span></p>
                 </div>
                 <div class="bg-green-900/20 p-4 rounded border border-green-700/30">
+                    <p class="text-xs text-green-400 uppercase mb-1">16 Mai 2026 ⭐</p>
+                    <p class="font-bold text-green-400">2W / 0L <span class="text-slate-400 font-normal text-xs">| Sporting 3-0 + Benfica 3-1 WIN</span></p>
+                </div>
+                <div class="bg-slate-900/50 p-4 rounded border border-green-700/20">
                     <p class="text-xs text-green-400 uppercase mb-1">Acumulado Semana</p>
-                    <p class="font-bold text-green-400">5W / 6L <span class="text-slate-400 font-normal text-xs">| ROI estimado: –3 un.</span></p>
+                    <p class="font-bold text-green-400">11W / 10L <span class="text-slate-400 font-normal text-xs">| ROI positivo nas Zebras</span></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ═══ FOOTER ═══ -->
+    <!-- FOOTER -->
     <footer class="py-12">
         <div class="text-center text-slate-500 text-xs mb-8 border-t border-slate-700 pt-8">
             <p>© 2026 The Alpha Terminal | Powered by Predictive Intelligence</p>
-            <p class="mt-2">Última atualização: 14 MAI 2026 | 07:00 GMT+1</p>
+            <p class="mt-2">Última atualização: 18 MAI 2026 | 09:00 GMT+1 | Próxima edição: 19 MAI (pré-final)</p>
         </div>
         <div class="legal-notice">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
