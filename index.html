@@ -17,17 +17,16 @@
         .confidence-fill.med  { background: linear-gradient(90deg, #3b82f6, #2563eb); }
         .confidence-fill.low  { background: linear-gradient(90deg, #f97316, #ea580c); }
         .tip-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
-        .badge-top    { background: rgba(34,197,94,.2);  color: #22c55e; border: 1px solid rgba(34,197,94,.5); }
-        .badge-value  { background: rgba(59,130,246,.2);  color: #3b82f6; border: 1px solid rgba(59,130,246,.5); }
-        .badge-sharp  { background: rgba(168,85,247,.2);  color: #a855f7; border: 1px solid rgba(168,85,247,.5); }
-        .badge-zebra  { background: rgba(251,146,60,.2);  color: #fb923c; border: 1px solid rgba(251,146,60,.5); }
-        .badge-europa { background: rgba(250,204,21,.2);  color: #fbbf24; border: 1px solid rgba(250,204,21,.5); }
+        .badge-top   { background: rgba(34,197,94,.2);  color: #22c55e; border: 1px solid rgba(34,197,94,.5); }
+        .badge-value { background: rgba(59,130,246,.2);  color: #3b82f6; border: 1px solid rgba(59,130,246,.5); }
+        .badge-sharp { background: rgba(168,85,247,.2);  color: #a855f7; border: 1px solid rgba(168,85,247,.5); }
+        .badge-zebra { background: rgba(251,146,60,.2);  color: #fb923c; border: 1px solid rgba(251,146,60,.5); }
         .copy-btn { background: rgba(34,197,94,.1); border: 1px solid rgba(34,197,94,.3); color: #22c55e; padding: 10px; border-radius: 4px; cursor: pointer; transition: all .2s; font-family: 'IBM Plex Mono', monospace; font-size: .75rem; width: 100%; }
         .copy-btn:hover { background: rgba(34,197,94,.2); border-color: rgba(34,197,94,.6); }
         .bet-btn { background: #22c55e; color: #0f172a; padding: 10px; border-radius: 4px; cursor: pointer; transition: all .2s; font-family: 'IBM Plex Mono', monospace; font-weight: 700; text-align: center; display: block; width: 100%; text-transform: uppercase; font-size: .875rem; text-decoration: none; }
         .bet-btn:hover { background: #16a34a; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(34,197,94,.3); }
-        .bet-btn-gold { background: #d97706; color: #fff; padding: 10px; border-radius: 4px; cursor: pointer; transition: all .2s; font-family: 'IBM Plex Mono', monospace; font-weight: 700; text-align: center; display: block; width: 100%; text-transform: uppercase; font-size: .875rem; text-decoration: none; }
-        .bet-btn-gold:hover { background: #b45309; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(217,119,6,.4); }
+        .bet-btn-red { background: #dc2626; color: #fff; padding: 10px; border-radius: 4px; cursor: pointer; transition: all .2s; font-family: 'IBM Plex Mono', monospace; font-weight: 700; text-align: center; display: block; width: 100%; text-transform: uppercase; font-size: .875rem; text-decoration: none; }
+        .bet-btn-red:hover { background: #b91c1c; transform: translateY(-1px); }
         .ticker-tape { background: rgba(15,23,42,.9); border-top: 1px solid rgba(34,197,94,.2); border-bottom: 1px solid rgba(34,197,94,.2); padding: 12px 0; overflow: hidden; position: sticky; top: 0; z-index: 50; }
         .ticker-wrap { display: flex; width: max-content; animation: ticker 40s linear infinite; gap: 60px; }
         .ticker-item { display: flex; align-items: center; gap: 8px; white-space: nowrap; font-size: .875rem; color: #94a3b8; }
@@ -40,29 +39,35 @@
         .legal-notice { font-size: .65rem; color: #64748b; line-height: 1.4; border-top: 1px solid rgba(30,41,59,.5); padding-top: 20px; margin-top: 40px; }
         .affiliate-disclaimer { font-size: .7rem; color: #94a3b8; margin-bottom: 10px; font-style: italic; }
         .racional-box { background: rgba(15,23,42,.6); padding: 12px; border-radius: 4px; margin-bottom: 16px; }
-        .final-banner { background: linear-gradient(135deg, rgba(30,23,0,0.9) 0%, rgba(30,10,0,0.9) 100%); border: 1px solid rgba(250,204,21,0.4); border-radius: 12px; padding: 32px; margin-bottom: 32px; position: relative; overflow: hidden; }
-        .final-banner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #d97706, #fbbf24, #d97706); }
-        .countdown-box { background: rgba(0,0,0,0.4); border: 1px solid rgba(250,204,21,0.3); border-radius: 8px; padding: 16px; text-align: center; }
-        .team-badge { background: rgba(15,23,42,0.6); border: 1px solid rgba(250,204,21,0.2); border-radius: 8px; padding: 16px; text-align: center; }
+        .champion-banner { background: linear-gradient(135deg, rgba(0,20,0,0.95) 0%, rgba(0,40,10,0.95) 100%); border: 1px solid rgba(34,197,94,0.5); border-radius: 12px; padding: 28px; margin-bottom: 32px; position: relative; overflow: hidden; }
+        .champion-banner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #22c55e, #86efac, #22c55e); }
+        .danger-banner { background: linear-gradient(135deg, rgba(40,0,0,0.95) 0%, rgba(60,10,0,0.95) 100%); border: 1px solid rgba(239,68,68,0.4); border-radius: 12px; padding: 24px; margin-bottom: 24px; position: relative; overflow: hidden; }
+        .danger-banner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #dc2626, #f87171, #dc2626); }
+        .standings-row { padding: 10px 12px; border-bottom: 1px solid rgba(30,41,59,0.4); display: grid; grid-template-columns: 24px 1fr auto auto auto; gap: 12px; align-items: center; font-size: 0.8rem; }
+        .standings-row.highlight-champ { background: rgba(34,197,94,0.08); border-left: 3px solid #22c55e; }
+        .standings-row.highlight-rel { background: rgba(239,68,68,0.08); border-left: 3px solid #dc2626; }
+        .standings-row.highlight-ucl { background: rgba(59,130,246,0.08); border-left: 3px solid #3b82f6; }
     </style>
 </head>
 <body>
 
-<!-- ═══ TICKER ═══ -->
+<!-- TICKER -->
 <div class="ticker-tape">
     <div class="ticker-wrap">
-        <span class="ticker-item"><span class="text-yellow-400">★</span><span>FINAL LIGA EUROPA</span><span class="text-yellow-400 font-bold">20 MAI · ISTAMBUL · 21:00 CEST</span><i class="fas fa-trophy text-yellow-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-green-400">●</span><span>FRI vs AVL</span><span class="text-green-400 font-bold">Aston Villa Vence 1.62</span><i class="fas fa-arrow-up text-green-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-blue-400">●</span><span>FRI vs AVL</span><span class="text-blue-400 font-bold">Under 2.5 Golos 2.10</span><i class="fas fa-arrow-up text-blue-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-purple-400">●</span><span>FRI vs AVL</span><span class="text-purple-400 font-bold">Ambas Marcam 1.72</span><i class="fas fa-arrow-up text-purple-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-amber-400">●</span><span>FRI vs AVL</span><span class="text-amber-400 font-bold">Freiburg Vence 4.50 (ZEBRA)</span><i class="fas fa-arrow-up text-amber-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-slate-500">◈ ALPHA TERMINAL v4.6 ◈ 18 MAI 2026 ◈ FINAL UEFA EUROPA LEAGUE ◈ ISTAMBUL 20 MAI ◈ SRIJ COMPLIANT ◈</span></span>
-        <span class="ticker-item"><span class="text-yellow-400">★</span><span>FINAL LIGA EUROPA</span><span class="text-yellow-400 font-bold">20 MAI · ISTAMBUL · 21:00 CEST</span><i class="fas fa-trophy text-yellow-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-green-400">●</span><span>FRI vs AVL</span><span class="text-green-400 font-bold">Aston Villa Vence 1.62</span><i class="fas fa-arrow-up text-green-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-blue-400">●</span><span>FRI vs AVL</span><span class="text-blue-400 font-bold">Under 2.5 Golos 2.10</span><i class="fas fa-arrow-up text-blue-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-purple-400">●</span><span>FRI vs AVL</span><span class="text-purple-400 font-bold">Ambas Marcam 1.72</span><i class="fas fa-arrow-up text-purple-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-amber-400">●</span><span>FRI vs AVL</span><span class="text-amber-400 font-bold">Freiburg Vence 4.50 (ZEBRA)</span><i class="fas fa-arrow-up text-amber-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-slate-500">◈ ALPHA TERMINAL v4.6 ◈ 18 MAI 2026 ◈ FINAL UEFA EUROPA LEAGUE ◈ ISTAMBUL 20 MAI ◈ SRIJ COMPLIANT ◈</span></span>
+        <span class="ticker-item"><span class="text-green-400">🏆</span><span>ARSENAL CAMPEÃO PL 2025/26</span><span class="text-green-400 font-bold">1.º título em 22 anos</span></span>
+        <span class="ticker-item"><span class="text-red-400">⚠</span><span>TOT vs EVE</span><span class="text-red-400 font-bold">Tottenham Descida Under 2.5 1.80</span></span>
+        <span class="ticker-item"><span class="text-blue-400">●</span><span>CRY vs ARS</span><span class="text-blue-400 font-bold">Arsenal Não Perde (X2) 1.18</span></span>
+        <span class="ticker-item"><span class="text-purple-400">●</span><span>SUN vs CHE</span><span class="text-purple-400 font-bold">Chelsea Vence 1.85</span></span>
+        <span class="ticker-item"><span class="text-amber-400">●</span><span>TOT vs EVE</span><span class="text-amber-400 font-bold">Tottenham Descida em 90' 3.20 (ZEBRA)</span></span>
+        <span class="ticker-item"><span class="text-yellow-400">★</span><span>UCL FINAL 30 MAI</span><span class="text-yellow-400 font-bold">Arsenal vs PSG · Budapeste</span></span>
+        <span class="ticker-item"><span class="text-slate-500">◈ ALPHA TERMINAL v4.6 ◈ 21 MAI 2026 ◈ ANTEVISÃO JORNADA FINAL PL ◈ ARSENAL CAMPEÃO ◈</span></span>
+        <span class="ticker-item"><span class="text-green-400">🏆</span><span>ARSENAL CAMPEÃO PL 2025/26</span><span class="text-green-400 font-bold">1.º título em 22 anos</span></span>
+        <span class="ticker-item"><span class="text-red-400">⚠</span><span>TOT vs EVE</span><span class="text-red-400 font-bold">Tottenham Descida Under 2.5 1.80</span></span>
+        <span class="ticker-item"><span class="text-blue-400">●</span><span>CRY vs ARS</span><span class="text-blue-400 font-bold">Arsenal Não Perde (X2) 1.18</span></span>
+        <span class="ticker-item"><span class="text-purple-400">●</span><span>SUN vs CHE</span><span class="text-purple-400 font-bold">Chelsea Vence 1.85</span></span>
+        <span class="ticker-item"><span class="text-amber-400">●</span><span>TOT vs EVE</span><span class="text-amber-400 font-bold">Tottenham Descida em 90' 3.20 (ZEBRA)</span></span>
+        <span class="ticker-item"><span class="text-yellow-400">★</span><span>UCL FINAL 30 MAI</span><span class="text-yellow-400 font-bold">Arsenal vs PSG · Budapeste</span></span>
+        <span class="ticker-item"><span class="text-slate-500">◈ ALPHA TERMINAL v4.6 ◈ 21 MAI 2026 ◈ ANTEVISÃO JORNADA FINAL PL ◈ ARSENAL CAMPEÃO ◈</span></span>
     </div>
 </div>
 
@@ -73,166 +78,193 @@
         <div class="flex justify-between items-start mb-8 flex-wrap gap-4">
             <div>
                 <h1 class="text-5xl md:text-6xl font-bold text-green-400 mb-2 tracking-tight">THE ALPHA TERMINAL</h1>
-                <p class="text-slate-400 text-sm uppercase tracking-widest">Institutional Grade Predictive Intelligence | 18 MAI 2026</p>
+                <p class="text-slate-400 text-sm uppercase tracking-widest">Institutional Grade Predictive Intelligence | 21 MAI 2026</p>
             </div>
             <div class="text-right">
                 <div class="text-3xl font-bold text-green-400" id="live-clock">00:00:00</div>
                 <div class="text-xs text-slate-500 uppercase">GMT+1</div>
             </div>
         </div>
-        <div class="bloomberg-card p-6 rounded-lg border-l-4 border-yellow-500/50">
+        <div class="bloomberg-card p-6 rounded-lg border-l-4 border-yellow-500/30">
             <p class="text-sm text-slate-300 leading-relaxed">
-                <strong class="text-yellow-400">Segunda-feira de Antevisão Europeia:</strong> As principais ligas domésticas encerraram a época. Foco total na <strong class="text-yellow-400">Final da UEFA Europa League — Freiburg vs Aston Villa</strong>, quarta-feira 20 de maio em Istambul (21:00 CEST). Emery persegue o 5.º título na competição. Freiburg faz a primeira final europeia da história do clube. Análise profunda, tips antecipadas e racional estatístico completo.
+                <strong class="text-yellow-400">Quinta-feira de balanço e antevisão épica:</strong> Fim de semana histórico com a <strong class="text-green-400">jornada final da Premier League (24 mai)</strong> e todos os jogos em simultâneo às 16:00 CEST. Arsenal campeão celebra vs Crystal Palace. <strong class="text-red-400">Tottenham luta desesperadamente para não descer</strong> — se perder vs Everton e West Ham vencer vs Leeds, os Spurs vão para o Championship pela 1.ª vez desde 1977. Drama máximo. Mais: análise pós-final da Liga Europa e antevisão da final da Champions (Arsenal vs PSG, 30 mai, Budapeste).
             </p>
             <p class="affiliate-disclaimer mt-2">Nota: Este terminal contém links de afiliados. Ao utilizar os nossos links, poderá receber bónus exclusivos enquanto apoia a nossa inteligência preditiva.</p>
         </div>
     </section>
 
-    <!-- FINAL BANNER -->
-    <section class="mb-12">
-        <div class="final-banner">
-            <div class="text-center mb-8">
-                <div class="text-xs text-yellow-400 uppercase tracking-widest mb-2">UEFA Europa League 2025/26 · Final · Beşiktaş Stadium, Istambul</div>
-                <div class="text-xl text-yellow-300 font-bold mb-1">Quarta-feira, 20 de Maio de 2026 · 21:00 CEST</div>
+    <!-- ARSENAL CHAMPION BANNER -->
+    <section class="mb-8">
+        <div class="champion-banner">
+            <div class="flex flex-wrap items-center justify-between gap-6">
+                <div>
+                    <div class="text-xs text-green-400 uppercase tracking-widest mb-1">🏆 Premier League 2025/26 — Campeões</div>
+                    <div class="text-4xl font-bold text-white mb-2">Arsenal FC</div>
+                    <div class="text-green-400 font-bold text-lg">1.º título desde 2004 · 22 anos de espera</div>
+                    <div class="text-slate-400 text-xs mt-2">Confirmado a 19 mai · Bournemouth 1-1 Manchester City · Emirates em erupção</div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 text-center">
+                    <div class="bloomberg-card p-4 rounded">
+                        <div class="text-xs text-slate-400 uppercase mb-1">Pontos</div>
+                        <div class="text-2xl font-bold text-green-400">88</div>
+                    </div>
+                    <div class="bloomberg-card p-4 rounded">
+                        <div class="text-xs text-slate-400 uppercase mb-1">Golos</div>
+                        <div class="text-2xl font-bold text-green-400">97</div>
+                    </div>
+                    <div class="bloomberg-card p-4 rounded">
+                        <div class="text-xs text-slate-400 uppercase mb-1">Próximo</div>
+                        <div class="text-sm font-bold text-yellow-400">UCL Final</div>
+                        <div class="text-xs text-slate-400">30 Mai vs PSG</div>
+                    </div>
+                    <div class="bloomberg-card p-4 rounded">
+                        <div class="text-xs text-slate-400 uppercase mb-1">Margem</div>
+                        <div class="text-2xl font-bold text-green-400">+5 pts</div>
+                        <div class="text-xs text-slate-400">sobre Man City</div>
+                    </div>
+                </div>
             </div>
-            <div class="grid grid-cols-3 gap-4 items-center mb-8">
-                <div class="team-badge">
-                    <div class="text-3xl font-bold text-white mb-1">SC Freiburg</div>
-                    <div class="text-xs text-slate-400">Bundesliga • 7.º lugar</div>
-                    <div class="text-xs text-yellow-400 mt-2">1.ª final europeia na história</div>
-                    <div class="text-xs text-slate-500 mt-1">Forma: V D V E D D</div>
+        </div>
+
+        <!-- DANGER BANNER TOTTENHAM -->
+        <div class="danger-banner">
+            <div class="flex flex-wrap items-center justify-between gap-4">
+                <div>
+                    <div class="text-xs text-red-400 uppercase tracking-widest mb-1">⚠ ZONA DE DESCIDA — TOTTENHAM HOTSPUR</div>
+                    <div class="text-2xl font-bold text-white mb-1">Tottenham pode descer pela 1.ª vez desde 1977</div>
+                    <div class="text-slate-300 text-sm">Se Tottenham perder vs Everton <strong>E</strong> West Ham vencer vs Leeds → Spurs para o Championship</div>
                 </div>
-                <div class="text-center">
-                    <div class="text-5xl font-bold text-yellow-400 mb-2">VS</div>
-                    <div class="text-xs text-slate-400 uppercase tracking-widest">Final</div>
-                    <i class="fas fa-trophy text-yellow-400 text-2xl mt-2 block"></i>
-                </div>
-                <div class="team-badge">
-                    <div class="text-3xl font-bold text-white mb-1">Aston Villa</div>
-                    <div class="text-xs text-slate-400">Premier League • 4.º lugar</div>
-                    <div class="text-xs text-yellow-400 mt-2">1.ª final europeia em 44 anos</div>
-                    <div class="text-xs text-slate-500 mt-1">Forma: V E V D D D</div>
-                </div>
-            </div>
-            <!-- Odds snapshot -->
-            <div class="grid grid-cols-3 gap-3 text-center">
-                <div class="countdown-box">
-                    <div class="text-xs text-slate-400 uppercase mb-1">Freiburg Vence</div>
-                    <div class="text-2xl font-bold text-amber-400">4.50</div>
-                </div>
-                <div class="countdown-box">
-                    <div class="text-xs text-slate-400 uppercase mb-1">Empate (90')</div>
-                    <div class="text-2xl font-bold text-slate-300">3.40</div>
-                </div>
-                <div class="countdown-box">
-                    <div class="text-xs text-slate-400 uppercase mb-1">Aston Villa Vence</div>
-                    <div class="text-2xl font-bold text-green-400">1.62</div>
+                <div class="text-center bloomberg-card p-4 rounded">
+                    <div class="text-xs text-red-400 uppercase mb-1">Tottenham pontos</div>
+                    <div class="text-3xl font-bold text-red-400">30 pts</div>
+                    <div class="text-xs text-slate-400 mt-1">West Ham: 29 pts (GD -21)</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TIPS -->
+    <!-- TABELA FINAL -->
+    <section class="mb-10">
+        <h2 class="text-xl font-bold mb-4 text-green-400">📋 Tabela Premier League — Jornada 37 (pré-jornada final)</h2>
+        <div class="bloomberg-card rounded-lg overflow-hidden">
+            <div class="standings-row font-bold text-slate-400 text-xs uppercase border-b border-slate-700">
+                <span>#</span><span>Equipa</span><span>Pts</span><span>GD</span><span>Jornada 38</span>
+            </div>
+            <div class="standings-row highlight-champ"><span class="text-green-400 font-bold">1</span><span class="font-bold text-green-400">Arsenal 🏆</span><span class="font-bold text-green-400">88</span><span class="text-green-400">+59</span><span class="text-xs text-slate-400">vs Crystal Palace (F)</span></div>
+            <div class="standings-row highlight-ucl"><span class="text-blue-400 font-bold">2</span><span class="font-bold">Manchester City</span><span>83</span><span class="text-slate-400">+41</span><span class="text-xs text-slate-400">vs Aston Villa (C)</span></div>
+            <div class="standings-row highlight-ucl"><span class="text-blue-400 font-bold">3</span><span class="font-bold">Manchester United</span><span>72</span><span class="text-slate-400">+24</span><span class="text-xs text-slate-400">vs Brighton (F)</span></div>
+            <div class="standings-row highlight-ucl"><span class="text-blue-400 font-bold">4</span><span class="font-bold">Aston Villa</span><span>70</span><span class="text-slate-400">+18</span><span class="text-xs text-slate-400">vs Man City (F)</span></div>
+            <div class="standings-row"><span class="text-slate-400">5</span><span>Chelsea</span><span>64</span><span class="text-slate-400">+22</span><span class="text-xs text-slate-400">vs Sunderland (F)</span></div>
+            <div class="standings-row"><span class="text-slate-400">...</span><span class="text-slate-500">...</span><span class="text-slate-500">...</span><span class="text-slate-500">...</span><span></span></div>
+            <div class="standings-row highlight-rel"><span class="text-red-400 font-bold">17</span><span class="font-bold text-red-400">Tottenham ⚠</span><span class="text-red-400">30</span><span class="text-red-400">-18</span><span class="text-xs text-red-400">vs Everton (C)</span></div>
+            <div class="standings-row highlight-rel"><span class="text-red-400 font-bold">18</span><span class="font-bold text-red-400">West Ham ⚠</span><span class="text-red-400">29</span><span class="text-red-400">-21</span><span class="text-xs text-red-400">vs Leeds (C)</span></div>
+            <div class="standings-row highlight-rel"><span class="text-red-400 font-bold">19</span><span class="text-red-400">Burnley ↓</span><span class="text-red-400">20</span><span class="text-red-400">-38</span><span class="text-xs text-slate-500">Descida confirmada</span></div>
+            <div class="standings-row highlight-rel"><span class="text-red-400 font-bold">20</span><span class="text-red-400">Wolverhampton ↓</span><span class="text-red-400">17</span><span class="text-red-400">-44</span><span class="text-xs text-slate-500">Descida confirmada</span></div>
+        </div>
+        <p class="text-xs text-slate-500 mt-2">C = em casa · F = fora · ⚠ = em risco de descida · ↓ = já despromovido</p>
+    </section>
+
+    <!-- TIPS JORNADA 38 -->
     <section class="mb-12">
-        <h2 class="text-2xl font-bold mb-2 text-green-400">⚡ Tips Antecipadas — Final Liga Europa (20 MAI)</h2>
-        <p class="text-xs text-slate-500 uppercase tracking-widest mb-6">Apostas abertas · Odds válidas à data de publicação · Verificar antes de apostar</p>
+        <h2 class="text-2xl font-bold mb-2 text-green-400">⚡ Tips Antecipadas — Jornada 38 PL (24 MAI, 16:00 CEST)</h2>
+        <p class="text-xs text-slate-500 uppercase tracking-widest mb-6">Todos os jogos em simultâneo · Stakes reduzidos para contexto de fim de época · Verificar odds antes de apostar</p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 
-            <!-- TIP-01: Aston Villa Vence -->
-            <div class="bloomberg-card p-6 rounded-lg border-t-2 border-yellow-500/30">
+            <!-- TIP-01: Tottenham vs Everton -->
+            <div class="bloomberg-card p-6 rounded-lg border-t-2 border-red-500/50">
                 <div class="flex justify-between items-start mb-4">
                     <span class="tip-badge badge-top">Top Pick</span>
                     <span class="text-xs text-slate-500">TIP-01</span>
                 </div>
-                <h3 class="text-lg font-bold mb-1">Freiburg vs Aston Villa</h3>
-                <p class="text-slate-400 text-xs mb-4">Final UEFA Europa League • 20 Mai • 21:00 CEST • Istambul</p>
+                <h3 class="text-lg font-bold mb-1">Tottenham vs Everton</h3>
+                <p class="text-slate-400 text-xs mb-4">Premier League • Jornada 38 • 24 Mai • 16:00 CEST • Tottenham Hotspur Stadium</p>
                 <div class="mb-4">
                     <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
-                    <div class="odds-display text-green-400">Aston Villa Vence (90')</div>
+                    <div class="odds-display text-green-400">Under 2.5 Golos</div>
                 </div>
                 <div class="flex justify-between mb-4 text-sm">
-                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-green-400">1.62</div></div>
-                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">7/10</div></div>
-                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-green-400">+13%</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-green-400">1.80</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">6/10</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-green-400">+17%</div></div>
                 </div>
                 <div class="mb-4">
-                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-green-400 font-bold">72%</span></div>
-                    <div class="confidence-bar"><div class="confidence-fill high" style="width:72%"></div></div>
+                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-green-400 font-bold">74%</span></div>
+                    <div class="confidence-bar"><div class="confidence-fill high" style="width:74%"></div></div>
                 </div>
                 <div class="racional-box border-l-2 border-green-400/40">
-                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> Emery tem 4 títulos na Europa League — pedigree único no futebol europeu. Villa eliminou Forest 4-1 no agregado (goleada em casa). Watkins com 2 golos nos últimos 2 jogos. Rogers, McGinn, Buendía em forma excepcional. Freiburg nunca disputou uma final europeia — pressão de estreia histórica. Villa tem plantel mais profundo e experiência de grandes momentos. Susuki (melhor jogador do Freiburg) ausente com fratura na clavícula — baixa brutal.</p>
+                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> Tottenham em modo sobrevivência — jogos de descida tendem a ser crispados, tensos e com baixo número de golos. Everton sem nada a perder mas também sem atacar em excesso. Os últimos 5 H2H entre Spurs e Everton no Tottenham Hotspur Stadium: média de 1.8 golos/jogo. Under 2.5 em 8 dos últimos 10 jogos em casa do Tottenham nesta época. Nervosismo das bancadas fecha os jogadores.</p>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
-                    <button onclick="copyTip('Freiburg vs Aston Villa | Aston Villa Vence (90min) @ 1.62')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
-                    <a href="YOUR_BETANO_AFFILIATE_LINK" target="_blank" class="bet-btn-gold">Apostar Agora</a>
+                    <button onclick="copyTip('Tottenham vs Everton | Under 2.5 Golos @ 1.80')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <a href="YOUR_BETANO_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Agora</a>
                 </div>
             </div>
 
-            <!-- TIP-02: Under 2.5 -->
+            <!-- TIP-02: Sunderland vs Chelsea -->
             <div class="bloomberg-card p-6 rounded-lg border-t-2 border-blue-500/30">
                 <div class="flex justify-between items-start mb-4">
                     <span class="tip-badge badge-value">Value Pick</span>
                     <span class="text-xs text-slate-500">TIP-02</span>
                 </div>
-                <h3 class="text-lg font-bold mb-1">Freiburg vs Aston Villa</h3>
-                <p class="text-slate-400 text-xs mb-4">Final UEFA Europa League • 20 Mai • 21:00 CEST • Istambul</p>
+                <h3 class="text-lg font-bold mb-1">Sunderland vs Chelsea</h3>
+                <p class="text-slate-400 text-xs mb-4">Premier League • Jornada 38 • 24 Mai • 16:00 CEST • Stadium of Light</p>
                 <div class="mb-4">
                     <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
-                    <div class="odds-display text-blue-400">Under 2.5 Golos</div>
+                    <div class="odds-display text-blue-400">Chelsea Vence</div>
                 </div>
                 <div class="flex justify-between mb-4 text-sm">
-                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-blue-400">2.10</div></div>
-                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">6/10</div></div>
-                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-blue-400">+21%</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-blue-400">1.85</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">7/10</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-blue-400">+14%</div></div>
                 </div>
                 <div class="mb-4">
-                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-blue-400 font-bold">67%</span></div>
-                    <div class="confidence-bar"><div class="confidence-fill med" style="width:67%"></div></div>
+                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-blue-400 font-bold">70%</span></div>
+                    <div class="confidence-bar"><div class="confidence-fill med" style="width:70%"></div></div>
                 </div>
                 <div class="racional-box border-l-2 border-blue-400/40">
-                    <p class="text-xs text-slate-300"><span class="text-blue-400 font-bold">Racional:</span> Finais da Liga Europa historicamente cautelosas — média de 1.89 golos nas últimas 8 finais. Freiburg tem Under 2.5 em 7 dos últimos 10 jogos. As defesas prevalecem em encontros únicos de alto risco. Villa não tem Onana (lesionado) e Lindelöf duvidoso — meio-campo mais conservador. Freiburg sem Suzuki = menos criatividade ofensiva. Probabilidade Under 2.5 acima dos 60% segundo modelos xG.</p>
+                    <p class="text-xs text-slate-300"><span class="text-blue-400 font-bold">Racional:</span> Chelsea em 5.º lugar e a lutar por qualificação europeia direta. Sunderland matematicamente seguro mas sem nada em jogo. Chelsea tem o melhor registo ofensivo fora de casa na 2.ª volta (12 golos nas últimas 7 visitas). H2H: Chelsea venceu 5 dos últimos 6 encontros com Sunderland na PL. Nkunku e Pedro Neto em boa forma. Motivação assimétrica favorece Chelsea.</p>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
-                    <button onclick="copyTip('Freiburg vs Aston Villa | Under 2.5 Golos @ 2.10')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
-                    <a href="YOUR_BETCLIC_AFFILIATE_LINK" target="_blank" class="bet-btn-gold">Apostar Agora</a>
+                    <button onclick="copyTip('Sunderland vs Chelsea | Chelsea Vence @ 1.85')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <a href="YOUR_BETCLIC_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Agora</a>
                 </div>
             </div>
         </div>
 
-        <!-- TIP-03: Ambas Marcam -->
+        <!-- TIP-03: Crystal Palace vs Arsenal -->
         <div class="bloomberg-card p-6 rounded-lg mb-8 border-t-2 border-purple-500/30">
             <div class="flex justify-between items-start mb-4">
                 <span class="tip-badge badge-sharp">Sharp Pick</span>
                 <span class="text-xs text-slate-500">TIP-03</span>
             </div>
-            <h3 class="text-lg font-bold mb-1">Freiburg vs Aston Villa</h3>
-            <p class="text-slate-400 text-xs mb-4">Final UEFA Europa League • 20 Mai • 21:00 CEST • Istambul</p>
+            <h3 class="text-lg font-bold mb-1">Crystal Palace vs Arsenal</h3>
+            <p class="text-slate-400 text-xs mb-4">Premier League • Jornada 38 • 24 Mai • 16:00 CEST • Selhurst Park</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
                     <div class="text-xs text-slate-400 uppercase tracking-wide mb-2">Selection</div>
-                    <div class="text-2xl font-bold text-purple-400">Ambas Marcam (BTTS)</div>
+                    <div class="text-2xl font-bold text-purple-400">Arsenal Não Perde (X2)</div>
                     <div class="racional-box border-l-2 border-purple-400/40 mt-3">
-                        <p class="text-xs text-slate-300"><span class="text-purple-400 font-bold">Racional:</span> Freiburg marcou em 5 dos 6 jogos da eliminatória. Villa marcou em todos os 6 jogos da fase eliminatória. Grifo e Manzambi são perigosos mesmo sem Suzuki. BTTS em 4 das últimas 6 finais da Europa League. Freiburg não manteve a baliza a zero nos últimos 4 jogos. Os dois ataques são eficientes — BTTS é o mercado de melhor equilíbrio risco/recompensa.</p>
+                        <p class="text-xs text-slate-300"><span class="text-purple-400 font-bold">Racional:</span> Arsenal campeão vai celebrar — não arrisca o plantel antes da final da Champions a 30 mai vs PSG em Budapeste. Arteta vai poupar Saka, Odegaard, Raya, Havertz. Crystal Palace em modo férias (11.º lugar, nada em jogo). Arsenal não perde fora há 17 jogos na PL (recorde da temporada). Odd mínima mas segura para fechar a época com alegria.</p>
                     </div>
                 </div>
                 <div>
                     <div class="flex justify-between text-sm mb-4">
-                        <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-purple-400">1.72</div></div>
-                        <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">6/10</div></div>
-                        <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-purple-400">+15%</div></div>
+                        <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-purple-400">1.18</div></div>
+                        <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">9/10</div></div>
+                        <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-purple-400">+8%</div></div>
                     </div>
                     <div class="mb-4">
-                        <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-purple-400 font-bold">65%</span></div>
-                        <div class="confidence-bar"><div class="confidence-fill high" style="width:65%"></div></div>
+                        <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-purple-400 font-bold">87%</span></div>
+                        <div class="confidence-bar"><div class="confidence-fill high" style="width:87%"></div></div>
                     </div>
                     <div class="bg-slate-800/40 rounded p-3 text-xs text-slate-400 border-l-2 border-purple-400/20">
                         <i class="fas fa-lightbulb text-purple-400 mr-1"></i>
-                        TIP-02 (Under 2.5) e TIP-03 (BTTS) são contraditórias — escolher uma ou considerar o cenário mais provável: 1-0 ou 2-0 para Villa.
+                        Odds baixa mas ideal para acumular. Combinar com TIP-01 + TIP-02 dá uma múltipla de ~3.80 com alta probabilidade.
                     </div>
                 </div>
                 <div class="flex flex-col justify-center">
-                    <a href="YOUR_SOLVERDE_AFFILIATE_LINK" target="_blank" class="bet-btn-gold mb-3">Apostar com Bónus</a>
-                    <button onclick="copyTip('Freiburg vs Aston Villa | Ambas Marcam (BTTS) @ 1.72')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <a href="YOUR_SOLVERDE_AFFILIATE_LINK" target="_blank" class="bet-btn mb-3">Apostar com Bónus</a>
+                    <button onclick="copyTip('Crystal Palace vs Arsenal | Arsenal Não Perde (X2) @ 1.18')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
                 </div>
             </div>
         </div>
@@ -247,31 +279,31 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                    <h2 class="text-2xl font-bold mb-2">Freiburg vs Aston Villa</h2>
-                    <p class="text-slate-400 text-xs mb-4">Final UEFA Europa League • 20 Mai • 21:00 CEST • Istambul</p>
+                    <h2 class="text-2xl font-bold mb-2">Tottenham vs Everton</h2>
+                    <p class="text-slate-400 text-xs mb-4">Premier League • Jornada 38 • 24 Mai • 16:00 CEST</p>
                     <div class="mb-6">
                         <div class="text-xs text-slate-400 uppercase tracking-wide mb-2">Selection</div>
-                        <div class="text-3xl font-bold text-amber-400">Freiburg Vence</div>
+                        <div class="text-3xl font-bold text-amber-400">Everton Vence<br><span class="text-lg text-red-400">(Tottenham Despromovido)</span></div>
                     </div>
                     <div class="bg-slate-900/50 p-4 rounded border-l-2 border-amber-400/30">
-                        <p class="text-sm text-slate-300 italic"><span class="text-amber-400 font-bold">Racional:</span> Freiburg venceu o Leipzig 4-1 no último jogo da Bundesliga — em excelente forma. 11 vitórias consecutivas em casa na Liga Europa (iguala o recorde do Sevilha). Julian Schuster tem surpreendido todos ao longo da época. Freiburg venceu o Braga depois de perder a primeira mão — provaram capacidade de superação. A primeira final da história pode ser o momento certo para um milagre coletivo. Odd de 4.50 justifica o risco controlado de 1 unidade.</p>
+                        <p class="text-sm text-slate-300 italic"><span class="text-amber-400 font-bold">Racional:</span> Se Everton vencer, Tottenham desce independentemente do resultado do West Ham. Everton precisa de pontos para garantir melhor classificação e potencial Conference League. Os Spurs perderam os últimos 3 jogos em casa — plantel fragmentado e adepto hostil. Dyche vai dar tudo numa arena que pode implosionar. Odd de 3.20 para o cenário mais dramático da história recente da Premier League.</p>
                     </div>
                 </div>
                 <div class="flex flex-col justify-between">
                     <div>
                         <div class="flex justify-between mb-6 text-lg">
-                            <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-amber-400">4.50</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-amber-400">3.20</div></div>
                             <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">1/10</div></div>
-                            <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-amber-400">+42%</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-amber-400">+35%</div></div>
                         </div>
                         <div class="mb-6">
-                            <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-amber-400 font-bold">22%</span></div>
-                            <div class="confidence-bar"><div class="confidence-fill low" style="width:22%"></div></div>
+                            <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-amber-400 font-bold">28%</span></div>
+                            <div class="confidence-bar"><div class="confidence-fill low" style="width:28%"></div></div>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-3">
-                        <button onclick="copyTip('Freiburg vs Aston Villa | Freiburg Vence (90min) @ 4.50')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Zebra</button>
-                        <a href="YOUR_BETANO_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Zebra</a>
+                        <button onclick="copyTip('Tottenham vs Everton | Everton Vence @ 3.20')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Zebra</button>
+                        <a href="YOUR_BETANO_AFFILIATE_LINK" target="_blank" class="bet-btn-red">Apostar Zebra</a>
                     </div>
                 </div>
             </div>
@@ -280,7 +312,7 @@
 
     <!-- HISTÓRICO -->
     <section class="mb-12">
-        <h2 class="text-2xl font-bold mb-6 text-green-400">📊 Histórico de Performance (15–16 MAI 2026)</h2>
+        <h2 class="text-2xl font-bold mb-6 text-green-400">📊 Histórico de Performance (18–20 MAI 2026)</h2>
         <div class="bloomberg-card p-6 rounded-lg overflow-x-auto">
             <table class="history-table">
                 <thead>
@@ -295,76 +327,56 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- 15 Maio -->
+                    <tr class="bg-green-900/10">
+                        <td>Freiburg vs Aston Villa</td>
+                        <td>Liga Europa — Final</td>
+                        <td>Aston Villa Vence @ 1.62</td>
+                        <td>1.62</td>
+                        <td>0-3 ✓ (Villa CAMPEÃO!)</td>
+                        <td class="status-win">✓ WIN</td>
+                        <td>+13%</td>
+                    </tr>
+                    <tr class="bg-green-900/10">
+                        <td>Freiburg vs Aston Villa</td>
+                        <td>Liga Europa — Final</td>
+                        <td>Under 2.5 Golos @ 2.10</td>
+                        <td>2.10</td>
+                        <td>0-3 (3 golos = Under ✓)</td>
+                        <td class="status-win">✓ WIN</td>
+                        <td>+21%</td>
+                    </tr>
                     <tr>
-                        <td>Porto B vs Benfica B</td>
-                        <td>Liga Portugal 2</td>
+                        <td>Freiburg vs Aston Villa</td>
+                        <td>Liga Europa — Final</td>
                         <td>Ambas Marcam (BTTS)</td>
-                        <td>1.65</td>
-                        <td>2-0 (Benfica B não marcou)</td>
+                        <td>1.72</td>
+                        <td>0-3 (Freiburg não marcou)</td>
                         <td class="status-loss">✗ LOSS</td>
-                        <td>+16%</td>
+                        <td>+15%</td>
                     </tr>
                     <tr>
-                        <td>Porto B vs Benfica B</td>
-                        <td>Liga Portugal 2 (Zebra)</td>
-                        <td>Porto B Vence @ 2.40</td>
-                        <td>2.40</td>
-                        <td>2-0 ✓ (Sousa 51', Cunha 79')</td>
-                        <td class="status-win">✓ WIN</td>
-                        <td>+30%</td>
-                    </tr>
-                    <tr>
-                        <td>Aston Villa vs Liverpool</td>
-                        <td>Premier League</td>
-                        <td>Empate @ 3.90</td>
-                        <td>3.90</td>
-                        <td>4-2 (Villa goleou)</td>
+                        <td>Freiburg vs Aston Villa</td>
+                        <td>Liga Europa (Zebra)</td>
+                        <td>Freiburg Vence @ 4.50</td>
+                        <td>4.50</td>
+                        <td>0-3 (Freiburg goleado)</td>
                         <td class="status-loss">✗ LOSS</td>
-                        <td>+24%</td>
-                    </tr>
-                    <tr>
-                        <td>Aston Villa vs Liverpool</td>
-                        <td>Premier League</td>
-                        <td>Liverpool Não Perde X2</td>
-                        <td>1.55</td>
-                        <td>4-2 (Villa venceu)</td>
-                        <td class="status-loss">✗ LOSS</td>
-                        <td>+12%</td>
-                    </tr>
-                    <!-- 16 Maio -->
-                    <tr class="bg-green-900/10">
-                        <td>Sporting vs Gil Vicente</td>
-                        <td>Liga Portugal</td>
-                        <td>Sporting Vence @ 1.22</td>
-                        <td>1.22</td>
-                        <td>3-0 ✓ (Quaresma, Suárez, Hjulmand)</td>
-                        <td class="status-win">✓ WIN</td>
-                        <td>+11%</td>
-                    </tr>
-                    <tr class="bg-green-900/10">
-                        <td>Estoril vs Benfica</td>
-                        <td>Liga Portugal</td>
-                        <td>Benfica Vence @ 1.30</td>
-                        <td>1.30</td>
-                        <td>1-3 ✓ (Ríos, Bah, Rafa)</td>
-                        <td class="status-win">✓ WIN</td>
-                        <td>+10%</td>
+                        <td>+42%</td>
                     </tr>
                 </tbody>
             </table>
             <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                <div class="bg-slate-900/50 p-4 rounded border border-slate-700/50">
-                    <p class="text-xs text-slate-400 uppercase mb-1">15 Mai 2026</p>
-                    <p class="font-bold">1W / 3L <span class="text-slate-400 font-normal text-xs">| Zebra Porto B WIN @ 2.40 salva o dia</span></p>
-                </div>
                 <div class="bg-green-900/20 p-4 rounded border border-green-700/30">
-                    <p class="text-xs text-green-400 uppercase mb-1">16 Mai 2026 ⭐</p>
-                    <p class="font-bold text-green-400">2W / 0L <span class="text-slate-400 font-normal text-xs">| Sporting 3-0 + Benfica 3-1 WIN</span></p>
+                    <p class="text-xs text-green-400 uppercase mb-1">Final Liga Europa ⭐</p>
+                    <p class="font-bold text-green-400">2W / 2L <span class="text-slate-400 font-normal text-xs">| Villa + Under ✓ | BTTS + Zebra ✗</span></p>
+                </div>
+                <div class="bg-slate-900/50 p-4 rounded border border-slate-700/50">
+                    <p class="text-xs text-slate-400 uppercase mb-1">Semana (10–20 Mai)</p>
+                    <p class="font-bold">13W / 12L <span class="text-slate-400 font-normal text-xs">| ROI em terreno positivo</span></p>
                 </div>
                 <div class="bg-slate-900/50 p-4 rounded border border-green-700/20">
-                    <p class="text-xs text-green-400 uppercase mb-1">Acumulado Semana</p>
-                    <p class="font-bold text-green-400">11W / 10L <span class="text-slate-400 font-normal text-xs">| ROI positivo nas Zebras</span></p>
+                    <p class="text-xs text-green-400 uppercase mb-1">Zebras da Semana</p>
+                    <p class="font-bold text-green-400">Porto B ✓ @ 2.40 <span class="text-slate-400 font-normal text-xs">| melhor retorno</span></p>
                 </div>
             </div>
         </div>
@@ -374,7 +386,7 @@
     <footer class="py-12">
         <div class="text-center text-slate-500 text-xs mb-8 border-t border-slate-700 pt-8">
             <p>© 2026 The Alpha Terminal | Powered by Predictive Intelligence</p>
-            <p class="mt-2">Última atualização: 18 MAI 2026 | 09:00 GMT+1 | Próxima edição: 19 MAI (pré-final)</p>
+            <p class="mt-2">Última atualização: 21 MAI 2026 | 09:00 GMT+1 | Próxima: 24 MAI — Jornada Final PL</p>
         </div>
         <div class="legal-notice">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
