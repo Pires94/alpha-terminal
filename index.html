@@ -25,8 +25,8 @@
         .copy-btn:hover { background: rgba(34,197,94,.2); border-color: rgba(34,197,94,.6); }
         .bet-btn { background: #22c55e; color: #0f172a; padding: 10px; border-radius: 4px; cursor: pointer; transition: all .2s; font-family: 'IBM Plex Mono', monospace; font-weight: 700; text-align: center; display: block; width: 100%; text-transform: uppercase; font-size: .875rem; text-decoration: none; }
         .bet-btn:hover { background: #16a34a; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(34,197,94,.3); }
-        .bet-btn-red { background: #dc2626; color: #fff; padding: 10px; border-radius: 4px; cursor: pointer; transition: all .2s; font-family: 'IBM Plex Mono', monospace; font-weight: 700; text-align: center; display: block; width: 100%; text-transform: uppercase; font-size: .875rem; text-decoration: none; }
-        .bet-btn-red:hover { background: #b91c1c; transform: translateY(-1px); }
+        .bet-btn-gold { background: #d97706; color: #fff; padding: 10px; border-radius: 4px; cursor: pointer; transition: all .2s; font-family: 'IBM Plex Mono', monospace; font-weight: 700; text-align: center; display: block; width: 100%; text-transform: uppercase; font-size: .875rem; text-decoration: none; }
+        .bet-btn-gold:hover { background: #b45309; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(217,119,6,.4); }
         .ticker-tape { background: rgba(15,23,42,.9); border-top: 1px solid rgba(34,197,94,.2); border-bottom: 1px solid rgba(34,197,94,.2); padding: 12px 0; overflow: hidden; position: sticky; top: 0; z-index: 50; }
         .ticker-wrap { display: flex; width: max-content; animation: ticker 40s linear infinite; gap: 60px; }
         .ticker-item { display: flex; align-items: center; gap: 8px; white-space: nowrap; font-size: .875rem; color: #94a3b8; }
@@ -39,14 +39,10 @@
         .legal-notice { font-size: .65rem; color: #64748b; line-height: 1.4; border-top: 1px solid rgba(30,41,59,.5); padding-top: 20px; margin-top: 40px; }
         .affiliate-disclaimer { font-size: .7rem; color: #94a3b8; margin-bottom: 10px; font-style: italic; }
         .racional-box { background: rgba(15,23,42,.6); padding: 12px; border-radius: 4px; margin-bottom: 16px; }
-        .champion-banner { background: linear-gradient(135deg, rgba(0,20,0,0.95) 0%, rgba(0,40,10,0.95) 100%); border: 1px solid rgba(34,197,94,0.5); border-radius: 12px; padding: 28px; margin-bottom: 32px; position: relative; overflow: hidden; }
-        .champion-banner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #22c55e, #86efac, #22c55e); }
-        .danger-banner { background: linear-gradient(135deg, rgba(40,0,0,0.95) 0%, rgba(60,10,0,0.95) 100%); border: 1px solid rgba(239,68,68,0.4); border-radius: 12px; padding: 24px; margin-bottom: 24px; position: relative; overflow: hidden; }
-        .danger-banner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #dc2626, #f87171, #dc2626); }
-        .standings-row { padding: 10px 12px; border-bottom: 1px solid rgba(30,41,59,0.4); display: grid; grid-template-columns: 24px 1fr auto auto auto; gap: 12px; align-items: center; font-size: 0.8rem; }
-        .standings-row.highlight-champ { background: rgba(34,197,94,0.08); border-left: 3px solid #22c55e; }
-        .standings-row.highlight-rel { background: rgba(239,68,68,0.08); border-left: 3px solid #dc2626; }
-        .standings-row.highlight-ucl { background: rgba(59,130,246,0.08); border-left: 3px solid #3b82f6; }
+        .ucl-banner { background: linear-gradient(135deg, rgba(0,10,40,0.97) 0%, rgba(0,20,60,0.97) 100%); border: 1px solid rgba(250,204,21,0.4); border-radius: 12px; padding: 28px; margin-bottom: 32px; position: relative; overflow: hidden; }
+        .ucl-banner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #1d4ed8, #fbbf24, #1d4ed8); }
+        .team-badge { background: rgba(15,23,42,0.7); border: 1px solid rgba(250,204,21,0.2); border-radius: 8px; padding: 16px; text-align: center; }
+        .odds-box { background: rgba(0,0,0,0.4); border: 1px solid rgba(250,204,21,0.25); border-radius: 8px; padding: 14px; text-align: center; }
     </style>
 </head>
 <body>
@@ -54,20 +50,18 @@
 <!-- TICKER -->
 <div class="ticker-tape">
     <div class="ticker-wrap">
-        <span class="ticker-item"><span class="text-green-400">🏆</span><span>ARSENAL CAMPEÃO PL 2025/26</span><span class="text-green-400 font-bold">1.º título em 22 anos</span></span>
-        <span class="ticker-item"><span class="text-red-400">⚠</span><span>TOT vs EVE</span><span class="text-red-400 font-bold">Tottenham Descida Under 2.5 1.80</span></span>
-        <span class="ticker-item"><span class="text-blue-400">●</span><span>CRY vs ARS</span><span class="text-blue-400 font-bold">Arsenal Não Perde (X2) 1.18</span></span>
-        <span class="ticker-item"><span class="text-purple-400">●</span><span>SUN vs CHE</span><span class="text-purple-400 font-bold">Chelsea Vence 1.85</span></span>
-        <span class="ticker-item"><span class="text-amber-400">●</span><span>TOT vs EVE</span><span class="text-amber-400 font-bold">Tottenham Descida em 90' 3.20 (ZEBRA)</span></span>
-        <span class="ticker-item"><span class="text-yellow-400">★</span><span>UCL FINAL 30 MAI</span><span class="text-yellow-400 font-bold">Arsenal vs PSG · Budapeste</span></span>
-        <span class="ticker-item"><span class="text-slate-500">◈ ALPHA TERMINAL v4.6 ◈ 21 MAI 2026 ◈ ANTEVISÃO JORNADA FINAL PL ◈ ARSENAL CAMPEÃO ◈</span></span>
-        <span class="ticker-item"><span class="text-green-400">🏆</span><span>ARSENAL CAMPEÃO PL 2025/26</span><span class="text-green-400 font-bold">1.º título em 22 anos</span></span>
-        <span class="ticker-item"><span class="text-red-400">⚠</span><span>TOT vs EVE</span><span class="text-red-400 font-bold">Tottenham Descida Under 2.5 1.80</span></span>
-        <span class="ticker-item"><span class="text-blue-400">●</span><span>CRY vs ARS</span><span class="text-blue-400 font-bold">Arsenal Não Perde (X2) 1.18</span></span>
-        <span class="ticker-item"><span class="text-purple-400">●</span><span>SUN vs CHE</span><span class="text-purple-400 font-bold">Chelsea Vence 1.85</span></span>
-        <span class="ticker-item"><span class="text-amber-400">●</span><span>TOT vs EVE</span><span class="text-amber-400 font-bold">Tottenham Descida em 90' 3.20 (ZEBRA)</span></span>
-        <span class="ticker-item"><span class="text-yellow-400">★</span><span>UCL FINAL 30 MAI</span><span class="text-yellow-400 font-bold">Arsenal vs PSG · Budapeste</span></span>
-        <span class="ticker-item"><span class="text-slate-500">◈ ALPHA TERMINAL v4.6 ◈ 21 MAI 2026 ◈ ANTEVISÃO JORNADA FINAL PL ◈ ARSENAL CAMPEÃO ◈</span></span>
+        <span class="ticker-item"><span class="text-green-400">●</span><span>NOT vs SAL</span><span class="text-green-400 font-bold">Salford City Vence 1.69</span><i class="fas fa-arrow-up text-green-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-blue-400">●</span><span>NOT vs SAL</span><span class="text-blue-400 font-bold">Under 2.5 Golos 1.72</span><i class="fas fa-arrow-up text-blue-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-purple-400">●</span><span>NOT vs SAL</span><span class="text-purple-400 font-bold">Ambas Marcam 2.10</span><i class="fas fa-arrow-up text-purple-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-amber-400">●</span><span>NOT vs SAL</span><span class="text-amber-400 font-bold">Notts County Vence 2.10 (ZEBRA)</span><i class="fas fa-arrow-up text-amber-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-yellow-400">★</span><span>UCL FINAL 30 MAI</span><span class="text-yellow-400 font-bold">Arsenal vs PSG · Budapeste · Arsenal 1.85</span></span>
+        <span class="ticker-item"><span class="text-slate-500">◈ ALPHA TERMINAL v4.6 ◈ 25 MAI 2026 ◈ EFL LEAGUE TWO PLAYOFF FINAL ◈ WEMBLEY ◈ SRIJ COMPLIANT ◈</span></span>
+        <span class="ticker-item"><span class="text-green-400">●</span><span>NOT vs SAL</span><span class="text-green-400 font-bold">Salford City Vence 1.69</span><i class="fas fa-arrow-up text-green-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-blue-400">●</span><span>NOT vs SAL</span><span class="text-blue-400 font-bold">Under 2.5 Golos 1.72</span><i class="fas fa-arrow-up text-blue-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-purple-400">●</span><span>NOT vs SAL</span><span class="text-purple-400 font-bold">Ambas Marcam 2.10</span><i class="fas fa-arrow-up text-purple-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-amber-400">●</span><span>NOT vs SAL</span><span class="text-amber-400 font-bold">Notts County Vence 2.10 (ZEBRA)</span><i class="fas fa-arrow-up text-amber-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-yellow-400">★</span><span>UCL FINAL 30 MAI</span><span class="text-yellow-400 font-bold">Arsenal vs PSG · Budapeste · Arsenal 1.85</span></span>
+        <span class="ticker-item"><span class="text-slate-500">◈ ALPHA TERMINAL v4.6 ◈ 25 MAI 2026 ◈ EFL LEAGUE TWO PLAYOFF FINAL ◈ WEMBLEY ◈ SRIJ COMPLIANT ◈</span></span>
     </div>
 </div>
 
@@ -78,7 +72,7 @@
         <div class="flex justify-between items-start mb-8 flex-wrap gap-4">
             <div>
                 <h1 class="text-5xl md:text-6xl font-bold text-green-400 mb-2 tracking-tight">THE ALPHA TERMINAL</h1>
-                <p class="text-slate-400 text-sm uppercase tracking-widest">Institutional Grade Predictive Intelligence | 21 MAI 2026</p>
+                <p class="text-slate-400 text-sm uppercase tracking-widest">Institutional Grade Predictive Intelligence | 25 MAI 2026</p>
             </div>
             <div class="text-right">
                 <div class="text-3xl font-bold text-green-400" id="live-clock">00:00:00</div>
@@ -87,184 +81,148 @@
         </div>
         <div class="bloomberg-card p-6 rounded-lg border-l-4 border-yellow-500/30">
             <p class="text-sm text-slate-300 leading-relaxed">
-                <strong class="text-yellow-400">Quinta-feira de balanço e antevisão épica:</strong> Fim de semana histórico com a <strong class="text-green-400">jornada final da Premier League (24 mai)</strong> e todos os jogos em simultâneo às 16:00 CEST. Arsenal campeão celebra vs Crystal Palace. <strong class="text-red-400">Tottenham luta desesperadamente para não descer</strong> — se perder vs Everton e West Ham vencer vs Leeds, os Spurs vão para o Championship pela 1.ª vez desde 1977. Drama máximo. Mais: análise pós-final da Liga Europa e antevisão da final da Champions (Arsenal vs PSG, 30 mai, Budapeste).
+                <strong class="text-yellow-400">Segunda-feira de feriado — Wembley em festa:</strong> Final da League Two entre <strong>Notts County e Salford City</strong> (15:00 BST / 16:00 CEST) — promoção para a League One em jogo. Salford venceu os dois dérbi desta época. Notts County tem 20.000 adeptos no estádio vs apenas 6.000 de Salford — mas os Magpies chegam em má forma. Mais: análise pós-jornada final da Premier League e antevisão da <strong class="text-yellow-400">final da Champions (Arsenal vs PSG, 30 mai)</strong>.
             </p>
             <p class="affiliate-disclaimer mt-2">Nota: Este terminal contém links de afiliados. Ao utilizar os nossos links, poderá receber bónus exclusivos enquanto apoia a nossa inteligência preditiva.</p>
         </div>
     </section>
 
-    <!-- ARSENAL CHAMPION BANNER -->
-    <section class="mb-8">
-        <div class="champion-banner">
-            <div class="flex flex-wrap items-center justify-between gap-6">
-                <div>
-                    <div class="text-xs text-green-400 uppercase tracking-widest mb-1">🏆 Premier League 2025/26 — Campeões</div>
-                    <div class="text-4xl font-bold text-white mb-2">Arsenal FC</div>
-                    <div class="text-green-400 font-bold text-lg">1.º título desde 2004 · 22 anos de espera</div>
-                    <div class="text-slate-400 text-xs mt-2">Confirmado a 19 mai · Bournemouth 1-1 Manchester City · Emirates em erupção</div>
-                </div>
-                <div class="grid grid-cols-2 gap-4 text-center">
-                    <div class="bloomberg-card p-4 rounded">
-                        <div class="text-xs text-slate-400 uppercase mb-1">Pontos</div>
-                        <div class="text-2xl font-bold text-green-400">88</div>
-                    </div>
-                    <div class="bloomberg-card p-4 rounded">
-                        <div class="text-xs text-slate-400 uppercase mb-1">Golos</div>
-                        <div class="text-2xl font-bold text-green-400">97</div>
-                    </div>
-                    <div class="bloomberg-card p-4 rounded">
-                        <div class="text-xs text-slate-400 uppercase mb-1">Próximo</div>
-                        <div class="text-sm font-bold text-yellow-400">UCL Final</div>
-                        <div class="text-xs text-slate-400">30 Mai vs PSG</div>
-                    </div>
-                    <div class="bloomberg-card p-4 rounded">
-                        <div class="text-xs text-slate-400 uppercase mb-1">Margem</div>
-                        <div class="text-2xl font-bold text-green-400">+5 pts</div>
-                        <div class="text-xs text-slate-400">sobre Man City</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- DANGER BANNER TOTTENHAM -->
-        <div class="danger-banner">
-            <div class="flex flex-wrap items-center justify-between gap-4">
-                <div>
-                    <div class="text-xs text-red-400 uppercase tracking-widest mb-1">⚠ ZONA DE DESCIDA — TOTTENHAM HOTSPUR</div>
-                    <div class="text-2xl font-bold text-white mb-1">Tottenham pode descer pela 1.ª vez desde 1977</div>
-                    <div class="text-slate-300 text-sm">Se Tottenham perder vs Everton <strong>E</strong> West Ham vencer vs Leeds → Spurs para o Championship</div>
-                </div>
-                <div class="text-center bloomberg-card p-4 rounded">
-                    <div class="text-xs text-red-400 uppercase mb-1">Tottenham pontos</div>
-                    <div class="text-3xl font-bold text-red-400">30 pts</div>
-                    <div class="text-xs text-slate-400 mt-1">West Ham: 29 pts (GD -21)</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TABELA FINAL -->
+    <!-- UCL FINAL PREVIEW BANNER -->
     <section class="mb-10">
-        <h2 class="text-xl font-bold mb-4 text-green-400">📋 Tabela Premier League — Jornada 37 (pré-jornada final)</h2>
-        <div class="bloomberg-card rounded-lg overflow-hidden">
-            <div class="standings-row font-bold text-slate-400 text-xs uppercase border-b border-slate-700">
-                <span>#</span><span>Equipa</span><span>Pts</span><span>GD</span><span>Jornada 38</span>
+        <div class="ucl-banner">
+            <div class="text-center mb-6">
+                <div class="text-xs text-yellow-400 uppercase tracking-widest mb-1">⭐ UEFA Champions League 2025/26 — Final</div>
+                <div class="text-lg text-yellow-300 font-bold">Sábado, 30 de Maio · 21:00 CEST · Puskás Aréna, Budapeste</div>
             </div>
-            <div class="standings-row highlight-champ"><span class="text-green-400 font-bold">1</span><span class="font-bold text-green-400">Arsenal 🏆</span><span class="font-bold text-green-400">88</span><span class="text-green-400">+59</span><span class="text-xs text-slate-400">vs Crystal Palace (F)</span></div>
-            <div class="standings-row highlight-ucl"><span class="text-blue-400 font-bold">2</span><span class="font-bold">Manchester City</span><span>83</span><span class="text-slate-400">+41</span><span class="text-xs text-slate-400">vs Aston Villa (C)</span></div>
-            <div class="standings-row highlight-ucl"><span class="text-blue-400 font-bold">3</span><span class="font-bold">Manchester United</span><span>72</span><span class="text-slate-400">+24</span><span class="text-xs text-slate-400">vs Brighton (F)</span></div>
-            <div class="standings-row highlight-ucl"><span class="text-blue-400 font-bold">4</span><span class="font-bold">Aston Villa</span><span>70</span><span class="text-slate-400">+18</span><span class="text-xs text-slate-400">vs Man City (F)</span></div>
-            <div class="standings-row"><span class="text-slate-400">5</span><span>Chelsea</span><span>64</span><span class="text-slate-400">+22</span><span class="text-xs text-slate-400">vs Sunderland (F)</span></div>
-            <div class="standings-row"><span class="text-slate-400">...</span><span class="text-slate-500">...</span><span class="text-slate-500">...</span><span class="text-slate-500">...</span><span></span></div>
-            <div class="standings-row highlight-rel"><span class="text-red-400 font-bold">17</span><span class="font-bold text-red-400">Tottenham ⚠</span><span class="text-red-400">30</span><span class="text-red-400">-18</span><span class="text-xs text-red-400">vs Everton (C)</span></div>
-            <div class="standings-row highlight-rel"><span class="text-red-400 font-bold">18</span><span class="font-bold text-red-400">West Ham ⚠</span><span class="text-red-400">29</span><span class="text-red-400">-21</span><span class="text-xs text-red-400">vs Leeds (C)</span></div>
-            <div class="standings-row highlight-rel"><span class="text-red-400 font-bold">19</span><span class="text-red-400">Burnley ↓</span><span class="text-red-400">20</span><span class="text-red-400">-38</span><span class="text-xs text-slate-500">Descida confirmada</span></div>
-            <div class="standings-row highlight-rel"><span class="text-red-400 font-bold">20</span><span class="text-red-400">Wolverhampton ↓</span><span class="text-red-400">17</span><span class="text-red-400">-44</span><span class="text-xs text-slate-500">Descida confirmada</span></div>
+            <div class="grid grid-cols-3 gap-4 items-center mb-6">
+                <div class="team-badge">
+                    <div class="text-2xl font-bold text-white mb-1">Arsenal FC</div>
+                    <div class="text-xs text-slate-400">Premier League Campeão</div>
+                    <div class="text-xs text-yellow-400 mt-1">1.ª final da UCL desde 2006</div>
+                    <div class="text-xs text-slate-500 mt-1">Arteta · Saka · Havertz · Odegaard</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-yellow-400 mb-1">VS</div>
+                    <i class="fas fa-trophy text-yellow-400 text-xl block mb-1"></i>
+                    <div class="text-xs text-slate-400 uppercase tracking-widest">Final UCL</div>
+                </div>
+                <div class="team-badge">
+                    <div class="text-2xl font-bold text-white mb-1">Paris SG</div>
+                    <div class="text-xs text-slate-400">Ligue 1 Campeão</div>
+                    <div class="text-xs text-yellow-400 mt-1">Busca o 1.º título europeu</div>
+                    <div class="text-xs text-slate-500 mt-1">Luis Enrique · Mbappé · Dembélé</div>
+                </div>
+            </div>
+            <div class="grid grid-cols-3 gap-3 text-center">
+                <div class="odds-box"><div class="text-xs text-slate-400 uppercase mb-1">Arsenal Vence</div><div class="text-2xl font-bold text-green-400">1.85</div></div>
+                <div class="odds-box"><div class="text-xs text-slate-400 uppercase mb-1">Empate (90')</div><div class="text-2xl font-bold text-slate-300">3.60</div></div>
+                <div class="odds-box"><div class="text-xs text-slate-400 uppercase mb-1">PSG Vence</div><div class="text-2xl font-bold text-blue-400">4.20</div></div>
+            </div>
+            <p class="text-xs text-slate-500 text-center mt-3">Tips para a final da UCL no terminal de 29 mai · Apostas já abertas</p>
         </div>
-        <p class="text-xs text-slate-500 mt-2">C = em casa · F = fora · ⚠ = em risco de descida · ↓ = já despromovido</p>
     </section>
 
-    <!-- TIPS JORNADA 38 -->
+    <!-- TIPS -->
     <section class="mb-12">
-        <h2 class="text-2xl font-bold mb-2 text-green-400">⚡ Tips Antecipadas — Jornada 38 PL (24 MAI, 16:00 CEST)</h2>
-        <p class="text-xs text-slate-500 uppercase tracking-widest mb-6">Todos os jogos em simultâneo · Stakes reduzidos para contexto de fim de época · Verificar odds antes de apostar</p>
+        <h2 class="text-2xl font-bold mb-2 text-green-400">⚡ Top Picks (25 MAI 2026)</h2>
+        <p class="text-xs text-slate-500 uppercase tracking-widest mb-6">EFL League Two Playoff Final · Wembley · 16:00 CEST</p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 
-            <!-- TIP-01: Tottenham vs Everton -->
-            <div class="bloomberg-card p-6 rounded-lg border-t-2 border-red-500/50">
+            <!-- TIP-01 -->
+            <div class="bloomberg-card p-6 rounded-lg">
                 <div class="flex justify-between items-start mb-4">
                     <span class="tip-badge badge-top">Top Pick</span>
                     <span class="text-xs text-slate-500">TIP-01</span>
                 </div>
-                <h3 class="text-lg font-bold mb-1">Tottenham vs Everton</h3>
-                <p class="text-slate-400 text-xs mb-4">Premier League • Jornada 38 • 24 Mai • 16:00 CEST • Tottenham Hotspur Stadium</p>
+                <h3 class="text-lg font-bold mb-1">Notts County vs Salford City</h3>
+                <p class="text-slate-400 text-xs mb-4">EFL League Two Playoff Final • 25 Mai • 16:00 CEST • Wembley Stadium</p>
                 <div class="mb-4">
                     <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
-                    <div class="odds-display text-green-400">Under 2.5 Golos</div>
+                    <div class="odds-display text-green-400">Salford City Vence</div>
                 </div>
                 <div class="flex justify-between mb-4 text-sm">
-                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-green-400">1.80</div></div>
-                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">6/10</div></div>
-                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-green-400">+17%</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-green-400">1.69</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">7/10</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-green-400">+14%</div></div>
                 </div>
                 <div class="mb-4">
-                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-green-400 font-bold">74%</span></div>
-                    <div class="confidence-bar"><div class="confidence-fill high" style="width:74%"></div></div>
+                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-green-400 font-bold">73%</span></div>
+                    <div class="confidence-bar"><div class="confidence-fill high" style="width:73%"></div></div>
                 </div>
                 <div class="racional-box border-l-2 border-green-400/40">
-                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> Tottenham em modo sobrevivência — jogos de descida tendem a ser crispados, tensos e com baixo número de golos. Everton sem nada a perder mas também sem atacar em excesso. Os últimos 5 H2H entre Spurs e Everton no Tottenham Hotspur Stadium: média de 1.8 golos/jogo. Under 2.5 em 8 dos últimos 10 jogos em casa do Tottenham nesta época. Nervosismo das bancadas fecha os jogadores.</p>
+                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> Salford venceu os dois confrontos desta época (2-1 em Meadow Lane e 2-1 em casa) e tem 5 vitórias consecutivas no H2H vs Notts County. Karl Robinson em excelente forma — 8 dos últimos 12 jogos ganhos sem sofrer. Notts County chega apenas com 2V nos últimos 8 jogos — forma horrível pré-final. Salford concedeu apenas 8 golos nos últimos 14 jogos. A vantagem de 20.000 adeptos do Notts não compensa a diferença de forma recente.</p>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
-                    <button onclick="copyTip('Tottenham vs Everton | Under 2.5 Golos @ 1.80')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <button onclick="copyTip('Notts County vs Salford City | Salford City Vence @ 1.69')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
                     <a href="YOUR_BETANO_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Agora</a>
                 </div>
             </div>
 
-            <!-- TIP-02: Sunderland vs Chelsea -->
-            <div class="bloomberg-card p-6 rounded-lg border-t-2 border-blue-500/30">
+            <!-- TIP-02 -->
+            <div class="bloomberg-card p-6 rounded-lg">
                 <div class="flex justify-between items-start mb-4">
                     <span class="tip-badge badge-value">Value Pick</span>
                     <span class="text-xs text-slate-500">TIP-02</span>
                 </div>
-                <h3 class="text-lg font-bold mb-1">Sunderland vs Chelsea</h3>
-                <p class="text-slate-400 text-xs mb-4">Premier League • Jornada 38 • 24 Mai • 16:00 CEST • Stadium of Light</p>
+                <h3 class="text-lg font-bold mb-1">Notts County vs Salford City</h3>
+                <p class="text-slate-400 text-xs mb-4">EFL League Two Playoff Final • 25 Mai • 16:00 CEST • Wembley Stadium</p>
                 <div class="mb-4">
                     <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
-                    <div class="odds-display text-blue-400">Chelsea Vence</div>
+                    <div class="odds-display text-blue-400">Under 2.5 Golos</div>
                 </div>
                 <div class="flex justify-between mb-4 text-sm">
-                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-blue-400">1.85</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-blue-400">1.72</div></div>
                     <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">7/10</div></div>
-                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-blue-400">+14%</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-blue-400">+16%</div></div>
                 </div>
                 <div class="mb-4">
-                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-blue-400 font-bold">70%</span></div>
-                    <div class="confidence-bar"><div class="confidence-fill med" style="width:70%"></div></div>
+                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-blue-400 font-bold">76%</span></div>
+                    <div class="confidence-bar"><div class="confidence-fill med" style="width:76%"></div></div>
                 </div>
                 <div class="racional-box border-l-2 border-blue-400/40">
-                    <p class="text-xs text-slate-300"><span class="text-blue-400 font-bold">Racional:</span> Chelsea em 5.º lugar e a lutar por qualificação europeia direta. Sunderland matematicamente seguro mas sem nada em jogo. Chelsea tem o melhor registo ofensivo fora de casa na 2.ª volta (12 golos nas últimas 7 visitas). H2H: Chelsea venceu 5 dos últimos 6 encontros com Sunderland na PL. Nkunku e Pedro Neto em boa forma. Motivação assimétrica favorece Chelsea.</p>
+                    <p class="text-xs text-slate-300"><span class="text-blue-400 font-bold">Racional:</span> Todos os últimos 4 jogos do Notts County foram Under 2.5. Salford viu 3+ golos em apenas 5 dos últimos 14 jogos. O playoff semi-final do Notts vs Chesterfield produziu apenas 1 golo em 2 jogos. Finais de playoff EFL tendem a ser cautelosas — media de 1.7 golos nos últimos 5 anos. Pressão máxima = conservadorismo tático. 61% de probabilidade segundo modelos estatísticos.</p>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
-                    <button onclick="copyTip('Sunderland vs Chelsea | Chelsea Vence @ 1.85')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <button onclick="copyTip('Notts County vs Salford City | Under 2.5 Golos @ 1.72')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
                     <a href="YOUR_BETCLIC_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Agora</a>
                 </div>
             </div>
         </div>
 
-        <!-- TIP-03: Crystal Palace vs Arsenal -->
-        <div class="bloomberg-card p-6 rounded-lg mb-8 border-t-2 border-purple-500/30">
+        <!-- TIP-03 -->
+        <div class="bloomberg-card p-6 rounded-lg mb-8">
             <div class="flex justify-between items-start mb-4">
                 <span class="tip-badge badge-sharp">Sharp Pick</span>
                 <span class="text-xs text-slate-500">TIP-03</span>
             </div>
-            <h3 class="text-lg font-bold mb-1">Crystal Palace vs Arsenal</h3>
-            <p class="text-slate-400 text-xs mb-4">Premier League • Jornada 38 • 24 Mai • 16:00 CEST • Selhurst Park</p>
+            <h3 class="text-lg font-bold mb-1">Notts County vs Salford City</h3>
+            <p class="text-slate-400 text-xs mb-4">EFL League Two Playoff Final • 25 Mai • 16:00 CEST • Wembley Stadium</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
                     <div class="text-xs text-slate-400 uppercase tracking-wide mb-2">Selection</div>
-                    <div class="text-2xl font-bold text-purple-400">Arsenal Não Perde (X2)</div>
+                    <div class="text-2xl font-bold text-purple-400">Salford Vence + Under 2.5<br><span class="text-base">(Acumulada)</span></div>
                     <div class="racional-box border-l-2 border-purple-400/40 mt-3">
-                        <p class="text-xs text-slate-300"><span class="text-purple-400 font-bold">Racional:</span> Arsenal campeão vai celebrar — não arrisca o plantel antes da final da Champions a 30 mai vs PSG em Budapeste. Arteta vai poupar Saka, Odegaard, Raya, Havertz. Crystal Palace em modo férias (11.º lugar, nada em jogo). Arsenal não perde fora há 17 jogos na PL (recorde da temporada). Odd mínima mas segura para fechar a época com alegria.</p>
+                        <p class="text-xs text-slate-300"><span class="text-purple-400 font-bold">Racional:</span> Combinar TIP-01 + TIP-02 numa acumulada. Salford ganhou os dois dérbi desta época por 2-1 — exatamente Under 2.5. O perfil mais provável é uma vitória apertada de Salford por 1-0 ou 2-0. Acumulada com odds atractiva que reflecte o cenário mais plausível segundo todos os modelos e analistas.</p>
                     </div>
                 </div>
                 <div>
                     <div class="flex justify-between text-sm mb-4">
-                        <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-purple-400">1.18</div></div>
-                        <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">9/10</div></div>
-                        <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-purple-400">+8%</div></div>
+                        <div><div class="text-xs text-slate-400 uppercase">Odds Aprox.</div><div class="font-bold text-purple-400">~2.90</div></div>
+                        <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">4/10</div></div>
+                        <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-purple-400">+28%</div></div>
                     </div>
                     <div class="mb-4">
-                        <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-purple-400 font-bold">87%</span></div>
-                        <div class="confidence-bar"><div class="confidence-fill high" style="width:87%"></div></div>
+                        <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-purple-400 font-bold">58%</span></div>
+                        <div class="confidence-bar"><div class="confidence-fill high" style="width:58%"></div></div>
                     </div>
                     <div class="bg-slate-800/40 rounded p-3 text-xs text-slate-400 border-l-2 border-purple-400/20">
                         <i class="fas fa-lightbulb text-purple-400 mr-1"></i>
-                        Odds baixa mas ideal para acumular. Combinar com TIP-01 + TIP-02 dá uma múltipla de ~3.80 com alta probabilidade.
+                        Construir no boletim como acumulada simples: Salford Vence + Under 2.5 Goals. Odds finais dependem da casa de apostas — verificar antes de apostar.
                     </div>
                 </div>
                 <div class="flex flex-col justify-center">
                     <a href="YOUR_SOLVERDE_AFFILIATE_LINK" target="_blank" class="bet-btn mb-3">Apostar com Bónus</a>
-                    <button onclick="copyTip('Crystal Palace vs Arsenal | Arsenal Não Perde (X2) @ 1.18')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <button onclick="copyTip('Notts County vs Salford City | Salford Vence + Under 2.5 Acumulada @ ~2.90')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
                 </div>
             </div>
         </div>
@@ -279,31 +237,31 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                    <h2 class="text-2xl font-bold mb-2">Tottenham vs Everton</h2>
-                    <p class="text-slate-400 text-xs mb-4">Premier League • Jornada 38 • 24 Mai • 16:00 CEST</p>
+                    <h2 class="text-2xl font-bold mb-2">Notts County vs Salford City</h2>
+                    <p class="text-slate-400 text-xs mb-4">EFL League Two Playoff Final • 25 Mai • 16:00 CEST • Wembley</p>
                     <div class="mb-6">
                         <div class="text-xs text-slate-400 uppercase tracking-wide mb-2">Selection</div>
-                        <div class="text-3xl font-bold text-amber-400">Everton Vence<br><span class="text-lg text-red-400">(Tottenham Despromovido)</span></div>
+                        <div class="text-3xl font-bold text-amber-400">Notts County Vence</div>
                     </div>
                     <div class="bg-slate-900/50 p-4 rounded border-l-2 border-amber-400/30">
-                        <p class="text-sm text-slate-300 italic"><span class="text-amber-400 font-bold">Racional:</span> Se Everton vencer, Tottenham desce independentemente do resultado do West Ham. Everton precisa de pontos para garantir melhor classificação e potencial Conference League. Os Spurs perderam os últimos 3 jogos em casa — plantel fragmentado e adepto hostil. Dyche vai dar tudo numa arena que pode implosionar. Odd de 3.20 para o cenário mais dramático da história recente da Premier League.</p>
+                        <p class="text-sm text-slate-300 italic"><span class="text-amber-400 font-bold">Racional:</span> Notts County são os favoritos dos bookmakers (8/5 vs 13/8 de Salford). Têm um diferencial de golos superior na época (+12 vs Salford). Vencem há 180.000+ adeptos — o maior apoio em qualquer playoff final da League Two em anos. Notts venceram a final da National League em 2023 a Wembley. A experiência de grandes momentos e o apoio esmagador de 20.000 adeptos pode ser decisivo. Odd de 2.10 para o favorito dos anúncios.</p>
                     </div>
                 </div>
                 <div class="flex flex-col justify-between">
                     <div>
                         <div class="flex justify-between mb-6 text-lg">
-                            <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-amber-400">3.20</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-amber-400">2.10</div></div>
                             <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">1/10</div></div>
-                            <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-amber-400">+35%</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-amber-400">+22%</div></div>
                         </div>
                         <div class="mb-6">
-                            <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-amber-400 font-bold">28%</span></div>
-                            <div class="confidence-bar"><div class="confidence-fill low" style="width:28%"></div></div>
+                            <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-amber-400 font-bold">38%</span></div>
+                            <div class="confidence-bar"><div class="confidence-fill low" style="width:38%"></div></div>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-3">
-                        <button onclick="copyTip('Tottenham vs Everton | Everton Vence @ 3.20')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Zebra</button>
-                        <a href="YOUR_BETANO_AFFILIATE_LINK" target="_blank" class="bet-btn-red">Apostar Zebra</a>
+                        <button onclick="copyTip('Notts County vs Salford City | Notts County Vence @ 2.10')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Zebra</button>
+                        <a href="YOUR_BETANO_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Zebra</a>
                     </div>
                 </div>
             </div>
@@ -312,7 +270,7 @@
 
     <!-- HISTÓRICO -->
     <section class="mb-12">
-        <h2 class="text-2xl font-bold mb-6 text-green-400">📊 Histórico de Performance (18–20 MAI 2026)</h2>
+        <h2 class="text-2xl font-bold mb-6 text-green-400">📊 Histórico de Performance — Jornada 38 PL (24 MAI 2026)</h2>
         <div class="bloomberg-card p-6 rounded-lg overflow-x-auto">
             <table class="history-table">
                 <thead>
@@ -328,55 +286,58 @@
                 </thead>
                 <tbody>
                     <tr class="bg-green-900/10">
-                        <td>Freiburg vs Aston Villa</td>
-                        <td>Liga Europa — Final</td>
-                        <td>Aston Villa Vence @ 1.62</td>
-                        <td>1.62</td>
-                        <td>0-3 ✓ (Villa CAMPEÃO!)</td>
+                        <td>Tottenham vs Everton</td>
+                        <td>Premier League</td>
+                        <td>Under 2.5 Golos</td>
+                        <td>1.80</td>
+                        <td>1-0 (Palhinha 43') ✓</td>
                         <td class="status-win">✓ WIN</td>
-                        <td>+13%</td>
+                        <td>+17%</td>
+                    </tr>
+                    <tr>
+                        <td>Sunderland vs Chelsea</td>
+                        <td>Premier League</td>
+                        <td>Chelsea Vence</td>
+                        <td>1.85</td>
+                        <td>2-1 para Sunderland</td>
+                        <td class="status-loss">✗ LOSS</td>
+                        <td>+14%</td>
                     </tr>
                     <tr class="bg-green-900/10">
-                        <td>Freiburg vs Aston Villa</td>
-                        <td>Liga Europa — Final</td>
-                        <td>Under 2.5 Golos @ 2.10</td>
-                        <td>2.10</td>
-                        <td>0-3 (3 golos = Under ✓)</td>
+                        <td>Crystal Palace vs Arsenal</td>
+                        <td>Premier League</td>
+                        <td>Arsenal Não Perde (X2)</td>
+                        <td>1.18</td>
+                        <td>1-2 Arsenal ✓ (Jesus, Madueke)</td>
                         <td class="status-win">✓ WIN</td>
-                        <td>+21%</td>
+                        <td>+8%</td>
                     </tr>
                     <tr>
-                        <td>Freiburg vs Aston Villa</td>
-                        <td>Liga Europa — Final</td>
-                        <td>Ambas Marcam (BTTS)</td>
-                        <td>1.72</td>
-                        <td>0-3 (Freiburg não marcou)</td>
+                        <td>Tottenham vs Everton</td>
+                        <td>Premier League (Zebra)</td>
+                        <td>Everton Vence @ 3.20</td>
+                        <td>3.20</td>
+                        <td>0-1 Tottenham</td>
                         <td class="status-loss">✗ LOSS</td>
-                        <td>+15%</td>
-                    </tr>
-                    <tr>
-                        <td>Freiburg vs Aston Villa</td>
-                        <td>Liga Europa (Zebra)</td>
-                        <td>Freiburg Vence @ 4.50</td>
-                        <td>4.50</td>
-                        <td>0-3 (Freiburg goleado)</td>
-                        <td class="status-loss">✗ LOSS</td>
-                        <td>+42%</td>
+                        <td>+35%</td>
                     </tr>
                 </tbody>
             </table>
+            <div class="mt-4 bloomberg-card p-4 rounded text-xs text-slate-400">
+                <span class="text-green-400 font-bold">Nota histórica 24 mai:</span> West Ham despromovido apesar de vencer Leeds 3-0 — Tottenham salvou-se com golo de Palhinha. Chelsea terminou em 10.º. Arsenal campeão com 85 pontos, PSG a 30 mai em Budapeste.
+            </div>
             <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                 <div class="bg-green-900/20 p-4 rounded border border-green-700/30">
-                    <p class="text-xs text-green-400 uppercase mb-1">Final Liga Europa ⭐</p>
-                    <p class="font-bold text-green-400">2W / 2L <span class="text-slate-400 font-normal text-xs">| Villa + Under ✓ | BTTS + Zebra ✗</span></p>
+                    <p class="text-xs text-green-400 uppercase mb-1">24 Mai 2026</p>
+                    <p class="font-bold text-green-400">2W / 2L <span class="text-slate-400 font-normal text-xs">| Under Spurs ✓ + Arsenal X2 ✓</span></p>
                 </div>
                 <div class="bg-slate-900/50 p-4 rounded border border-slate-700/50">
-                    <p class="text-xs text-slate-400 uppercase mb-1">Semana (10–20 Mai)</p>
-                    <p class="font-bold">13W / 12L <span class="text-slate-400 font-normal text-xs">| ROI em terreno positivo</span></p>
+                    <p class="text-xs text-slate-400 uppercase mb-1">Semana (21–24 Mai)</p>
+                    <p class="font-bold">15W / 14L <span class="text-slate-400 font-normal text-xs">| ROI equilibrado</span></p>
                 </div>
                 <div class="bg-slate-900/50 p-4 rounded border border-green-700/20">
-                    <p class="text-xs text-green-400 uppercase mb-1">Zebras da Semana</p>
-                    <p class="font-bold text-green-400">Porto B ✓ @ 2.40 <span class="text-slate-400 font-normal text-xs">| melhor retorno</span></p>
+                    <p class="text-xs text-green-400 uppercase mb-1">Melhor Pick da Semana</p>
+                    <p class="font-bold text-green-400">Arsenal X2 @ 1.18 <span class="text-slate-400 font-normal text-xs">| 87% confiança confirmada</span></p>
                 </div>
             </div>
         </div>
@@ -386,7 +347,7 @@
     <footer class="py-12">
         <div class="text-center text-slate-500 text-xs mb-8 border-t border-slate-700 pt-8">
             <p>© 2026 The Alpha Terminal | Powered by Predictive Intelligence</p>
-            <p class="mt-2">Última atualização: 21 MAI 2026 | 09:00 GMT+1 | Próxima: 24 MAI — Jornada Final PL</p>
+            <p class="mt-2">Última atualização: 25 MAI 2026 | 09:00 GMT+1 | Próxima: 29 MAI — Antevisão Final UCL Arsenal vs PSG</p>
         </div>
         <div class="legal-notice">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
