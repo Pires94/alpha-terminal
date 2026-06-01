@@ -3,46 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Alpha Terminal | Predictive Sports Intelligence</title>
+    <title>The Alpha Terminal | 1–8 Jun 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&display=swap');
-        body { font-family: 'IBM Plex Mono', monospace; background: linear-gradient(135deg, #0f172a 0%, #1a2847 100%); color: #e2e8f0; min-height: 100vh; }
-        .bloomberg-card { background: rgba(15,23,42,0.8); border: 1px solid rgba(34,197,94,0.1); backdrop-filter: blur(10px); }
-        .odds-display { font-size: 1.5rem; font-weight: 700; letter-spacing: 2px; }
-        .confidence-bar { height: 8px; background: rgba(30,41,59,0.8); border-radius: 4px; overflow: hidden; }
-        .confidence-fill { height: 100%; border-radius: 4px; transition: width 0.3s ease; }
-        .confidence-fill.high { background: linear-gradient(90deg, #22c55e, #16a34a); }
-        .confidence-fill.med  { background: linear-gradient(90deg, #3b82f6, #2563eb); }
-        .confidence-fill.low  { background: linear-gradient(90deg, #f97316, #ea580c); }
-        .tip-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
-        .badge-top   { background: rgba(34,197,94,.2);  color: #22c55e; border: 1px solid rgba(34,197,94,.5); }
-        .badge-value { background: rgba(59,130,246,.2);  color: #3b82f6; border: 1px solid rgba(59,130,246,.5); }
-        .badge-sharp { background: rgba(168,85,247,.2);  color: #a855f7; border: 1px solid rgba(168,85,247,.5); }
-        .badge-zebra { background: rgba(251,146,60,.2);  color: #fb923c; border: 1px solid rgba(251,146,60,.5); }
-        .copy-btn { background: rgba(34,197,94,.1); border: 1px solid rgba(34,197,94,.3); color: #22c55e; padding: 10px; border-radius: 4px; cursor: pointer; transition: all .2s; font-family: 'IBM Plex Mono', monospace; font-size: .75rem; width: 100%; }
-        .copy-btn:hover { background: rgba(34,197,94,.2); border-color: rgba(34,197,94,.6); }
-        .bet-btn { background: #22c55e; color: #0f172a; padding: 10px; border-radius: 4px; cursor: pointer; transition: all .2s; font-family: 'IBM Plex Mono', monospace; font-weight: 700; text-align: center; display: block; width: 100%; text-transform: uppercase; font-size: .875rem; text-decoration: none; }
-        .bet-btn:hover { background: #16a34a; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(34,197,94,.3); }
-        .bet-btn-gold { background: #d97706; color: #fff; padding: 10px; border-radius: 4px; cursor: pointer; transition: all .2s; font-family: 'IBM Plex Mono', monospace; font-weight: 700; text-align: center; display: block; width: 100%; text-transform: uppercase; font-size: .875rem; text-decoration: none; }
-        .bet-btn-gold:hover { background: #b45309; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(217,119,6,.4); }
-        .ticker-tape { background: rgba(15,23,42,.9); border-top: 1px solid rgba(34,197,94,.2); border-bottom: 1px solid rgba(34,197,94,.2); padding: 12px 0; overflow: hidden; position: sticky; top: 0; z-index: 50; }
-        .ticker-wrap { display: flex; width: max-content; animation: ticker 40s linear infinite; gap: 60px; }
-        .ticker-item { display: flex; align-items: center; gap: 8px; white-space: nowrap; font-size: .875rem; color: #94a3b8; }
-        @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .history-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
-        .history-table th { background: rgba(34,197,94,.1); color: #22c55e; padding: 12px; text-align: left; border-bottom: 1px solid rgba(34,197,94,.2); font-weight: 600; }
-        .history-table td { padding: 10px 12px; border-bottom: 1px solid rgba(30,41,59,.5); }
-        .status-win  { color: #22c55e; font-weight: 700; }
-        .status-loss { color: #ef4444; font-weight: 700; }
-        .legal-notice { font-size: .65rem; color: #64748b; line-height: 1.4; border-top: 1px solid rgba(30,41,59,.5); padding-top: 20px; margin-top: 40px; }
-        .affiliate-disclaimer { font-size: .7rem; color: #94a3b8; margin-bottom: 10px; font-style: italic; }
-        .racional-box { background: rgba(15,23,42,.6); padding: 12px; border-radius: 4px; margin-bottom: 16px; }
-        .ucl-banner { background: linear-gradient(135deg, rgba(0,10,40,0.97) 0%, rgba(0,20,60,0.97) 100%); border: 1px solid rgba(250,204,21,0.4); border-radius: 12px; padding: 28px; margin-bottom: 32px; position: relative; overflow: hidden; }
-        .ucl-banner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #1d4ed8, #fbbf24, #1d4ed8); }
-        .team-badge { background: rgba(15,23,42,0.7); border: 1px solid rgba(250,204,21,0.2); border-radius: 8px; padding: 16px; text-align: center; }
-        .odds-box { background: rgba(0,0,0,0.4); border: 1px solid rgba(250,204,21,0.25); border-radius: 8px; padding: 14px; text-align: center; }
+        body { font-family:'IBM Plex Mono',monospace; background:linear-gradient(135deg,#0f172a 0%,#1a2847 100%); color:#e2e8f0; min-height:100vh; }
+        .bloomberg-card { background:rgba(15,23,42,.8); border:1px solid rgba(34,197,94,.1); backdrop-filter:blur(10px); }
+        .odds-display { font-size:1.5rem; font-weight:700; letter-spacing:2px; }
+        .confidence-bar { height:8px; background:rgba(30,41,59,.8); border-radius:4px; overflow:hidden; }
+        .confidence-fill { height:100%; border-radius:4px; }
+        .confidence-fill.high { background:linear-gradient(90deg,#22c55e,#16a34a); }
+        .confidence-fill.med  { background:linear-gradient(90deg,#3b82f6,#2563eb); }
+        .confidence-fill.low  { background:linear-gradient(90deg,#f97316,#ea580c); }
+        .tip-badge { display:inline-block; padding:4px 12px; border-radius:4px; font-size:.75rem; font-weight:600; letter-spacing:1px; text-transform:uppercase; }
+        .badge-top   { background:rgba(34,197,94,.2);  color:#22c55e; border:1px solid rgba(34,197,94,.5); }
+        .badge-value { background:rgba(59,130,246,.2);  color:#3b82f6; border:1px solid rgba(59,130,246,.5); }
+        .badge-sharp { background:rgba(168,85,247,.2);  color:#a855f7; border:1px solid rgba(168,85,247,.5); }
+        .badge-zebra { background:rgba(251,146,60,.2);  color:#fb923c; border:1px solid rgba(251,146,60,.5); }
+        .copy-btn { background:rgba(34,197,94,.1); border:1px solid rgba(34,197,94,.3); color:#22c55e; padding:10px; border-radius:4px; cursor:pointer; font-family:'IBM Plex Mono',monospace; font-size:.75rem; width:100%; }
+        .copy-btn:hover { background:rgba(34,197,94,.2); }
+        .bet-btn { background:#22c55e; color:#0f172a; padding:10px; border-radius:4px; font-family:'IBM Plex Mono',monospace; font-weight:700; text-align:center; display:block; width:100%; text-transform:uppercase; font-size:.875rem; text-decoration:none; }
+        .bet-btn:hover { background:#16a34a; transform:translateY(-1px); box-shadow:0 4px 12px rgba(34,197,94,.3); }
+        .ticker-tape { background:rgba(15,23,42,.9); border-top:1px solid rgba(34,197,94,.2); border-bottom:1px solid rgba(34,197,94,.2); padding:12px 0; overflow:hidden; position:sticky; top:0; z-index:50; }
+        .ticker-wrap { display:flex; width:max-content; animation:ticker 45s linear infinite; gap:60px; }
+        .ticker-item { display:flex; align-items:center; gap:8px; white-space:nowrap; font-size:.875rem; color:#94a3b8; }
+        @keyframes ticker { 0%{transform:translateX(0)}100%{transform:translateX(-50%)} }
+        .history-table { width:100%; border-collapse:collapse; font-size:.875rem; }
+        .history-table th { background:rgba(34,197,94,.1); color:#22c55e; padding:12px; text-align:left; border-bottom:1px solid rgba(34,197,94,.2); font-weight:600; }
+        .history-table td { padding:10px 12px; border-bottom:1px solid rgba(30,41,59,.5); }
+        .status-win  { color:#22c55e; font-weight:700; }
+        .status-loss { color:#ef4444; font-weight:700; }
+        .legal-notice { font-size:.65rem; color:#64748b; line-height:1.4; border-top:1px solid rgba(30,41,59,.5); padding-top:20px; margin-top:40px; }
+        .affiliate-disclaimer { font-size:.7rem; color:#94a3b8; margin-bottom:10px; font-style:italic; }
+        .racional-box { background:rgba(15,23,42,.6); padding:12px; border-radius:4px; margin-bottom:16px; }
+        .day-divider { border-left:3px solid rgba(34,197,94,.4); padding-left:16px; margin-bottom:24px; margin-top:40px; }
+        .day-divider.blue  { border-color:rgba(59,130,246,.4); }
+        .day-divider.purple { border-color:rgba(168,85,247,.4); }
     </style>
 </head>
 <body>
@@ -50,18 +47,18 @@
 <!-- TICKER -->
 <div class="ticker-tape">
     <div class="ticker-wrap">
-        <span class="ticker-item"><span class="text-green-400">●</span><span>NOT vs SAL</span><span class="text-green-400 font-bold">Salford City Vence 1.69</span><i class="fas fa-arrow-up text-green-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-blue-400">●</span><span>NOT vs SAL</span><span class="text-blue-400 font-bold">Under 2.5 Golos 1.72</span><i class="fas fa-arrow-up text-blue-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-purple-400">●</span><span>NOT vs SAL</span><span class="text-purple-400 font-bold">Ambas Marcam 2.10</span><i class="fas fa-arrow-up text-purple-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-amber-400">●</span><span>NOT vs SAL</span><span class="text-amber-400 font-bold">Notts County Vence 2.10 (ZEBRA)</span><i class="fas fa-arrow-up text-amber-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-yellow-400">★</span><span>UCL FINAL 30 MAI</span><span class="text-yellow-400 font-bold">Arsenal vs PSG · Budapeste · Arsenal 1.85</span></span>
-        <span class="ticker-item"><span class="text-slate-500">◈ ALPHA TERMINAL v4.6 ◈ 25 MAI 2026 ◈ EFL LEAGUE TWO PLAYOFF FINAL ◈ WEMBLEY ◈ SRIJ COMPLIANT ◈</span></span>
-        <span class="ticker-item"><span class="text-green-400">●</span><span>NOT vs SAL</span><span class="text-green-400 font-bold">Salford City Vence 1.69</span><i class="fas fa-arrow-up text-green-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-blue-400">●</span><span>NOT vs SAL</span><span class="text-blue-400 font-bold">Under 2.5 Golos 1.72</span><i class="fas fa-arrow-up text-blue-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-purple-400">●</span><span>NOT vs SAL</span><span class="text-purple-400 font-bold">Ambas Marcam 2.10</span><i class="fas fa-arrow-up text-purple-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-amber-400">●</span><span>NOT vs SAL</span><span class="text-amber-400 font-bold">Notts County Vence 2.10 (ZEBRA)</span><i class="fas fa-arrow-up text-amber-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-yellow-400">★</span><span>UCL FINAL 30 MAI</span><span class="text-yellow-400 font-bold">Arsenal vs PSG · Budapeste · Arsenal 1.85</span></span>
-        <span class="ticker-item"><span class="text-slate-500">◈ ALPHA TERMINAL v4.6 ◈ 25 MAI 2026 ◈ EFL LEAGUE TWO PLAYOFF FINAL ◈ WEMBLEY ◈ SRIJ COMPLIANT ◈</span></span>
+        <span class="ticker-item"><span class="text-green-400">●</span><span>POR vs CHI</span><span class="text-green-400 font-bold">Portugal Vence 1.40 · 6 Jun</span><i class="fas fa-arrow-up text-green-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-blue-400">●</span><span>ENG vs KOR</span><span class="text-blue-400 font-bold">Inglaterra Vence 1.55 · 6 Jun</span><i class="fas fa-arrow-up text-blue-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-purple-400">●</span><span>FRA vs ALG</span><span class="text-purple-400 font-bold">Over 2.5 Golos 1.62 · 8 Jun</span><i class="fas fa-arrow-up text-purple-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-green-400">●</span><span>BRA vs ALE</span><span class="text-green-400 font-bold">Brasil Vence 1.70 · 8 Jun</span><i class="fas fa-arrow-up text-green-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-amber-400">●</span><span>ARG vs BRA</span><span class="text-amber-400 font-bold">Empate 3.40 (ZEBRA) · 8 Jun</span><i class="fas fa-arrow-up text-amber-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-slate-500">◈ ALPHA TERMINAL v4.6 ◈ 1–8 JUN 2026 ◈ AMIGÁVEIS PRÉ-MUNDIAL ◈ SRIJ COMPLIANT ◈</span></span>
+        <span class="ticker-item"><span class="text-green-400">●</span><span>POR vs CHI</span><span class="text-green-400 font-bold">Portugal Vence 1.40 · 6 Jun</span><i class="fas fa-arrow-up text-green-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-blue-400">●</span><span>ENG vs KOR</span><span class="text-blue-400 font-bold">Inglaterra Vence 1.55 · 6 Jun</span><i class="fas fa-arrow-up text-blue-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-purple-400">●</span><span>FRA vs ALG</span><span class="text-purple-400 font-bold">Over 2.5 Golos 1.62 · 8 Jun</span><i class="fas fa-arrow-up text-purple-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-green-400">●</span><span>BRA vs ALE</span><span class="text-green-400 font-bold">Brasil Vence 1.70 · 8 Jun</span><i class="fas fa-arrow-up text-green-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-amber-400">●</span><span>ARG vs BRA</span><span class="text-amber-400 font-bold">Empate 3.40 (ZEBRA) · 8 Jun</span><i class="fas fa-arrow-up text-amber-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-slate-500">◈ ALPHA TERMINAL v4.6 ◈ 1–8 JUN 2026 ◈ AMIGÁVEIS PRÉ-MUNDIAL ◈ SRIJ COMPLIANT ◈</span></span>
     </div>
 </div>
 
@@ -72,7 +69,7 @@
         <div class="flex justify-between items-start mb-8 flex-wrap gap-4">
             <div>
                 <h1 class="text-5xl md:text-6xl font-bold text-green-400 mb-2 tracking-tight">THE ALPHA TERMINAL</h1>
-                <p class="text-slate-400 text-sm uppercase tracking-widest">Institutional Grade Predictive Intelligence | 25 MAI 2026</p>
+                <p class="text-slate-400 text-sm uppercase tracking-widest">Institutional Grade Predictive Intelligence | 1–8 JUN 2026</p>
             </div>
             <div class="text-right">
                 <div class="text-3xl font-bold text-green-400" id="live-clock">00:00:00</div>
@@ -81,186 +78,303 @@
         </div>
         <div class="bloomberg-card p-6 rounded-lg border-l-4 border-yellow-500/30">
             <p class="text-sm text-slate-300 leading-relaxed">
-                <strong class="text-yellow-400">Segunda-feira de feriado — Wembley em festa:</strong> Final da League Two entre <strong>Notts County e Salford City</strong> (15:00 BST / 16:00 CEST) — promoção para a League One em jogo. Salford venceu os dois dérbi desta época. Notts County tem 20.000 adeptos no estádio vs apenas 6.000 de Salford — mas os Magpies chegam em má forma. Mais: análise pós-jornada final da Premier League e antevisão da <strong class="text-yellow-400">final da Champions (Arsenal vs PSG, 30 mai)</strong>.
+                <strong class="text-yellow-400">Semana pré-Mundial:</strong> Época europeia de clubes encerrada. Esta semana os grandes palcos são os amigáveis de preparação — última oportunidade das seleções afinarem antes do Mundial 2026 (arranca 11 Jun). Dias 1-5 sem jogos de topo. <strong>6 Jun:</strong> Portugal vs Chile, Inglaterra vs Coreia do Sul. <strong>8 Jun:</strong> França vs Argélia, Brasil vs Alemanha, Argentina vs Brasil.
             </p>
             <p class="affiliate-disclaimer mt-2">Nota: Este terminal contém links de afiliados. Ao utilizar os nossos links, poderá receber bónus exclusivos enquanto apoia a nossa inteligência preditiva.</p>
         </div>
     </section>
 
-    <!-- UCL FINAL PREVIEW BANNER -->
-    <section class="mb-10">
-        <div class="ucl-banner">
-            <div class="text-center mb-6">
-                <div class="text-xs text-yellow-400 uppercase tracking-widest mb-1">⭐ UEFA Champions League 2025/26 — Final</div>
-                <div class="text-lg text-yellow-300 font-bold">Sábado, 30 de Maio · 21:00 CEST · Puskás Aréna, Budapeste</div>
-            </div>
-            <div class="grid grid-cols-3 gap-4 items-center mb-6">
-                <div class="team-badge">
-                    <div class="text-2xl font-bold text-white mb-1">Arsenal FC</div>
-                    <div class="text-xs text-slate-400">Premier League Campeão</div>
-                    <div class="text-xs text-yellow-400 mt-1">1.ª final da UCL desde 2006</div>
-                    <div class="text-xs text-slate-500 mt-1">Arteta · Saka · Havertz · Odegaard</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-4xl font-bold text-yellow-400 mb-1">VS</div>
-                    <i class="fas fa-trophy text-yellow-400 text-xl block mb-1"></i>
-                    <div class="text-xs text-slate-400 uppercase tracking-widest">Final UCL</div>
-                </div>
-                <div class="team-badge">
-                    <div class="text-2xl font-bold text-white mb-1">Paris SG</div>
-                    <div class="text-xs text-slate-400">Ligue 1 Campeão</div>
-                    <div class="text-xs text-yellow-400 mt-1">Busca o 1.º título europeu</div>
-                    <div class="text-xs text-slate-500 mt-1">Luis Enrique · Mbappé · Dembélé</div>
-                </div>
-            </div>
-            <div class="grid grid-cols-3 gap-3 text-center">
-                <div class="odds-box"><div class="text-xs text-slate-400 uppercase mb-1">Arsenal Vence</div><div class="text-2xl font-bold text-green-400">1.85</div></div>
-                <div class="odds-box"><div class="text-xs text-slate-400 uppercase mb-1">Empate (90')</div><div class="text-2xl font-bold text-slate-300">3.60</div></div>
-                <div class="odds-box"><div class="text-xs text-slate-400 uppercase mb-1">PSG Vence</div><div class="text-2xl font-bold text-blue-400">4.20</div></div>
-            </div>
-            <p class="text-xs text-slate-500 text-center mt-3">Tips para a final da UCL no terminal de 29 mai · Apostas já abertas</p>
-        </div>
-    </section>
+    <!-- ═══ 6 JUNHO ═══ -->
+    <div class="day-divider">
+        <p class="text-xs text-green-400 uppercase tracking-widest">Tips do Dia</p>
+        <h2 class="text-2xl font-bold text-white">Sábado, 6 de Junho 2026</h2>
+        <p class="text-xs text-slate-400 mt-1">Amigáveis Preparação Mundial · 5 dias antes do apito inicial</p>
+    </div>
 
-    <!-- TIPS -->
     <section class="mb-12">
-        <h2 class="text-2xl font-bold mb-2 text-green-400">⚡ Top Picks (25 MAI 2026)</h2>
-        <p class="text-xs text-slate-500 uppercase tracking-widest mb-6">EFL League Two Playoff Final · Wembley · 16:00 CEST</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <h2 class="text-2xl font-bold mb-6 text-green-400">⚡ Top Picks (6 JUN 2026)</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
 
-            <!-- TIP-01 -->
+            <!-- TIP-01: Portugal vs Chile -->
             <div class="bloomberg-card p-6 rounded-lg">
                 <div class="flex justify-between items-start mb-4">
                     <span class="tip-badge badge-top">Top Pick</span>
                     <span class="text-xs text-slate-500">TIP-01</span>
                 </div>
-                <h3 class="text-lg font-bold mb-1">Notts County vs Salford City</h3>
-                <p class="text-slate-400 text-xs mb-4">EFL League Two Playoff Final • 25 Mai • 16:00 CEST • Wembley Stadium</p>
+                <h3 class="text-lg font-bold mb-1">🇵🇹 Portugal vs Chile 🇨🇱</h3>
+                <p class="text-slate-400 text-xs mb-4">Amigável Preparação · 6 Jun · 22:30 CEST · NRG Stadium, Houston</p>
                 <div class="mb-4">
                     <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
-                    <div class="odds-display text-green-400">Salford City Vence</div>
+                    <div class="odds-display text-green-400">Portugal Vence</div>
                 </div>
                 <div class="flex justify-between mb-4 text-sm">
-                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-green-400">1.69</div></div>
-                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">7/10</div></div>
-                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-green-400">+14%</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-green-400">1.40</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">8/10</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-green-400">+10%</div></div>
                 </div>
                 <div class="mb-4">
-                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-green-400 font-bold">73%</span></div>
-                    <div class="confidence-bar"><div class="confidence-fill high" style="width:73%"></div></div>
+                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-green-400 font-bold">80%</span></div>
+                    <div class="confidence-bar"><div class="confidence-fill high" style="width:80%"></div></div>
                 </div>
                 <div class="racional-box border-l-2 border-green-400/40">
-                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> Salford venceu os dois confrontos desta época (2-1 em Meadow Lane e 2-1 em casa) e tem 5 vitórias consecutivas no H2H vs Notts County. Karl Robinson em excelente forma — 8 dos últimos 12 jogos ganhos sem sofrer. Notts County chega apenas com 2V nos últimos 8 jogos — forma horrível pré-final. Salford concedeu apenas 8 golos nos últimos 14 jogos. A vantagem de 20.000 adeptos do Notts não compensa a diferença de forma recente.</p>
+                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> Portugal venceu EUA 2-0 em março e empatou no Azteca (0-0 vs México). Chile não qualificou para o Mundial. Ronaldo em preparação para a 5.ª Copa — plantel motivado com Bruno Fernandes, Vitinha, Gonçalo Ramos e Pedro Neto. Portugal não perde amigáveis de preparação mundialista desde 2022. Jogo no mesmo estádio (NRG Houston) onde defrontam DR Congo a 17 de junho — reconhecimento do palco.</p>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
-                    <button onclick="copyTip('Notts County vs Salford City | Salford City Vence @ 1.69')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <button onclick="copyTip('Portugal vs Chile | Portugal Vence @ 1.40')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
                     <a href="YOUR_BETANO_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Agora</a>
                 </div>
             </div>
 
-            <!-- TIP-02 -->
+            <!-- TIP-02: Inglaterra vs Coreia do Sul -->
             <div class="bloomberg-card p-6 rounded-lg">
                 <div class="flex justify-between items-start mb-4">
                     <span class="tip-badge badge-value">Value Pick</span>
                     <span class="text-xs text-slate-500">TIP-02</span>
                 </div>
-                <h3 class="text-lg font-bold mb-1">Notts County vs Salford City</h3>
-                <p class="text-slate-400 text-xs mb-4">EFL League Two Playoff Final • 25 Mai • 16:00 CEST • Wembley Stadium</p>
+                <h3 class="text-lg font-bold mb-1">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra vs Coreia do Sul 🇰🇷</h3>
+                <p class="text-slate-400 text-xs mb-4">Amigável Preparação · 6 Jun · 22:00 CEST · Camping World Stadium, Orlando</p>
                 <div class="mb-4">
                     <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
-                    <div class="odds-display text-blue-400">Under 2.5 Golos</div>
+                    <div class="odds-display text-blue-400">Inglaterra Vence</div>
                 </div>
                 <div class="flex justify-between mb-4 text-sm">
-                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-blue-400">1.72</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-blue-400">1.55</div></div>
                     <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">7/10</div></div>
-                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-blue-400">+16%</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-blue-400">+12%</div></div>
                 </div>
                 <div class="mb-4">
-                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-blue-400 font-bold">76%</span></div>
-                    <div class="confidence-bar"><div class="confidence-fill med" style="width:76%"></div></div>
+                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-blue-400 font-bold">72%</span></div>
+                    <div class="confidence-bar"><div class="confidence-fill med" style="width:72%"></div></div>
                 </div>
                 <div class="racional-box border-l-2 border-blue-400/40">
-                    <p class="text-xs text-slate-300"><span class="text-blue-400 font-bold">Racional:</span> Todos os últimos 4 jogos do Notts County foram Under 2.5. Salford viu 3+ golos em apenas 5 dos últimos 14 jogos. O playoff semi-final do Notts vs Chesterfield produziu apenas 1 golo em 2 jogos. Finais de playoff EFL tendem a ser cautelosas — media de 1.7 golos nos últimos 5 anos. Pressão máxima = conservadorismo tático. 61% de probabilidade segundo modelos estatísticos.</p>
+                    <p class="text-xs text-slate-300"><span class="text-blue-400 font-bold">Racional:</span> Tuchel quer afinar o 4-2-3-1 com Bellingham trequartista e Palmer no 10 — ensaio final antes de Croácia a 11 jun. Coreia sem Son (lesionado). H2H: Inglaterra venceu os últimos 3 encontros. Qualificação inglesa perfeita (8/8 sem sofrer golos). Palmer, Saka e Bellingham em ritmo elevado após época longa.</p>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
-                    <button onclick="copyTip('Notts County vs Salford City | Under 2.5 Golos @ 1.72')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <button onclick="copyTip('Inglaterra vs Coreia do Sul | Inglaterra Vence @ 1.55')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
                     <a href="YOUR_BETCLIC_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Agora</a>
                 </div>
             </div>
         </div>
 
-        <!-- TIP-03 -->
+        <!-- TIP-03: Espanha vs Marrocos (6 Jun) -->
         <div class="bloomberg-card p-6 rounded-lg mb-8">
             <div class="flex justify-between items-start mb-4">
                 <span class="tip-badge badge-sharp">Sharp Pick</span>
                 <span class="text-xs text-slate-500">TIP-03</span>
             </div>
-            <h3 class="text-lg font-bold mb-1">Notts County vs Salford City</h3>
-            <p class="text-slate-400 text-xs mb-4">EFL League Two Playoff Final • 25 Mai • 16:00 CEST • Wembley Stadium</p>
+            <h3 class="text-lg font-bold mb-1">🇪🇸 Espanha vs Marrocos 🇲🇦</h3>
+            <p class="text-slate-400 text-xs mb-4">Amigável Preparação · 6 Jun · 00:30 CEST (madrugada) · MetLife Stadium, Nova Iorque</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
                     <div class="text-xs text-slate-400 uppercase tracking-wide mb-2">Selection</div>
-                    <div class="text-2xl font-bold text-purple-400">Salford Vence + Under 2.5<br><span class="text-base">(Acumulada)</span></div>
+                    <div class="text-2xl font-bold text-purple-400">Espanha Não Perde (1X)</div>
                     <div class="racional-box border-l-2 border-purple-400/40 mt-3">
-                        <p class="text-xs text-slate-300"><span class="text-purple-400 font-bold">Racional:</span> Combinar TIP-01 + TIP-02 numa acumulada. Salford ganhou os dois dérbi desta época por 2-1 — exatamente Under 2.5. O perfil mais provável é uma vitória apertada de Salford por 1-0 ou 2-0. Acumulada com odds atractiva que reflecte o cenário mais plausível segundo todos os modelos e analistas.</p>
+                        <p class="text-xs text-slate-300"><span class="text-purple-400 font-bold">Racional:</span> Espanha campeã europeia em 2024 — Yamal, Pedri, Morata continuam intocáveis. Marrocos qualificou para o Mundial mas como surpresa do Grupo C. H2H: Espanha invicta em 9 dos últimos 10 encontros. De La Fuente quer ritmo competitivo — vai usar plantel completo. Dupla hipótese cobre o empate num jogo que Espanha controlará.</p>
                     </div>
                 </div>
                 <div>
                     <div class="flex justify-between text-sm mb-4">
-                        <div><div class="text-xs text-slate-400 uppercase">Odds Aprox.</div><div class="font-bold text-purple-400">~2.90</div></div>
-                        <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">4/10</div></div>
-                        <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-purple-400">+28%</div></div>
+                        <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-purple-400">1.25</div></div>
+                        <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">9/10</div></div>
+                        <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-purple-400">+7%</div></div>
                     </div>
                     <div class="mb-4">
-                        <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-purple-400 font-bold">58%</span></div>
-                        <div class="confidence-bar"><div class="confidence-fill high" style="width:58%"></div></div>
+                        <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-purple-400 font-bold">85%</span></div>
+                        <div class="confidence-bar"><div class="confidence-fill high" style="width:85%"></div></div>
                     </div>
                     <div class="bg-slate-800/40 rounded p-3 text-xs text-slate-400 border-l-2 border-purple-400/20">
                         <i class="fas fa-lightbulb text-purple-400 mr-1"></i>
-                        Construir no boletim como acumulada simples: Salford Vence + Under 2.5 Goals. Odds finais dependem da casa de apostas — verificar antes de apostar.
+                        Odd baixa mas ideal para acumular com TIP-01 e TIP-02 — múltipla ~2.16 com alta probabilidade combinada.
                     </div>
                 </div>
                 <div class="flex flex-col justify-center">
                     <a href="YOUR_SOLVERDE_AFFILIATE_LINK" target="_blank" class="bet-btn mb-3">Apostar com Bónus</a>
-                    <button onclick="copyTip('Notts County vs Salford City | Salford Vence + Under 2.5 Acumulada @ ~2.90')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <button onclick="copyTip('Espanha vs Marrocos | Espanha Não Perde (1X) @ 1.25')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- ZEBRA -->
-    <section class="mb-12">
+        <!-- ZEBRA 6 JUNHO: Alemanha vs Argentina -->
         <div class="bloomberg-card p-8 rounded-lg border-l-4 border-amber-400">
             <div class="flex justify-between items-start mb-6">
                 <span class="tip-badge badge-zebra">High Risk / High Reward</span>
-                <span class="text-xs text-slate-500">ZEBRA-01</span>
+                <span class="text-xs text-slate-500">ZEBRA-01 · 6 Jun</span>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                    <h2 class="text-2xl font-bold mb-2">Notts County vs Salford City</h2>
-                    <p class="text-slate-400 text-xs mb-4">EFL League Two Playoff Final • 25 Mai • 16:00 CEST • Wembley</p>
+                    <h2 class="text-2xl font-bold mb-2">🇩🇪 Alemanha vs Argentina 🇦🇷</h2>
+                    <p class="text-slate-400 text-xs mb-4">Amigável Preparação · 6 Jun · 02:30 CEST · SoFi Stadium, Los Angeles</p>
                     <div class="mb-6">
                         <div class="text-xs text-slate-400 uppercase tracking-wide mb-2">Selection</div>
-                        <div class="text-3xl font-bold text-amber-400">Notts County Vence</div>
+                        <div class="text-3xl font-bold text-amber-400">Alemanha Vence</div>
                     </div>
                     <div class="bg-slate-900/50 p-4 rounded border-l-2 border-amber-400/30">
-                        <p class="text-sm text-slate-300 italic"><span class="text-amber-400 font-bold">Racional:</span> Notts County são os favoritos dos bookmakers (8/5 vs 13/8 de Salford). Têm um diferencial de golos superior na época (+12 vs Salford). Vencem há 180.000+ adeptos — o maior apoio em qualquer playoff final da League Two em anos. Notts venceram a final da National League em 2023 a Wembley. A experiência de grandes momentos e o apoio esmagador de 20.000 adeptos pode ser decisivo. Odd de 2.10 para o favorito dos anúncios.</p>
+                        <p class="text-sm text-slate-300 italic"><span class="text-amber-400 font-bold">Racional:</span> Alemanha em casa dos EUA — grande base de torcedores germano-americanos em LA. Nagelsmann quer desforra histórica após o 7-1 de 2014 ter tornado Argentina em campeã. Musiala, Wirtz e Gnabry são armas ofensivas brutais. Messi pode não jogar os 90' — preservação para o Mundial. Argentina depende muito do capitão e sem ele perde criatividade. Odd de 3.20 para uma Alemanha motivada contra uma Argentina descansada mas incompleta.</p>
                     </div>
                 </div>
                 <div class="flex flex-col justify-between">
                     <div>
                         <div class="flex justify-between mb-6 text-lg">
-                            <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-amber-400">2.10</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-amber-400">3.20</div></div>
                             <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">1/10</div></div>
-                            <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-amber-400">+22%</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-amber-400">+30%</div></div>
                         </div>
                         <div class="mb-6">
-                            <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-amber-400 font-bold">38%</span></div>
-                            <div class="confidence-bar"><div class="confidence-fill low" style="width:38%"></div></div>
+                            <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-amber-400 font-bold">28%</span></div>
+                            <div class="confidence-bar"><div class="confidence-fill low" style="width:28%"></div></div>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-3">
-                        <button onclick="copyTip('Notts County vs Salford City | Notts County Vence @ 2.10')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Zebra</button>
+                        <button onclick="copyTip('Alemanha vs Argentina | Alemanha Vence @ 3.20')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Zebra</button>
+                        <a href="YOUR_BETANO_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Zebra</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ 8 JUNHO ═══ -->
+    <div class="day-divider purple">
+        <p class="text-xs text-purple-400 uppercase tracking-widest">Tips do Dia</p>
+        <h2 class="text-2xl font-bold text-white">Segunda-feira, 8 de Junho 2026</h2>
+        <p class="text-xs text-slate-400 mt-1">Amigáveis Preparação Mundial · 3 dias antes do apito inicial</p>
+    </div>
+
+    <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-6 text-green-400">⚡ Top Picks (8 JUN 2026)</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+
+            <!-- TIP-04: França vs Argélia -->
+            <div class="bloomberg-card p-6 rounded-lg">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="tip-badge badge-top">Top Pick</span>
+                    <span class="text-xs text-slate-500">TIP-04</span>
+                </div>
+                <h3 class="text-lg font-bold mb-1">🇫🇷 França vs Argélia 🇩🇿</h3>
+                <p class="text-slate-400 text-xs mb-4">Amigável Preparação · 8 Jun · 21:00 CEST · MetLife Stadium, Nova Iorque</p>
+                <div class="mb-4">
+                    <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
+                    <div class="odds-display text-green-400">Over 2.5 Golos</div>
+                </div>
+                <div class="flex justify-between mb-4 text-sm">
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-green-400">1.62</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">7/10</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-green-400">+15%</div></div>
+                </div>
+                <div class="mb-4">
+                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-green-400 font-bold">71%</span></div>
+                    <div class="confidence-bar"><div class="confidence-fill high" style="width:71%"></div></div>
+                </div>
+                <div class="racional-box border-l-2 border-green-400/40">
+                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> França vs Argélia é sempre um encontro carregado de emoção e golos — os últimos 3 H2H produziram 4-2, 3-1 e 2-0. França quer testar Mbappé, Camavinga e Tchouaméni em modo ofensivo antes do Grupo I. Argélia qualificou para o Mundial e vai ao MetLife com o plantel completo e sem nada a perder. Deschamps usa os titulares. Público massivo franco-argelino em Nova Iorque — ambiente explosivo que abre o jogo.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="copyTip('França vs Argélia | Over 2.5 Golos @ 1.62')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <a href="YOUR_BETANO_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Agora</a>
+                </div>
+            </div>
+
+            <!-- TIP-05: Brasil vs Alemanha -->
+            <div class="bloomberg-card p-6 rounded-lg">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="tip-badge badge-value">Value Pick</span>
+                    <span class="text-xs text-slate-500">TIP-05</span>
+                </div>
+                <h3 class="text-lg font-bold mb-1">🇧🇷 Brasil vs Alemanha 🇩🇪</h3>
+                <p class="text-slate-400 text-xs mb-4">Amigável Preparação · 8 Jun · 02:00 CEST (madrugada) · SoFi Stadium, Los Angeles</p>
+                <div class="mb-4">
+                    <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
+                    <div class="odds-display text-blue-400">Brasil Vence</div>
+                </div>
+                <div class="flex justify-between mb-4 text-sm">
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-blue-400">1.70</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">6/10</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-blue-400">+13%</div></div>
+                </div>
+                <div class="mb-4">
+                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-blue-400 font-bold">68%</span></div>
+                    <div class="confidence-bar"><div class="confidence-fill med" style="width:68%"></div></div>
+                </div>
+                <div class="racional-box border-l-2 border-blue-400/40">
+                    <p class="text-xs text-slate-300"><span class="text-blue-400 font-bold">Racional:</span> Brasil de Ancelotti quer desforra pelo 7-1 histórico. Vinicius Jr., Rodrygo e Raphinha ao melhor nível. Alemanha em transição geracional — Nagelsmann constrói equipa jovem, sem a solidez defensiva habitual. Brasil venceu os últimos 3 H2H desde 2014. Ancelotti não poupa ninguém — quer confirmar sistema antes de Marrocos a 13 de junho.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="copyTip('Brasil vs Alemanha | Brasil Vence @ 1.70')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <a href="YOUR_BETCLIC_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Agora</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- TIP-06: Portugal vs Adversário a confirmar (10 Jun) -->
+        <div class="bloomberg-card p-6 rounded-lg mb-8">
+            <div class="flex justify-between items-start mb-4">
+                <span class="tip-badge badge-sharp">Sharp Pick</span>
+                <span class="text-xs text-slate-500">TIP-06 · 10 Jun</span>
+            </div>
+            <h3 class="text-lg font-bold mb-1">🇵🇹 Portugal vs Adversário (Amigável Final) 🏟️</h3>
+            <p class="text-slate-400 text-xs mb-4">Amigável Preparação · 10 Jun · Hora e local a confirmar · 1 dia antes da abertura do Mundial</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                    <div class="text-xs text-slate-400 uppercase tracking-wide mb-2">Selection</div>
+                    <div class="text-2xl font-bold text-purple-400">Portugal Não Perde (1X)</div>
+                    <div class="racional-box border-l-2 border-purple-400/40 mt-3">
+                        <p class="text-xs text-slate-300"><span class="text-purple-400 font-bold">Racional:</span> Portugal joga o último amigável a 10 de junho, véspera da abertura do Mundial. Adversário ainda a confirmar — Martinez vai poupar titulares com cuidado mas não pode perder moralmente. Portugal inderrotado em amigáveis desde 2022. Dupla hipótese cobre qualquer resultado positivo — ideal para fechar a semana.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between text-sm mb-4">
+                        <div><div class="text-xs text-slate-400 uppercase">Odds (aprox.)</div><div class="font-bold text-purple-400">~1.20</div></div>
+                        <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">7/10</div></div>
+                        <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-purple-400">+6%</div></div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-purple-400 font-bold">84%</span></div>
+                        <div class="confidence-bar"><div class="confidence-fill high" style="width:84%"></div></div>
+                    </div>
+                    <div class="bg-slate-800/40 rounded p-3 text-xs text-slate-400 border-l-2 border-purple-400/20">
+                        <i class="fas fa-info-circle text-purple-400 mr-1"></i>
+                        Verificar adversário e odds definitivas antes de apostar. Confirmar na casa de apostas.
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center">
+                    <a href="YOUR_SOLVERDE_AFFILIATE_LINK" target="_blank" class="bet-btn mb-3">Apostar com Bónus</a>
+                    <button onclick="copyTip('Portugal (Amigável 10 Jun) | Portugal Não Perde (1X) @ ~1.20')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ZEBRA 8 JUNHO: Argentina vs Brasil -->
+        <div class="bloomberg-card p-8 rounded-lg border-l-4 border-amber-400">
+            <div class="flex justify-between items-start mb-6">
+                <span class="tip-badge badge-zebra">High Risk / High Reward</span>
+                <span class="text-xs text-slate-500">ZEBRA-02 · 8 Jun</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h2 class="text-2xl font-bold mb-2">🇦🇷 Argentina vs Brasil 🇧🇷</h2>
+                    <p class="text-slate-400 text-xs mb-4">Amigável Preparação · 8 Jun · 23:00 CEST · Hard Rock Stadium, Miami</p>
+                    <div class="mb-6">
+                        <div class="text-xs text-slate-400 uppercase tracking-wide mb-2">Selection</div>
+                        <div class="text-3xl font-bold text-amber-400">Empate</div>
+                    </div>
+                    <div class="bg-slate-900/50 p-4 rounded border-l-2 border-amber-400/30">
+                        <p class="text-sm text-slate-300 italic"><span class="text-amber-400 font-bold">Racional:</span> Clássico sul-americano em Miami — 70% do público argentino e brasileiro. Ambas as equipas vão gerir energia a 3 dias do Mundial. Messi e Vinicius não jogatodos os 90'. Em amigáveis mundialistas de alta pressão entre estes dois, o empate aconteceu em 4 dos últimos 7 confrontos. Jogo que nenhuma equipa quer perder antes da estreia — defensivismo mútuo = empate plausível. Odd de 3.40 compensa amplamente.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between mb-6 text-lg">
+                            <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-amber-400">3.40</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">1/10</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-amber-400">+32%</div></div>
+                        </div>
+                        <div class="mb-6">
+                            <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-amber-400 font-bold">26%</span></div>
+                            <div class="confidence-bar"><div class="confidence-fill low" style="width:26%"></div></div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button onclick="copyTip('Argentina vs Brasil | Empate @ 3.40')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Zebra</button>
                         <a href="YOUR_BETANO_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Zebra</a>
                     </div>
                 </div>
@@ -270,74 +384,35 @@
 
     <!-- HISTÓRICO -->
     <section class="mb-12">
-        <h2 class="text-2xl font-bold mb-6 text-green-400">📊 Histórico de Performance — Jornada 38 PL (24 MAI 2026)</h2>
+        <h2 class="text-2xl font-bold mb-6 text-green-400">📊 Histórico de Performance — Finais Europeias (Mai 2026)</h2>
         <div class="bloomberg-card p-6 rounded-lg overflow-x-auto">
             <table class="history-table">
                 <thead>
-                    <tr>
-                        <th>Jogo</th>
-                        <th>Competição</th>
-                        <th>Seleção</th>
-                        <th>Odds</th>
-                        <th>Resultado</th>
-                        <th>Status</th>
-                        <th>EV+</th>
-                    </tr>
+                    <tr><th>Jogo</th><th>Competição</th><th>Seleção</th><th>Odds</th><th>Resultado</th><th>Status</th><th>EV+</th></tr>
                 </thead>
                 <tbody>
-                    <tr class="bg-green-900/10">
-                        <td>Tottenham vs Everton</td>
-                        <td>Premier League</td>
-                        <td>Under 2.5 Golos</td>
-                        <td>1.80</td>
-                        <td>1-0 (Palhinha 43') ✓</td>
-                        <td class="status-win">✓ WIN</td>
-                        <td>+17%</td>
-                    </tr>
-                    <tr>
-                        <td>Sunderland vs Chelsea</td>
-                        <td>Premier League</td>
-                        <td>Chelsea Vence</td>
-                        <td>1.85</td>
-                        <td>2-1 para Sunderland</td>
-                        <td class="status-loss">✗ LOSS</td>
-                        <td>+14%</td>
-                    </tr>
-                    <tr class="bg-green-900/10">
-                        <td>Crystal Palace vs Arsenal</td>
-                        <td>Premier League</td>
-                        <td>Arsenal Não Perde (X2)</td>
-                        <td>1.18</td>
-                        <td>1-2 Arsenal ✓ (Jesus, Madueke)</td>
-                        <td class="status-win">✓ WIN</td>
-                        <td>+8%</td>
-                    </tr>
-                    <tr>
-                        <td>Tottenham vs Everton</td>
-                        <td>Premier League (Zebra)</td>
-                        <td>Everton Vence @ 3.20</td>
-                        <td>3.20</td>
-                        <td>0-1 Tottenham</td>
-                        <td class="status-loss">✗ LOSS</td>
-                        <td>+35%</td>
-                    </tr>
+                    <tr class="bg-green-900/10"><td>Aston Villa vs Freiburg</td><td>Liga Europa — Final</td><td>Villa Vence</td><td>1.62</td><td>3-0 ✓</td><td class="status-win">✓ WIN</td><td>+13%</td></tr>
+                    <tr class="bg-green-900/10"><td>Aston Villa vs Freiburg</td><td>Liga Europa — Final</td><td>Under 2.5 Golos</td><td>2.10</td><td>3-0 ✓</td><td class="status-win">✓ WIN</td><td>+21%</td></tr>
+                    <tr><td>Aston Villa vs Freiburg</td><td>Liga Europa — Final</td><td>Ambas Marcam (BTTS)</td><td>1.72</td><td>Freiburg não marcou</td><td class="status-loss">✗ LOSS</td><td>+15%</td></tr>
+                    <tr class="bg-green-900/10"><td>Notts County vs Salford</td><td>League Two Final (Zebra)</td><td>Notts County Vence</td><td>2.10</td><td>3-0 Notts ✓</td><td class="status-win">✓ WIN</td><td>+22%</td></tr>
+                    <tr class="bg-green-900/10"><td>PSG vs Arsenal</td><td>Champions League — Final</td><td>Under 2.5 Golos</td><td>1.95</td><td>1-1 AET ✓</td><td class="status-win">✓ WIN</td><td>+19%</td></tr>
+                    <tr class="bg-green-900/10"><td>PSG vs Arsenal</td><td>Champions League — Final</td><td>PSG Não Perde (X2)</td><td>1.30</td><td>PSG venceu nos penaltis ✓</td><td class="status-win">✓ WIN</td><td>+9%</td></tr>
+                    <tr class="bg-green-900/10"><td>PSG vs Arsenal</td><td>Champions League — Final</td><td>Havertz Marca (Anytime)</td><td>3.20</td><td>Havertz 6' ✓</td><td class="status-win">✓ WIN</td><td>+22%</td></tr>
+                    <tr><td>PSG vs Arsenal</td><td>Champions League (Zebra)</td><td>Arsenal Vence @ 2.20</td><td>2.20</td><td>PSG ganhou nos penalties</td><td class="status-loss">✗ LOSS</td><td>+28%</td></tr>
                 </tbody>
             </table>
-            <div class="mt-4 bloomberg-card p-4 rounded text-xs text-slate-400">
-                <span class="text-green-400 font-bold">Nota histórica 24 mai:</span> West Ham despromovido apesar de vencer Leeds 3-0 — Tottenham salvou-se com golo de Palhinha. Chelsea terminou em 10.º. Arsenal campeão com 85 pontos, PSG a 30 mai em Budapeste.
-            </div>
             <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                 <div class="bg-green-900/20 p-4 rounded border border-green-700/30">
-                    <p class="text-xs text-green-400 uppercase mb-1">24 Mai 2026</p>
-                    <p class="font-bold text-green-400">2W / 2L <span class="text-slate-400 font-normal text-xs">| Under Spurs ✓ + Arsenal X2 ✓</span></p>
+                    <p class="text-xs text-green-400 uppercase mb-1">Semana das Finais ⭐</p>
+                    <p class="font-bold text-green-400">6W / 2L <span class="text-slate-400 font-normal text-xs">| Melhor semana do terminal</span></p>
                 </div>
                 <div class="bg-slate-900/50 p-4 rounded border border-slate-700/50">
-                    <p class="text-xs text-slate-400 uppercase mb-1">Semana (21–24 Mai)</p>
-                    <p class="font-bold">15W / 14L <span class="text-slate-400 font-normal text-xs">| ROI equilibrado</span></p>
+                    <p class="text-xs text-slate-400 uppercase mb-1">Acumulado (Mai 2026)</p>
+                    <p class="font-bold">22W / 18L <span class="text-slate-400 font-normal text-xs">| ROI positivo</span></p>
                 </div>
-                <div class="bg-slate-900/50 p-4 rounded border border-green-700/20">
-                    <p class="text-xs text-green-400 uppercase mb-1">Melhor Pick da Semana</p>
-                    <p class="font-bold text-green-400">Arsenal X2 @ 1.18 <span class="text-slate-400 font-normal text-xs">| 87% confiança confirmada</span></p>
+                <div class="bg-amber-900/20 p-4 rounded border border-amber-700/30">
+                    <p class="text-xs text-amber-400 uppercase mb-1">Melhor Pick do Mês</p>
+                    <p class="font-bold text-amber-400">Havertz Anytime @ 3.20 ✓</p>
                 </div>
             </div>
         </div>
@@ -347,7 +422,7 @@
     <footer class="py-12">
         <div class="text-center text-slate-500 text-xs mb-8 border-t border-slate-700 pt-8">
             <p>© 2026 The Alpha Terminal | Powered by Predictive Intelligence</p>
-            <p class="mt-2">Última atualização: 25 MAI 2026 | 09:00 GMT+1 | Próxima: 29 MAI — Antevisão Final UCL Arsenal vs PSG</p>
+            <p class="mt-2">Última atualização: 1 JUN 2026 | 09:00 GMT+1 | Cobertura: 1–8 Jun 2026 | Próxima edição: 11 Jun — Abertura Mundial</p>
         </div>
         <div class="legal-notice">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -357,38 +432,22 @@
                 </div>
                 <div>
                     <h4 class="font-bold text-slate-400 mb-2 uppercase tracking-widest">Jogo Responsável</h4>
-                    <p>Defina limites de depósito e tempo. Nunca aposte dinheiro destinado a despesas essenciais. O "The Alpha Terminal" fornece análises baseadas em dados, mas não garante lucros. O risco é inteiramente do apostador.</p>
+                    <p>Defina limites de depósito e tempo. Nunca aposte dinheiro destinado a despesas essenciais. O risco é inteiramente do apostador.</p>
                 </div>
                 <div>
                     <h4 class="font-bold text-slate-400 mb-2 uppercase tracking-widest">Contactos de Apoio</h4>
                     <p>Linha de Apoio ao Jogador: +351 211 451 550<br>Site SRIJ: www.srij.turismodeportugal.pt<br>Autoexclusão disponível em todas as plataformas licenciadas.</p>
                 </div>
             </div>
-            <div class="text-center mt-8 text-[10px] opacity-50">
-                ESTE TERMINAL OPERA EM CONFORMIDADE COM A LEI N.º 45/2011 E O REGIME JURÍDICO DOS JOGOS E APOSTAS ONLINE (RJO).
-            </div>
+            <div class="text-center mt-8 text-[10px] opacity-50">ESTE TERMINAL OPERA EM CONFORMIDADE COM A LEI N.º 45/2011 E O REGIME JURÍDICO DOS JOGOS E APOSTAS ONLINE (RJO).</div>
         </div>
     </footer>
-
 </div>
 
 <script>
-    function copyTip(text) {
-        navigator.clipboard.writeText(text).then(() => {
-            alert('Tip copiada para a área de transferência!');
-        }).catch(() => {
-            prompt('Copia este texto:', text);
-        });
-    }
-    function updateClock() {
-        const now = new Date();
-        document.getElementById('live-clock').textContent =
-            String(now.getHours()).padStart(2,'0') + ':' +
-            String(now.getMinutes()).padStart(2,'0') + ':' +
-            String(now.getSeconds()).padStart(2,'0');
-    }
-    setInterval(updateClock, 1000);
-    updateClock();
+    function copyTip(t) { navigator.clipboard.writeText(t).then(()=>alert('Tip copiada!')).catch(()=>prompt('Copia:',t)); }
+    function updateClock() { const n=new Date(); document.getElementById('live-clock').textContent=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0')+':'+String(n.getSeconds()).padStart(2,'0'); }
+    setInterval(updateClock,1000); updateClock();
 </script>
 </body>
 </html>
