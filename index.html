@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Alpha Terminal | 1–8 Jun 2026</title>
+    <title>The Alpha Terminal | Mundial 2026 | 15–22 Jun</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -26,7 +26,7 @@
         .bet-btn { background:#22c55e; color:#0f172a; padding:10px; border-radius:4px; font-family:'IBM Plex Mono',monospace; font-weight:700; text-align:center; display:block; width:100%; text-transform:uppercase; font-size:.875rem; text-decoration:none; }
         .bet-btn:hover { background:#16a34a; transform:translateY(-1px); box-shadow:0 4px 12px rgba(34,197,94,.3); }
         .ticker-tape { background:rgba(15,23,42,.9); border-top:1px solid rgba(34,197,94,.2); border-bottom:1px solid rgba(34,197,94,.2); padding:12px 0; overflow:hidden; position:sticky; top:0; z-index:50; }
-        .ticker-wrap { display:flex; width:max-content; animation:ticker 45s linear infinite; gap:60px; }
+        .ticker-wrap { display:flex; width:max-content; animation:ticker 50s linear infinite; gap:60px; }
         .ticker-item { display:flex; align-items:center; gap:8px; white-space:nowrap; font-size:.875rem; color:#94a3b8; }
         @keyframes ticker { 0%{transform:translateX(0)}100%{transform:translateX(-50%)} }
         .history-table { width:100%; border-collapse:collapse; font-size:.875rem; }
@@ -37,9 +37,14 @@
         .legal-notice { font-size:.65rem; color:#64748b; line-height:1.4; border-top:1px solid rgba(30,41,59,.5); padding-top:20px; margin-top:40px; }
         .affiliate-disclaimer { font-size:.7rem; color:#94a3b8; margin-bottom:10px; font-style:italic; }
         .racional-box { background:rgba(15,23,42,.6); padding:12px; border-radius:4px; margin-bottom:16px; }
-        .day-divider { border-left:3px solid rgba(34,197,94,.4); padding-left:16px; margin-bottom:24px; margin-top:40px; }
-        .day-divider.blue  { border-color:rgba(59,130,246,.4); }
-        .day-divider.purple { border-color:rgba(168,85,247,.4); }
+        .day-divider { border-left:4px solid rgba(34,197,94,.5); padding-left:16px; margin-bottom:28px; margin-top:48px; }
+        .day-divider.d16 { border-color:rgba(59,130,246,.5); }
+        .day-divider.d17 { border-color:rgba(250,204,21,.7); }
+        .day-divider.d18 { border-color:rgba(168,85,247,.5); }
+        .day-divider.d19 { border-color:rgba(239,68,68,.5); }
+        .day-divider.d20 { border-color:rgba(20,184,166,.5); }
+        .day-divider.d21 { border-color:rgba(251,146,60,.5); }
+        .por-highlight { background:rgba(34,197,94,.06); border:1px solid rgba(34,197,94,.2); border-radius:8px; padding:4px 0; }
     </style>
 </head>
 <body>
@@ -47,372 +52,889 @@
 <!-- TICKER -->
 <div class="ticker-tape">
     <div class="ticker-wrap">
-        <span class="ticker-item"><span class="text-green-400">●</span><span>POR vs CHI</span><span class="text-green-400 font-bold">Portugal Vence 1.40 · 6 Jun</span><i class="fas fa-arrow-up text-green-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-blue-400">●</span><span>ENG vs KOR</span><span class="text-blue-400 font-bold">Inglaterra Vence 1.55 · 6 Jun</span><i class="fas fa-arrow-up text-blue-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-purple-400">●</span><span>FRA vs ALG</span><span class="text-purple-400 font-bold">Over 2.5 Golos 1.62 · 8 Jun</span><i class="fas fa-arrow-up text-purple-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-green-400">●</span><span>BRA vs ALE</span><span class="text-green-400 font-bold">Brasil Vence 1.70 · 8 Jun</span><i class="fas fa-arrow-up text-green-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-amber-400">●</span><span>ARG vs BRA</span><span class="text-amber-400 font-bold">Empate 3.40 (ZEBRA) · 8 Jun</span><i class="fas fa-arrow-up text-amber-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-slate-500">◈ ALPHA TERMINAL v4.6 ◈ 1–8 JUN 2026 ◈ AMIGÁVEIS PRÉ-MUNDIAL ◈ SRIJ COMPLIANT ◈</span></span>
-        <span class="ticker-item"><span class="text-green-400">●</span><span>POR vs CHI</span><span class="text-green-400 font-bold">Portugal Vence 1.40 · 6 Jun</span><i class="fas fa-arrow-up text-green-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-blue-400">●</span><span>ENG vs KOR</span><span class="text-blue-400 font-bold">Inglaterra Vence 1.55 · 6 Jun</span><i class="fas fa-arrow-up text-blue-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-purple-400">●</span><span>FRA vs ALG</span><span class="text-purple-400 font-bold">Over 2.5 Golos 1.62 · 8 Jun</span><i class="fas fa-arrow-up text-purple-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-green-400">●</span><span>BRA vs ALE</span><span class="text-green-400 font-bold">Brasil Vence 1.70 · 8 Jun</span><i class="fas fa-arrow-up text-green-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-amber-400">●</span><span>ARG vs BRA</span><span class="text-amber-400 font-bold">Empate 3.40 (ZEBRA) · 8 Jun</span><i class="fas fa-arrow-up text-amber-400 ml-1"></i></span>
-        <span class="ticker-item"><span class="text-slate-500">◈ ALPHA TERMINAL v4.6 ◈ 1–8 JUN 2026 ◈ AMIGÁVEIS PRÉ-MUNDIAL ◈ SRIJ COMPLIANT ◈</span></span>
+        <span class="ticker-item"><span class="text-green-400">🇵🇹</span><span class="text-green-300 font-bold">PORTUGAL vs DR CONGO · 17 JUN · 18:00 · HOUSTON</span></span>
+        <span class="ticker-item"><span class="text-green-400">●</span><span>ESP vs CPV</span><span class="text-green-400 font-bold">Espanha Over 3.5 @ 1.65 · 15 Jun</span><i class="fas fa-arrow-up text-green-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-blue-400">●</span><span>FRA vs SEN</span><span class="text-blue-400 font-bold">França Vence @ 1.55 · 16 Jun</span><i class="fas fa-arrow-up text-blue-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-green-400">●</span><span>POR vs COD</span><span class="text-green-400 font-bold">Portugal Over 2.5 @ 1.50 · 17 Jun</span><i class="fas fa-arrow-up text-green-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-purple-400">●</span><span>ENG vs CRO</span><span class="text-purple-400 font-bold">Inglaterra Vence @ 1.60 · 17 Jun</span><i class="fas fa-arrow-up text-purple-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-amber-400">●</span><span>BRA vs HAI</span><span class="text-amber-400 font-bold">Brasil Over 3.5 @ 1.50 · 19 Jun</span><i class="fas fa-arrow-up text-amber-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-slate-500">◈ ALPHA TERMINAL v4.6 ◈ 15–22 JUN 2026 ◈ MUNDIAL 2026 · JORNADA 1 & 2 ◈ SRIJ COMPLIANT ◈</span></span>
+        <span class="ticker-item"><span class="text-green-400">🇵🇹</span><span class="text-green-300 font-bold">PORTUGAL vs DR CONGO · 17 JUN · 18:00 · HOUSTON</span></span>
+        <span class="ticker-item"><span class="text-green-400">●</span><span>ESP vs CPV</span><span class="text-green-400 font-bold">Espanha Over 3.5 @ 1.65 · 15 Jun</span><i class="fas fa-arrow-up text-green-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-blue-400">●</span><span>FRA vs SEN</span><span class="text-blue-400 font-bold">França Vence @ 1.55 · 16 Jun</span><i class="fas fa-arrow-up text-blue-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-green-400">●</span><span>POR vs COD</span><span class="text-green-400 font-bold">Portugal Over 2.5 @ 1.50 · 17 Jun</span><i class="fas fa-arrow-up text-green-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-purple-400">●</span><span>ENG vs CRO</span><span class="text-purple-400 font-bold">Inglaterra Vence @ 1.60 · 17 Jun</span><i class="fas fa-arrow-up text-purple-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-amber-400">●</span><span>BRA vs HAI</span><span class="text-amber-400 font-bold">Brasil Over 3.5 @ 1.50 · 19 Jun</span><i class="fas fa-arrow-up text-amber-400 ml-1"></i></span>
+        <span class="ticker-item"><span class="text-slate-500">◈ ALPHA TERMINAL v4.6 ◈ 15–22 JUN 2026 ◈ MUNDIAL 2026 · JORNADA 1 & 2 ◈ SRIJ COMPLIANT ◈</span></span>
     </div>
 </div>
 
 <div class="max-w-6xl mx-auto px-4 py-12">
 
     <!-- HEADER -->
-    <section class="mb-12">
+    <section class="mb-10">
         <div class="flex justify-between items-start mb-8 flex-wrap gap-4">
             <div>
                 <h1 class="text-5xl md:text-6xl font-bold text-green-400 mb-2 tracking-tight">THE ALPHA TERMINAL</h1>
-                <p class="text-slate-400 text-sm uppercase tracking-widest">Institutional Grade Predictive Intelligence | 1–8 JUN 2026</p>
+                <p class="text-slate-400 text-sm uppercase tracking-widest">Institutional Grade Predictive Intelligence | Mundial 2026 · 15–22 Jun</p>
             </div>
             <div class="text-right">
                 <div class="text-3xl font-bold text-green-400" id="live-clock">00:00:00</div>
                 <div class="text-xs text-slate-500 uppercase">GMT+1</div>
             </div>
         </div>
-        <div class="bloomberg-card p-6 rounded-lg border-l-4 border-yellow-500/30">
+        <div class="bloomberg-card p-6 rounded-lg border-l-4 border-yellow-500/40">
             <p class="text-sm text-slate-300 leading-relaxed">
-                <strong class="text-yellow-400">Semana pré-Mundial:</strong> Época europeia de clubes encerrada. Esta semana os grandes palcos são os amigáveis de preparação — última oportunidade das seleções afinarem antes do Mundial 2026 (arranca 11 Jun). Dias 1-5 sem jogos de topo. <strong>6 Jun:</strong> Portugal vs Chile, Inglaterra vs Coreia do Sul. <strong>8 Jun:</strong> França vs Argélia, Brasil vs Alemanha, Argentina vs Brasil.
+                <strong class="text-yellow-400">Mundial 2026 — Jornadas 1 e 2 em pleno:</strong> Semana decisiva com os grandes favoritos a entrarem em ação. Destaque absoluto para <strong class="text-green-400">Portugal vs DR Congo (17 Jun, 18:00)</strong> no NRG Stadium em Houston — Ronaldo na sua 5.ª Copa. Inglaterra, França, Espanha, Brasil e Argentina também em campo entre 15 e 21 de junho.
             </p>
             <p class="affiliate-disclaimer mt-2">Nota: Este terminal contém links de afiliados. Ao utilizar os nossos links, poderá receber bónus exclusivos enquanto apoia a nossa inteligência preditiva.</p>
         </div>
     </section>
 
-    <!-- ═══ 6 JUNHO ═══ -->
-    <div class="day-divider">
+    
+    <!-- ═══ 15 JUN ═══ -->
+    <div class="day-divider d16">
         <p class="text-xs text-green-400 uppercase tracking-widest">Tips do Dia</p>
-        <h2 class="text-2xl font-bold text-white">Sábado, 6 de Junho 2026</h2>
-        <p class="text-xs text-slate-400 mt-1">Amigáveis Preparação Mundial · 5 dias antes do apito inicial</p>
+        <h2 class="text-2xl font-bold text-white">15 Jun de Junho 2026</h2>
     </div>
 
-    <section class="mb-12">
-        <h2 class="text-2xl font-bold mb-6 text-green-400">⚡ Top Picks (6 JUN 2026)</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-
-            <!-- TIP-01: Portugal vs Chile -->
+    <section class="mb-10">
+        <h2 class="text-2xl font-bold mb-6 text-green-400">⚡ Top Picks (15 JUN)</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+    
             <div class="bloomberg-card p-6 rounded-lg">
                 <div class="flex justify-between items-start mb-4">
                     <span class="tip-badge badge-top">Top Pick</span>
-                    <span class="text-xs text-slate-500">TIP-01</span>
+                    <span class="text-xs text-slate-500">TIP-01-1</span>
                 </div>
-                <h3 class="text-lg font-bold mb-1">🇵🇹 Portugal vs Chile 🇨🇱</h3>
-                <p class="text-slate-400 text-xs mb-4">Amigável Preparação · 6 Jun · 22:30 CEST · NRG Stadium, Houston</p>
+                <h3 class="text-lg font-bold mb-1">Espanha vs Cabo Verde</h3>
                 <div class="mb-4">
                     <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
-                    <div class="odds-display text-green-400">Portugal Vence</div>
+                    <div class="odds-display text-green-400">Espanha Over 2.5 Golos</div>
                 </div>
                 <div class="flex justify-between mb-4 text-sm">
-                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-green-400">1.40</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-green-400">1.55</div></div>
                     <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">8/10</div></div>
-                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-green-400">+10%</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-green-400">+12%</div></div>
                 </div>
                 <div class="mb-4">
                     <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-green-400 font-bold">80%</span></div>
                     <div class="confidence-bar"><div class="confidence-fill high" style="width:80%"></div></div>
                 </div>
                 <div class="racional-box border-l-2 border-green-400/40">
-                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> Portugal venceu EUA 2-0 em março e empatou no Azteca (0-0 vs México). Chile não qualificou para o Mundial. Ronaldo em preparação para a 5.ª Copa — plantel motivado com Bruno Fernandes, Vitinha, Gonçalo Ramos e Pedro Neto. Portugal não perde amigáveis de preparação mundialista desde 2022. Jogo no mesmo estádio (NRG Houston) onde defrontam DR Congo a 17 de junho — reconhecimento do palco.</p>
+                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> Espanha entra como clara favorita. Cabo Verde é estreante e a diferença técnica é abismal. Espera-se domínio total da 'Roja'.</p>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
-                    <button onclick="copyTip('Portugal vs Chile | Portugal Vence @ 1.40')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
-                    <a href="YOUR_BETANO_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Agora</a>
+                    <button onclick="copyTip('Espanha vs Cabo Verde | Espanha Over 2.5 Golos @ 1.55')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <a href="#" target="_blank" class="bet-btn">Apostar Agora</a>
                 </div>
             </div>
-
-            <!-- TIP-02: Inglaterra vs Coreia do Sul -->
+        
             <div class="bloomberg-card p-6 rounded-lg">
                 <div class="flex justify-between items-start mb-4">
                     <span class="tip-badge badge-value">Value Pick</span>
-                    <span class="text-xs text-slate-500">TIP-02</span>
+                    <span class="text-xs text-slate-500">TIP-01-2</span>
                 </div>
-                <h3 class="text-lg font-bold mb-1">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra vs Coreia do Sul 🇰🇷</h3>
-                <p class="text-slate-400 text-xs mb-4">Amigável Preparação · 6 Jun · 22:00 CEST · Camping World Stadium, Orlando</p>
+                <h3 class="text-lg font-bold mb-1">Bélgica vs Egito</h3>
+                <div class="mb-4">
+                    <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
+                    <div class="odds-display text-blue-400">Bélgica Vence</div>
+                </div>
+                <div class="flex justify-between mb-4 text-sm">
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-blue-400">1.50</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">7/10</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-blue-400">+10%</div></div>
+                </div>
+                <div class="mb-4">
+                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-blue-400 font-bold">75%</span></div>
+                    <div class="confidence-bar"><div class="confidence-fill med" style="width:75%"></div></div>
+                </div>
+                <div class="racional-box border-l-2 border-green-400/40">
+                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> Bélgica tem uma geração em transição mas muito superior ao Egito de Salah, que chega em fim de ciclo.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="copyTip('Bélgica vs Egito | Bélgica Vence @ 1.50')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <a href="#" target="_blank" class="bet-btn">Apostar Agora</a>
+                </div>
+            </div>
+        </div>
+        <div class="bloomberg-card p-8 rounded-lg border-l-4 border-amber-400">
+            <div class="flex justify-between items-start mb-6">
+                <span class="tip-badge badge-zebra">High Risk / High Reward</span>
+                <span class="text-xs text-slate-500">ZEBRA-01 · 15 Jun</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h2 class="text-2xl font-bold mb-2">Arábia Saudita vs Uruguai</h2>
+                    <div class="mb-6">
+                        <div class="text-xs text-slate-400 uppercase tracking-wide mb-2">Selection</div>
+                        <div class="text-3xl font-bold text-amber-400">Uruguai Vence</div>
+                    </div>
+                    <div class="bg-slate-900/50 p-4 rounded border-l-2 border-amber-400/30">
+                        <p class="text-sm text-slate-300 italic"><span class="text-amber-400 font-bold">Racional:</span> Uruguai de Bielsa é intenso e deve superar a organização saudita. Darwin Nuñez em destaque.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between mb-6 text-lg">
+                            <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-amber-400">1.65</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">6/10</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-amber-400">+8%</div></div>
+                        </div>
+                        <div class="mb-6">
+                            <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-amber-400 font-bold">68%</span></div>
+                            <div class="confidence-bar"><div class="confidence-fill low" style="width:68%"></div></div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button onclick="copyTip('Arábia Saudita vs Uruguai | Uruguai Vence @ 1.65')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Zebra</button>
+                        <a href="#" target="_blank" class="bet-btn">Apostar Zebra</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+    <!-- ═══ 16 JUN ═══ -->
+    <div class="day-divider d17">
+        <p class="text-xs text-green-400 uppercase tracking-widest">Tips do Dia</p>
+        <h2 class="text-2xl font-bold text-white">16 Jun de Junho 2026</h2>
+    </div>
+
+    <section class="mb-10">
+        <h2 class="text-2xl font-bold mb-6 text-green-400">⚡ Top Picks (16 JUN)</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+    
+            <div class="bloomberg-card p-6 rounded-lg">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="tip-badge badge-top">Top Pick</span>
+                    <span class="text-xs text-slate-500">TIP-02-1</span>
+                </div>
+                <h3 class="text-lg font-bold mb-1">França vs Senegal</h3>
+                <div class="mb-4">
+                    <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
+                    <div class="odds-display text-green-400">França Vence</div>
+                </div>
+                <div class="flex justify-between mb-4 text-sm">
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-green-400">1.45</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">9/10</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-green-400">+15%</div></div>
+                </div>
+                <div class="mb-4">
+                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-green-400 font-bold">85%</span></div>
+                    <div class="confidence-bar"><div class="confidence-fill high" style="width:85%"></div></div>
+                </div>
+                <div class="racional-box border-l-2 border-green-400/40">
+                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> Mbappé e companhia não devem dar hipóteses ao campeão africano de 2022. Poderio ofensivo francês é imparável.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="copyTip('França vs Senegal | França Vence @ 1.45')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <a href="#" target="_blank" class="bet-btn">Apostar Agora</a>
+                </div>
+            </div>
+        
+            <div class="bloomberg-card p-6 rounded-lg">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="tip-badge badge-value">Value Pick</span>
+                    <span class="text-xs text-slate-500">TIP-02-2</span>
+                </div>
+                <h3 class="text-lg font-bold mb-1">Argentina vs Argélia</h3>
+                <div class="mb-4">
+                    <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
+                    <div class="odds-display text-blue-400">Argentina Over 1.5 Golos</div>
+                </div>
+                <div class="flex justify-between mb-4 text-sm">
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-blue-400">1.40</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">8/10</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-blue-400">+10%</div></div>
+                </div>
+                <div class="mb-4">
+                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-blue-400 font-bold">82%</span></div>
+                    <div class="confidence-bar"><div class="confidence-fill med" style="width:82%"></div></div>
+                </div>
+                <div class="racional-box border-l-2 border-green-400/40">
+                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> Messi na sua última dança. Argentina joga em 'casa' nos EUA com apoio massivo. Argélia defensivamente instável.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="copyTip('Argentina vs Argélia | Argentina Over 1.5 Golos @ 1.40')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <a href="#" target="_blank" class="bet-btn">Apostar Agora</a>
+                </div>
+            </div>
+        </div>
+        <div class="bloomberg-card p-8 rounded-lg border-l-4 border-amber-400">
+            <div class="flex justify-between items-start mb-6">
+                <span class="tip-badge badge-zebra">High Risk / High Reward</span>
+                <span class="text-xs text-slate-500">ZEBRA-02 · 16 Jun</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h2 class="text-2xl font-bold mb-2">Áustria vs Jordânia</h2>
+                    <div class="mb-6">
+                        <div class="text-xs text-slate-400 uppercase tracking-wide mb-2">Selection</div>
+                        <div class="text-3xl font-bold text-amber-400">Áustria Vence</div>
+                    </div>
+                    <div class="bg-slate-900/50 p-4 rounded border-l-2 border-amber-400/30">
+                        <p class="text-sm text-slate-300 italic"><span class="text-amber-400 font-bold">Racional:</span> Rangnick montou uma Áustria muito pressionante. Jordânia terá dificuldades em sair a jogar.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between mb-6 text-lg">
+                            <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-amber-400">1.55</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">7/10</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-amber-400">+12%</div></div>
+                        </div>
+                        <div class="mb-6">
+                            <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-amber-400 font-bold">74%</span></div>
+                            <div class="confidence-bar"><div class="confidence-fill low" style="width:74%"></div></div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button onclick="copyTip('Áustria vs Jordânia | Áustria Vence @ 1.55')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Zebra</button>
+                        <a href="#" target="_blank" class="bet-btn">Apostar Zebra</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+    <!-- ═══ 17 JUN ═══ -->
+    <div class="day-divider d18">
+        <p class="text-xs text-green-400 uppercase tracking-widest">Tips do Dia</p>
+        <h2 class="text-2xl font-bold text-white">17 Jun de Junho 2026</h2>
+    </div>
+
+    <section class="mb-10">
+        <h2 class="text-2xl font-bold mb-6 text-green-400">⚡ Top Picks (17 JUN)</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+    
+            <div class="bloomberg-card p-6 rounded-lg">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="tip-badge badge-top">Top Pick</span>
+                    <span class="text-xs text-slate-500">TIP-03-1</span>
+                </div>
+                <h3 class="text-lg font-bold mb-1">Portugal vs RD Congo</h3>
+                <div class="mb-4">
+                    <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
+                    <div class="odds-display text-green-400">Portugal Vence & Over 2.5</div>
+                </div>
+                <div class="flex justify-between mb-4 text-sm">
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-green-400">1.85</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">8/10</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-green-400">+18%</div></div>
+                </div>
+                <div class="mb-4">
+                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-green-400 font-bold">78%</span></div>
+                    <div class="confidence-bar"><div class="confidence-fill high" style="width:78%"></div></div>
+                </div>
+                <div class="racional-box border-l-2 border-green-400/40">
+                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> Estreia de Portugal. Ronaldo quer marcar logo a abrir. RD Congo é física mas taticamente limitada para o meio-campo luso.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="copyTip('Portugal vs RD Congo | Portugal Vence & Over 2.5 @ 1.85')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <a href="#" target="_blank" class="bet-btn">Apostar Agora</a>
+                </div>
+            </div>
+        
+            <div class="bloomberg-card p-6 rounded-lg">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="tip-badge badge-value">Value Pick</span>
+                    <span class="text-xs text-slate-500">TIP-03-2</span>
+                </div>
+                <h3 class="text-lg font-bold mb-1">Inglaterra vs Croácia</h3>
                 <div class="mb-4">
                     <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
                     <div class="odds-display text-blue-400">Inglaterra Vence</div>
                 </div>
                 <div class="flex justify-between mb-4 text-sm">
-                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-blue-400">1.55</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-blue-400">1.75</div></div>
                     <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">7/10</div></div>
-                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-blue-400">+12%</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-blue-400">+14%</div></div>
                 </div>
                 <div class="mb-4">
-                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-blue-400 font-bold">72%</span></div>
-                    <div class="confidence-bar"><div class="confidence-fill med" style="width:72%"></div></div>
+                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-blue-400 font-bold">70%</span></div>
+                    <div class="confidence-bar"><div class="confidence-fill med" style="width:70%"></div></div>
                 </div>
-                <div class="racional-box border-l-2 border-blue-400/40">
-                    <p class="text-xs text-slate-300"><span class="text-blue-400 font-bold">Racional:</span> Tuchel quer afinar o 4-2-3-1 com Bellingham trequartista e Palmer no 10 — ensaio final antes de Croácia a 11 jun. Coreia sem Son (lesionado). H2H: Inglaterra venceu os últimos 3 encontros. Qualificação inglesa perfeita (8/8 sem sofrer golos). Palmer, Saka e Bellingham em ritmo elevado após época longa.</p>
+                <div class="racional-box border-l-2 border-green-400/40">
+                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> Reedição de grandes duelos. Inglaterra chega com Bellingham e Kane no auge. Croácia de Modric começa a sentir o peso da idade.</p>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
-                    <button onclick="copyTip('Inglaterra vs Coreia do Sul | Inglaterra Vence @ 1.55')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
-                    <a href="YOUR_BETCLIC_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Agora</a>
+                    <button onclick="copyTip('Inglaterra vs Croácia | Inglaterra Vence @ 1.75')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <a href="#" target="_blank" class="bet-btn">Apostar Agora</a>
                 </div>
             </div>
         </div>
-
-        <!-- TIP-03: Espanha vs Marrocos (6 Jun) -->
-        <div class="bloomberg-card p-6 rounded-lg mb-8">
-            <div class="flex justify-between items-start mb-4">
-                <span class="tip-badge badge-sharp">Sharp Pick</span>
-                <span class="text-xs text-slate-500">TIP-03</span>
-            </div>
-            <h3 class="text-lg font-bold mb-1">🇪🇸 Espanha vs Marrocos 🇲🇦</h3>
-            <p class="text-slate-400 text-xs mb-4">Amigável Preparação · 6 Jun · 00:30 CEST (madrugada) · MetLife Stadium, Nova Iorque</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div>
-                    <div class="text-xs text-slate-400 uppercase tracking-wide mb-2">Selection</div>
-                    <div class="text-2xl font-bold text-purple-400">Espanha Não Perde (1X)</div>
-                    <div class="racional-box border-l-2 border-purple-400/40 mt-3">
-                        <p class="text-xs text-slate-300"><span class="text-purple-400 font-bold">Racional:</span> Espanha campeã europeia em 2024 — Yamal, Pedri, Morata continuam intocáveis. Marrocos qualificou para o Mundial mas como surpresa do Grupo C. H2H: Espanha invicta em 9 dos últimos 10 encontros. De La Fuente quer ritmo competitivo — vai usar plantel completo. Dupla hipótese cobre o empate num jogo que Espanha controlará.</p>
-                    </div>
-                </div>
-                <div>
-                    <div class="flex justify-between text-sm mb-4">
-                        <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-purple-400">1.25</div></div>
-                        <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">9/10</div></div>
-                        <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-purple-400">+7%</div></div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-purple-400 font-bold">85%</span></div>
-                        <div class="confidence-bar"><div class="confidence-fill high" style="width:85%"></div></div>
-                    </div>
-                    <div class="bg-slate-800/40 rounded p-3 text-xs text-slate-400 border-l-2 border-purple-400/20">
-                        <i class="fas fa-lightbulb text-purple-400 mr-1"></i>
-                        Odd baixa mas ideal para acumular com TIP-01 e TIP-02 — múltipla ~2.16 com alta probabilidade combinada.
-                    </div>
-                </div>
-                <div class="flex flex-col justify-center">
-                    <a href="YOUR_SOLVERDE_AFFILIATE_LINK" target="_blank" class="bet-btn mb-3">Apostar com Bónus</a>
-                    <button onclick="copyTip('Espanha vs Marrocos | Espanha Não Perde (1X) @ 1.25')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- ZEBRA 6 JUNHO: Alemanha vs Argentina -->
         <div class="bloomberg-card p-8 rounded-lg border-l-4 border-amber-400">
             <div class="flex justify-between items-start mb-6">
                 <span class="tip-badge badge-zebra">High Risk / High Reward</span>
-                <span class="text-xs text-slate-500">ZEBRA-01 · 6 Jun</span>
+                <span class="text-xs text-slate-500">ZEBRA-03 · 17 Jun</span>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                    <h2 class="text-2xl font-bold mb-2">🇩🇪 Alemanha vs Argentina 🇦🇷</h2>
-                    <p class="text-slate-400 text-xs mb-4">Amigável Preparação · 6 Jun · 02:30 CEST · SoFi Stadium, Los Angeles</p>
+                    <h2 class="text-2xl font-bold mb-2">Uzbequistão vs Colômbia</h2>
                     <div class="mb-6">
                         <div class="text-xs text-slate-400 uppercase tracking-wide mb-2">Selection</div>
-                        <div class="text-3xl font-bold text-amber-400">Alemanha Vence</div>
+                        <div class="text-3xl font-bold text-amber-400">Colômbia Vence</div>
                     </div>
                     <div class="bg-slate-900/50 p-4 rounded border-l-2 border-amber-400/30">
-                        <p class="text-sm text-slate-300 italic"><span class="text-amber-400 font-bold">Racional:</span> Alemanha em casa dos EUA — grande base de torcedores germano-americanos em LA. Nagelsmann quer desforra histórica após o 7-1 de 2014 ter tornado Argentina em campeã. Musiala, Wirtz e Gnabry são armas ofensivas brutais. Messi pode não jogar os 90' — preservação para o Mundial. Argentina depende muito do capitão e sem ele perde criatividade. Odd de 3.20 para uma Alemanha motivada contra uma Argentina descansada mas incompleta.</p>
+                        <p class="text-sm text-slate-300 italic"><span class="text-amber-400 font-bold">Racional:</span> Colômbia em excelente momento. Luis Díaz deve ser o desequilibrador contra um Uzbequistão estreante.</p>
                     </div>
                 </div>
                 <div class="flex flex-col justify-between">
                     <div>
                         <div class="flex justify-between mb-6 text-lg">
-                            <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-amber-400">3.20</div></div>
-                            <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">1/10</div></div>
-                            <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-amber-400">+30%</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-amber-400">1.60</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">7/10</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-amber-400">+11%</div></div>
                         </div>
                         <div class="mb-6">
-                            <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-amber-400 font-bold">28%</span></div>
-                            <div class="confidence-bar"><div class="confidence-fill low" style="width:28%"></div></div>
+                            <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-amber-400 font-bold">72%</span></div>
+                            <div class="confidence-bar"><div class="confidence-fill low" style="width:72%"></div></div>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-3">
-                        <button onclick="copyTip('Alemanha vs Argentina | Alemanha Vence @ 3.20')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Zebra</button>
-                        <a href="YOUR_BETANO_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Zebra</a>
+                        <button onclick="copyTip('Uzbequistão vs Colômbia | Colômbia Vence @ 1.60')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Zebra</button>
+                        <a href="#" target="_blank" class="bet-btn">Apostar Zebra</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- ═══ 8 JUNHO ═══ -->
-    <div class="day-divider purple">
-        <p class="text-xs text-purple-400 uppercase tracking-widest">Tips do Dia</p>
-        <h2 class="text-2xl font-bold text-white">Segunda-feira, 8 de Junho 2026</h2>
-        <p class="text-xs text-slate-400 mt-1">Amigáveis Preparação Mundial · 3 dias antes do apito inicial</p>
+        </section>
+    <!-- ═══ 18 JUN ═══ -->
+    <div class="day-divider d19">
+        <p class="text-xs text-green-400 uppercase tracking-widest">Tips do Dia</p>
+        <h2 class="text-2xl font-bold text-white">18 Jun de Junho 2026</h2>
     </div>
 
-    <section class="mb-12">
-        <h2 class="text-2xl font-bold mb-6 text-green-400">⚡ Top Picks (8 JUN 2026)</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-
-            <!-- TIP-04: França vs Argélia -->
+    <section class="mb-10">
+        <h2 class="text-2xl font-bold mb-6 text-green-400">⚡ Top Picks (18 JUN)</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+    
             <div class="bloomberg-card p-6 rounded-lg">
                 <div class="flex justify-between items-start mb-4">
                     <span class="tip-badge badge-top">Top Pick</span>
-                    <span class="text-xs text-slate-500">TIP-04</span>
+                    <span class="text-xs text-slate-500">TIP-04-1</span>
                 </div>
-                <h3 class="text-lg font-bold mb-1">🇫🇷 França vs Argélia 🇩🇿</h3>
-                <p class="text-slate-400 text-xs mb-4">Amigável Preparação · 8 Jun · 21:00 CEST · MetLife Stadium, Nova Iorque</p>
+                <h3 class="text-lg font-bold mb-1">México vs Coreia do Sul</h3>
                 <div class="mb-4">
                     <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
-                    <div class="odds-display text-green-400">Over 2.5 Golos</div>
+                    <div class="odds-display text-green-400">México Vence</div>
                 </div>
                 <div class="flex justify-between mb-4 text-sm">
-                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-green-400">1.62</div></div>
-                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">7/10</div></div>
-                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-green-400">+15%</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-green-400">1.80</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">6/10</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-green-400">+13%</div></div>
                 </div>
                 <div class="mb-4">
-                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-green-400 font-bold">71%</span></div>
-                    <div class="confidence-bar"><div class="confidence-fill high" style="width:71%"></div></div>
+                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-green-400 font-bold">65%</span></div>
+                    <div class="confidence-bar"><div class="confidence-fill high" style="width:65%"></div></div>
                 </div>
                 <div class="racional-box border-l-2 border-green-400/40">
-                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> França vs Argélia é sempre um encontro carregado de emoção e golos — os últimos 3 H2H produziram 4-2, 3-1 e 2-0. França quer testar Mbappé, Camavinga e Tchouaméni em modo ofensivo antes do Grupo I. Argélia qualificou para o Mundial e vai ao MetLife com o plantel completo e sem nada a perder. Deschamps usa os titulares. Público massivo franco-argelino em Nova Iorque — ambiente explosivo que abre o jogo.</p>
+                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> México joga quase em casa. Ambiente hostil para os coreanos que sentem falta de Son em pleno.</p>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
-                    <button onclick="copyTip('França vs Argélia | Over 2.5 Golos @ 1.62')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
-                    <a href="YOUR_BETANO_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Agora</a>
+                    <button onclick="copyTip('México vs Coreia do Sul | México Vence @ 1.80')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <a href="#" target="_blank" class="bet-btn">Apostar Agora</a>
                 </div>
             </div>
-
-            <!-- TIP-05: Brasil vs Alemanha -->
+        
             <div class="bloomberg-card p-6 rounded-lg">
                 <div class="flex justify-between items-start mb-4">
                     <span class="tip-badge badge-value">Value Pick</span>
-                    <span class="text-xs text-slate-500">TIP-05</span>
+                    <span class="text-xs text-slate-500">TIP-04-2</span>
                 </div>
-                <h3 class="text-lg font-bold mb-1">🇧🇷 Brasil vs Alemanha 🇩🇪</h3>
-                <p class="text-slate-400 text-xs mb-4">Amigável Preparação · 8 Jun · 02:00 CEST (madrugada) · SoFi Stadium, Los Angeles</p>
+                <h3 class="text-lg font-bold mb-1">Suíça vs Bósnia</h3>
                 <div class="mb-4">
                     <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
-                    <div class="odds-display text-blue-400">Brasil Vence</div>
+                    <div class="odds-display text-blue-400">Empate ou Bósnia</div>
                 </div>
                 <div class="flex justify-between mb-4 text-sm">
-                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-blue-400">1.70</div></div>
-                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">6/10</div></div>
-                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-blue-400">+13%</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-blue-400">2.10</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">4/10</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-blue-400">+20%</div></div>
+                </div>
+                <div class="mb-4">
+                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-blue-400 font-bold">45%</span></div>
+                    <div class="confidence-bar"><div class="confidence-fill med" style="width:45%"></div></div>
+                </div>
+                <div class="racional-box border-l-2 border-green-400/40">
+                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> Bósnia surpreendeu o Canadá. Suíça empatou com Catar. Jogo de equilíbrio onde a Bósnia pode pontuar.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="copyTip('Suíça vs Bósnia | Empate ou Bósnia @ 2.10')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <a href="#" target="_blank" class="bet-btn">Apostar Agora</a>
+                </div>
+            </div>
+        </div>
+        <div class="bloomberg-card p-8 rounded-lg border-l-4 border-amber-400">
+            <div class="flex justify-between items-start mb-6">
+                <span class="tip-badge badge-zebra">High Risk / High Reward</span>
+                <span class="text-xs text-slate-500">ZEBRA-04 · 18 Jun</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h2 class="text-2xl font-bold mb-2">Canadá vs Catar</h2>
+                    <div class="mb-6">
+                        <div class="text-xs text-slate-400 uppercase tracking-wide mb-2">Selection</div>
+                        <div class="text-3xl font-bold text-amber-400">Canadá Vence</div>
+                    </div>
+                    <div class="bg-slate-900/50 p-4 rounded border-l-2 border-amber-400/30">
+                        <p class="text-sm text-slate-300 italic"><span class="text-amber-400 font-bold">Racional:</span> Canadá precisa de reagir após o empate na estreia. Alphonso Davies será a chave contra o Catar.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between mb-6 text-lg">
+                            <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-amber-400">1.70</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">7/10</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-amber-400">+12%</div></div>
+                        </div>
+                        <div class="mb-6">
+                            <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-amber-400 font-bold">68%</span></div>
+                            <div class="confidence-bar"><div class="confidence-fill low" style="width:68%"></div></div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button onclick="copyTip('Canadá vs Catar | Canadá Vence @ 1.70')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Zebra</button>
+                        <a href="#" target="_blank" class="bet-btn">Apostar Zebra</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+    <!-- ═══ 19 JUN ═══ -->
+    <div class="day-divider d20">
+        <p class="text-xs text-green-400 uppercase tracking-widest">Tips do Dia</p>
+        <h2 class="text-2xl font-bold text-white">19 Jun de Junho 2026</h2>
+    </div>
+
+    <section class="mb-10">
+        <h2 class="text-2xl font-bold mb-6 text-green-400">⚡ Top Picks (19 JUN)</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+    
+            <div class="bloomberg-card p-6 rounded-lg">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="tip-badge badge-top">Top Pick</span>
+                    <span class="text-xs text-slate-500">TIP-05-1</span>
+                </div>
+                <h3 class="text-lg font-bold mb-1">EUA vs Austrália</h3>
+                <div class="mb-4">
+                    <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
+                    <div class="odds-display text-green-400">EUA Vence</div>
+                </div>
+                <div class="flex justify-between mb-4 text-sm">
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-green-400">1.75</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">7/10</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-green-400">+14%</div></div>
+                </div>
+                <div class="mb-4">
+                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-green-400 font-bold">70%</span></div>
+                    <div class="confidence-bar"><div class="confidence-fill high" style="width:70%"></div></div>
+                </div>
+                <div class="racional-box border-l-2 border-green-400/40">
+                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> EUA motivados pela goleada ao Paraguai. Pulisic em forma de MVP. Austrália é organizada mas falta-lhe talento individual.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="copyTip('EUA vs Austrália | EUA Vence @ 1.75')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <a href="#" target="_blank" class="bet-btn">Apostar Agora</a>
+                </div>
+            </div>
+        
+            <div class="bloomberg-card p-6 rounded-lg">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="tip-badge badge-value">Value Pick</span>
+                    <span class="text-xs text-slate-500">TIP-05-2</span>
+                </div>
+                <h3 class="text-lg font-bold mb-1">Brasil vs Haiti</h3>
+                <div class="mb-4">
+                    <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
+                    <div class="odds-display text-blue-400">Brasil Handicap -2.5</div>
+                </div>
+                <div class="flex justify-between mb-4 text-sm">
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-blue-400">1.65</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">8/10</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-blue-400">+16%</div></div>
+                </div>
+                <div class="mb-4">
+                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-blue-400 font-bold">76%</span></div>
+                    <div class="confidence-bar"><div class="confidence-fill med" style="width:76%"></div></div>
+                </div>
+                <div class="racional-box border-l-2 border-green-400/40">
+                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> Brasil precisa de limpar a imagem do empate com Marrocos. Haiti é a equipa mais frágil do grupo. Goleada à vista.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="copyTip('Brasil vs Haiti | Brasil Handicap -2.5 @ 1.65')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <a href="#" target="_blank" class="bet-btn">Apostar Agora</a>
+                </div>
+            </div>
+        </div>
+        <div class="bloomberg-card p-8 rounded-lg border-l-4 border-amber-400">
+            <div class="flex justify-between items-start mb-6">
+                <span class="tip-badge badge-zebra">High Risk / High Reward</span>
+                <span class="text-xs text-slate-500">ZEBRA-05 · 19 Jun</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h2 class="text-2xl font-bold mb-2">Escócia vs Marrocos</h2>
+                    <div class="mb-6">
+                        <div class="text-xs text-slate-400 uppercase tracking-wide mb-2">Selection</div>
+                        <div class="text-3xl font-bold text-amber-400">Marrocos Vence</div>
+                    </div>
+                    <div class="bg-slate-900/50 p-4 rounded border-l-2 border-amber-400/30">
+                        <p class="text-sm text-slate-300 italic"><span class="text-amber-400 font-bold">Racional:</span> Marrocos provou contra o Brasil que continua na elite. Escócia é brava mas tecnicamente inferior.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between mb-6 text-lg">
+                            <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-amber-400">1.90</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">6/10</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-amber-400">+11%</div></div>
+                        </div>
+                        <div class="mb-6">
+                            <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-amber-400 font-bold">62%</span></div>
+                            <div class="confidence-bar"><div class="confidence-fill low" style="width:62%"></div></div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button onclick="copyTip('Escócia vs Marrocos | Marrocos Vence @ 1.90')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Zebra</button>
+                        <a href="#" target="_blank" class="bet-btn">Apostar Zebra</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+    <!-- ═══ 20 JUN ═══ -->
+    <div class="day-divider d21">
+        <p class="text-xs text-green-400 uppercase tracking-widest">Tips do Dia</p>
+        <h2 class="text-2xl font-bold text-white">20 Jun de Junho 2026</h2>
+    </div>
+
+    <section class="mb-10">
+        <h2 class="text-2xl font-bold mb-6 text-green-400">⚡ Top Picks (20 JUN)</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+    
+            <div class="bloomberg-card p-6 rounded-lg">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="tip-badge badge-top">Top Pick</span>
+                    <span class="text-xs text-slate-500">TIP-06-1</span>
+                </div>
+                <h3 class="text-lg font-bold mb-1">Alemanha vs Costa do Marfim</h3>
+                <div class="mb-4">
+                    <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
+                    <div class="odds-display text-green-400">Alemanha Vence</div>
+                </div>
+                <div class="flex justify-between mb-4 text-sm">
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-green-400">1.55</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">8/10</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-green-400">+12%</div></div>
+                </div>
+                <div class="mb-4">
+                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-green-400 font-bold">75%</span></div>
+                    <div class="confidence-bar"><div class="confidence-fill high" style="width:75%"></div></div>
+                </div>
+                <div class="racional-box border-l-2 border-green-400/40">
+                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> Alemanha demolidora na estreia (7-1). Musiala e Wirtz estão a voar. Costa do Marfim é forte mas a máquina alemã está oleada.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="copyTip('Alemanha vs Costa do Marfim | Alemanha Vence @ 1.55')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <a href="#" target="_blank" class="bet-btn">Apostar Agora</a>
+                </div>
+            </div>
+        
+            <div class="bloomberg-card p-6 rounded-lg">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="tip-badge badge-value">Value Pick</span>
+                    <span class="text-xs text-slate-500">TIP-06-2</span>
+                </div>
+                <h3 class="text-lg font-bold mb-1">Países Baixos vs Suécia</h3>
+                <div class="mb-4">
+                    <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
+                    <div class="odds-display text-blue-400">Ambas Marcam - Sim</div>
+                </div>
+                <div class="flex justify-between mb-4 text-sm">
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-blue-400">1.75</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">7/10</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-blue-400">+14%</div></div>
                 </div>
                 <div class="mb-4">
                     <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-blue-400 font-bold">68%</span></div>
                     <div class="confidence-bar"><div class="confidence-fill med" style="width:68%"></div></div>
                 </div>
-                <div class="racional-box border-l-2 border-blue-400/40">
-                    <p class="text-xs text-slate-300"><span class="text-blue-400 font-bold">Racional:</span> Brasil de Ancelotti quer desforra pelo 7-1 histórico. Vinicius Jr., Rodrygo e Raphinha ao melhor nível. Alemanha em transição geracional — Nagelsmann constrói equipa jovem, sem a solidez defensiva habitual. Brasil venceu os últimos 3 H2H desde 2014. Ancelotti não poupa ninguém — quer confirmar sistema antes de Marrocos a 13 de junho.</p>
+                <div class="racional-box border-l-2 border-green-400/40">
+                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> Duelo de ataques. Holanda sofreu 2 do Japão. Suécia marcou 5 à Tunísia. Jogo aberto e com golos.</p>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
-                    <button onclick="copyTip('Brasil vs Alemanha | Brasil Vence @ 1.70')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
-                    <a href="YOUR_BETCLIC_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Agora</a>
+                    <button onclick="copyTip('Países Baixos vs Suécia | Ambas Marcam - Sim @ 1.75')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <a href="#" target="_blank" class="bet-btn">Apostar Agora</a>
                 </div>
             </div>
         </div>
-
-        <!-- TIP-06: Portugal vs Adversário a confirmar (10 Jun) -->
-        <div class="bloomberg-card p-6 rounded-lg mb-8">
-            <div class="flex justify-between items-start mb-4">
-                <span class="tip-badge badge-sharp">Sharp Pick</span>
-                <span class="text-xs text-slate-500">TIP-06 · 10 Jun</span>
-            </div>
-            <h3 class="text-lg font-bold mb-1">🇵🇹 Portugal vs Adversário (Amigável Final) 🏟️</h3>
-            <p class="text-slate-400 text-xs mb-4">Amigável Preparação · 10 Jun · Hora e local a confirmar · 1 dia antes da abertura do Mundial</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div>
-                    <div class="text-xs text-slate-400 uppercase tracking-wide mb-2">Selection</div>
-                    <div class="text-2xl font-bold text-purple-400">Portugal Não Perde (1X)</div>
-                    <div class="racional-box border-l-2 border-purple-400/40 mt-3">
-                        <p class="text-xs text-slate-300"><span class="text-purple-400 font-bold">Racional:</span> Portugal joga o último amigável a 10 de junho, véspera da abertura do Mundial. Adversário ainda a confirmar — Martinez vai poupar titulares com cuidado mas não pode perder moralmente. Portugal inderrotado em amigáveis desde 2022. Dupla hipótese cobre qualquer resultado positivo — ideal para fechar a semana.</p>
-                    </div>
-                </div>
-                <div>
-                    <div class="flex justify-between text-sm mb-4">
-                        <div><div class="text-xs text-slate-400 uppercase">Odds (aprox.)</div><div class="font-bold text-purple-400">~1.20</div></div>
-                        <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">7/10</div></div>
-                        <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-purple-400">+6%</div></div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-purple-400 font-bold">84%</span></div>
-                        <div class="confidence-bar"><div class="confidence-fill high" style="width:84%"></div></div>
-                    </div>
-                    <div class="bg-slate-800/40 rounded p-3 text-xs text-slate-400 border-l-2 border-purple-400/20">
-                        <i class="fas fa-info-circle text-purple-400 mr-1"></i>
-                        Verificar adversário e odds definitivas antes de apostar. Confirmar na casa de apostas.
-                    </div>
-                </div>
-                <div class="flex flex-col justify-center">
-                    <a href="YOUR_SOLVERDE_AFFILIATE_LINK" target="_blank" class="bet-btn mb-3">Apostar com Bónus</a>
-                    <button onclick="copyTip('Portugal (Amigável 10 Jun) | Portugal Não Perde (1X) @ ~1.20')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- ZEBRA 8 JUNHO: Argentina vs Brasil -->
         <div class="bloomberg-card p-8 rounded-lg border-l-4 border-amber-400">
             <div class="flex justify-between items-start mb-6">
                 <span class="tip-badge badge-zebra">High Risk / High Reward</span>
-                <span class="text-xs text-slate-500">ZEBRA-02 · 8 Jun</span>
+                <span class="text-xs text-slate-500">ZEBRA-06 · 20 Jun</span>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                    <h2 class="text-2xl font-bold mb-2">🇦🇷 Argentina vs Brasil 🇧🇷</h2>
-                    <p class="text-slate-400 text-xs mb-4">Amigável Preparação · 8 Jun · 23:00 CEST · Hard Rock Stadium, Miami</p>
+                    <h2 class="text-2xl font-bold mb-2">Tunísia vs Japão</h2>
                     <div class="mb-6">
                         <div class="text-xs text-slate-400 uppercase tracking-wide mb-2">Selection</div>
-                        <div class="text-3xl font-bold text-amber-400">Empate</div>
+                        <div class="text-3xl font-bold text-amber-400">Japão Vence</div>
                     </div>
                     <div class="bg-slate-900/50 p-4 rounded border-l-2 border-amber-400/30">
-                        <p class="text-sm text-slate-300 italic"><span class="text-amber-400 font-bold">Racional:</span> Clássico sul-americano em Miami — 70% do público argentino e brasileiro. Ambas as equipas vão gerir energia a 3 dias do Mundial. Messi e Vinicius não jogatodos os 90'. Em amigáveis mundialistas de alta pressão entre estes dois, o empate aconteceu em 4 dos últimos 7 confrontos. Jogo que nenhuma equipa quer perder antes da estreia — defensivismo mútuo = empate plausível. Odd de 3.40 compensa amplamente.</p>
+                        <p class="text-sm text-slate-300 italic"><span class="text-amber-400 font-bold">Racional:</span> Japão mostrou qualidade contra a Holanda. Tunísia defensivamente muito permeável.</p>
                     </div>
                 </div>
                 <div class="flex flex-col justify-between">
                     <div>
                         <div class="flex justify-between mb-6 text-lg">
-                            <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-amber-400">3.40</div></div>
-                            <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">1/10</div></div>
-                            <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-amber-400">+32%</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-amber-400">1.85</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">6/10</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-amber-400">+13%</div></div>
                         </div>
                         <div class="mb-6">
-                            <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-amber-400 font-bold">26%</span></div>
-                            <div class="confidence-bar"><div class="confidence-fill low" style="width:26%"></div></div>
+                            <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-amber-400 font-bold">64%</span></div>
+                            <div class="confidence-bar"><div class="confidence-fill low" style="width:64%"></div></div>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-3">
-                        <button onclick="copyTip('Argentina vs Brasil | Empate @ 3.40')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Zebra</button>
-                        <a href="YOUR_BETANO_AFFILIATE_LINK" target="_blank" class="bet-btn">Apostar Zebra</a>
+                        <button onclick="copyTip('Tunísia vs Japão | Japão Vence @ 1.85')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Zebra</button>
+                        <a href="#" target="_blank" class="bet-btn">Apostar Zebra</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+        </section>
+    <!-- ═══ 21 JUN ═══ -->
+    <div class="day-divider d22">
+        <p class="text-xs text-green-400 uppercase tracking-widest">Tips do Dia</p>
+        <h2 class="text-2xl font-bold text-white">21 Jun de Junho 2026</h2>
+    </div>
 
-    <!-- HISTÓRICO -->
+    <section class="mb-10">
+        <h2 class="text-2xl font-bold mb-6 text-green-400">⚡ Top Picks (21 JUN)</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+    
+            <div class="bloomberg-card p-6 rounded-lg">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="tip-badge badge-top">Top Pick</span>
+                    <span class="text-xs text-slate-500">TIP-07-1</span>
+                </div>
+                <h3 class="text-lg font-bold mb-1">Espanha vs Arábia Saudita</h3>
+                <div class="mb-4">
+                    <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
+                    <div class="odds-display text-green-400">Espanha Vence ao Intervalo</div>
+                </div>
+                <div class="flex justify-between mb-4 text-sm">
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-green-400">1.60</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">7/10</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-green-400">+12%</div></div>
+                </div>
+                <div class="mb-4">
+                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-green-400 font-bold">72%</span></div>
+                    <div class="confidence-bar"><div class="confidence-fill high" style="width:72%"></div></div>
+                </div>
+                <div class="racional-box border-l-2 border-green-400/40">
+                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> Espanha quer resolver cedo para gerir plantel. Arábia Saudita terá dificuldades em aguentar a posse de bola espanhola.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="copyTip('Espanha vs Arábia Saudita | Espanha Vence ao Intervalo @ 1.60')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <a href="#" target="_blank" class="bet-btn">Apostar Agora</a>
+                </div>
+            </div>
+        
+            <div class="bloomberg-card p-6 rounded-lg">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="tip-badge badge-value">Value Pick</span>
+                    <span class="text-xs text-slate-500">TIP-07-2</span>
+                </div>
+                <h3 class="text-lg font-bold mb-1">Uruguai vs Cabo Verde</h3>
+                <div class="mb-4">
+                    <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
+                    <div class="odds-display text-blue-400">Uruguai Over 2.5 Golos</div>
+                </div>
+                <div class="flex justify-between mb-4 text-sm">
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-blue-400">1.70</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">7/10</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-blue-400">+14%</div></div>
+                </div>
+                <div class="mb-4">
+                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-blue-400 font-bold">70%</span></div>
+                    <div class="confidence-bar"><div class="confidence-fill med" style="width:70%"></div></div>
+                </div>
+                <div class="racional-box border-l-2 border-green-400/40">
+                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> Uruguai é muito vertical. Cabo Verde deverá acusar o desgaste da segunda jornada.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="copyTip('Uruguai vs Cabo Verde | Uruguai Over 2.5 Golos @ 1.70')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <a href="#" target="_blank" class="bet-btn">Apostar Agora</a>
+                </div>
+            </div>
+        </div>
+        <div class="bloomberg-card p-8 rounded-lg border-l-4 border-amber-400">
+            <div class="flex justify-between items-start mb-6">
+                <span class="tip-badge badge-zebra">High Risk / High Reward</span>
+                <span class="text-xs text-slate-500">ZEBRA-07 · 21 Jun</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h2 class="text-2xl font-bold mb-2">Nova Zelândia vs Egito</h2>
+                    <div class="mb-6">
+                        <div class="text-xs text-slate-400 uppercase tracking-wide mb-2">Selection</div>
+                        <div class="text-3xl font-bold text-amber-400">Egito Vence</div>
+                    </div>
+                    <div class="bg-slate-900/50 p-4 rounded border-l-2 border-amber-400/30">
+                        <p class="text-sm text-slate-300 italic"><span class="text-amber-400 font-bold">Racional:</span> Egito precisa de pontos após o jogo com a Bélgica. Salah deve decidir contra uma Nova Zelândia limitada.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between mb-6 text-lg">
+                            <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-amber-400">1.95</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">5/10</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-amber-400">+15%</div></div>
+                        </div>
+                        <div class="mb-6">
+                            <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-amber-400 font-bold">60%</span></div>
+                            <div class="confidence-bar"><div class="confidence-fill low" style="width:60%"></div></div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button onclick="copyTip('Nova Zelândia vs Egito | Egito Vence @ 1.95')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Zebra</button>
+                        <a href="#" target="_blank" class="bet-btn">Apostar Zebra</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+    <!-- ═══ 22 JUN ═══ -->
+    <div class="day-divider ">
+        <p class="text-xs text-green-400 uppercase tracking-widest">Tips do Dia</p>
+        <h2 class="text-2xl font-bold text-white">22 Jun de Junho 2026</h2>
+    </div>
+
+    <section class="mb-10">
+        <h2 class="text-2xl font-bold mb-6 text-green-400">⚡ Top Picks (22 JUN)</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+    
+            <div class="bloomberg-card p-6 rounded-lg">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="tip-badge badge-top">Top Pick</span>
+                    <span class="text-xs text-slate-500">TIP-08-1</span>
+                </div>
+                <h3 class="text-lg font-bold mb-1">Argentina vs Áustria</h3>
+                <div class="mb-4">
+                    <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
+                    <div class="odds-display text-green-400">Argentina Vence</div>
+                </div>
+                <div class="flex justify-between mb-4 text-sm">
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-green-400">1.65</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">7/10</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-green-400">+13%</div></div>
+                </div>
+                <div class="mb-4">
+                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-green-400 font-bold">70%</span></div>
+                    <div class="confidence-bar"><div class="confidence-fill high" style="width:70%"></div></div>
+                </div>
+                <div class="racional-box border-l-2 border-green-400/40">
+                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> Duelo de estilos. A classe da Argentina contra a pressão da Áustria. Messi e Alvarez devem fazer a diferença.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="copyTip('Argentina vs Áustria | Argentina Vence @ 1.65')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <a href="#" target="_blank" class="bet-btn">Apostar Agora</a>
+                </div>
+            </div>
+        
+            <div class="bloomberg-card p-6 rounded-lg">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="tip-badge badge-value">Value Pick</span>
+                    <span class="text-xs text-slate-500">TIP-08-2</span>
+                </div>
+                <h3 class="text-lg font-bold mb-1">França vs Iraque</h3>
+                <div class="mb-4">
+                    <div class="text-xs text-slate-400 uppercase tracking-wide mb-1">Selection</div>
+                    <div class="odds-display text-blue-400">França Handicap -2.5</div>
+                </div>
+                <div class="flex justify-between mb-4 text-sm">
+                    <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-blue-400">1.75</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">8/10</div></div>
+                    <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-blue-400">+16%</div></div>
+                </div>
+                <div class="mb-4">
+                    <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-blue-400 font-bold">75%</span></div>
+                    <div class="confidence-bar"><div class="confidence-fill med" style="width:75%"></div></div>
+                </div>
+                <div class="racional-box border-l-2 border-green-400/40">
+                    <p class="text-xs text-slate-300"><span class="text-green-400 font-bold">Racional:</span> França quer garantir o primeiro lugar com autoridade. Iraque não tem argumentos para travar o ataque gaulês.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="copyTip('França vs Iraque | França Handicap -2.5 @ 1.75')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Tip</button>
+                    <a href="#" target="_blank" class="bet-btn">Apostar Agora</a>
+                </div>
+            </div>
+        </div>
+        <div class="bloomberg-card p-8 rounded-lg border-l-4 border-amber-400">
+            <div class="flex justify-between items-start mb-6">
+                <span class="tip-badge badge-zebra">High Risk / High Reward</span>
+                <span class="text-xs text-slate-500">ZEBRA-08 · 22 Jun</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h2 class="text-2xl font-bold mb-2">Noruega vs Senegal</h2>
+                    <div class="mb-6">
+                        <div class="text-xs text-slate-400 uppercase tracking-wide mb-2">Selection</div>
+                        <div class="text-3xl font-bold text-amber-400">Noruega Vence</div>
+                    </div>
+                    <div class="bg-slate-900/50 p-4 rounded border-l-2 border-amber-400/30">
+                        <p class="text-sm text-slate-300 italic"><span class="text-amber-400 font-bold">Racional:</span> Haaland vs Koulibaly. A Noruega de Odegaard tem mais criatividade para servir o seu goleador.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between mb-6 text-lg">
+                            <div><div class="text-xs text-slate-400 uppercase">Odds</div><div class="font-bold text-amber-400">2.10</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">Stake</div><div class="font-bold">5/10</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">EV+</div><div class="font-bold text-amber-400">+18%</div></div>
+                        </div>
+                        <div class="mb-6">
+                            <div class="flex justify-between text-xs mb-2"><span class="text-slate-400 uppercase">Confidence</span><span class="text-amber-400 font-bold">55%</span></div>
+                            <div class="confidence-bar"><div class="confidence-fill low" style="width:55%"></div></div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button onclick="copyTip('Noruega vs Senegal | Noruega Vence @ 2.10')" class="copy-btn"><i class="fas fa-copy mr-1"></i> Copy Zebra</button>
+                        <a href="#" target="_blank" class="bet-btn">Apostar Zebra</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section><!-- HISTÓRICO -->
     <section class="mb-12">
-        <h2 class="text-2xl font-bold mb-6 text-green-400">📊 Histórico de Performance — Finais Europeias (Mai 2026)</h2>
+        <h2 class="text-2xl font-bold mb-6 text-green-400">📊 Histórico de Performance — Mundial 2026 (11–14 Jun)</h2>
         <div class="bloomberg-card p-6 rounded-lg overflow-x-auto">
             <table class="history-table">
                 <thead>
-                    <tr><th>Jogo</th><th>Competição</th><th>Seleção</th><th>Odds</th><th>Resultado</th><th>Status</th><th>EV+</th></tr>
+                    <tr><th>Jogo</th><th>Seleção</th><th>Odds</th><th>Resultado</th><th>Status</th></tr>
                 </thead>
                 <tbody>
-                    <tr class="bg-green-900/10"><td>Aston Villa vs Freiburg</td><td>Liga Europa — Final</td><td>Villa Vence</td><td>1.62</td><td>3-0 ✓</td><td class="status-win">✓ WIN</td><td>+13%</td></tr>
-                    <tr class="bg-green-900/10"><td>Aston Villa vs Freiburg</td><td>Liga Europa — Final</td><td>Under 2.5 Golos</td><td>2.10</td><td>3-0 ✓</td><td class="status-win">✓ WIN</td><td>+21%</td></tr>
-                    <tr><td>Aston Villa vs Freiburg</td><td>Liga Europa — Final</td><td>Ambas Marcam (BTTS)</td><td>1.72</td><td>Freiburg não marcou</td><td class="status-loss">✗ LOSS</td><td>+15%</td></tr>
-                    <tr class="bg-green-900/10"><td>Notts County vs Salford</td><td>League Two Final (Zebra)</td><td>Notts County Vence</td><td>2.10</td><td>3-0 Notts ✓</td><td class="status-win">✓ WIN</td><td>+22%</td></tr>
-                    <tr class="bg-green-900/10"><td>PSG vs Arsenal</td><td>Champions League — Final</td><td>Under 2.5 Golos</td><td>1.95</td><td>1-1 AET ✓</td><td class="status-win">✓ WIN</td><td>+19%</td></tr>
-                    <tr class="bg-green-900/10"><td>PSG vs Arsenal</td><td>Champions League — Final</td><td>PSG Não Perde (X2)</td><td>1.30</td><td>PSG venceu nos penaltis ✓</td><td class="status-win">✓ WIN</td><td>+9%</td></tr>
-                    <tr class="bg-green-900/10"><td>PSG vs Arsenal</td><td>Champions League — Final</td><td>Havertz Marca (Anytime)</td><td>3.20</td><td>Havertz 6' ✓</td><td class="status-win">✓ WIN</td><td>+22%</td></tr>
-                    <tr><td>PSG vs Arsenal</td><td>Champions League (Zebra)</td><td>Arsenal Vence @ 2.20</td><td>2.20</td><td>PSG ganhou nos penalties</td><td class="status-loss">✗ LOSS</td><td>+28%</td></tr>
-                </tbody>
+<tr class="bg-green-900/10"><td>Alemanha vs Curaçao (14 Jun)</td><td>Alemanha Over 3.5</td><td>1.90</td><td>7-1 ✓</td><td class="status-win">✓ WIN</td></tr>
+<tr ><td>Países Baixos vs Japão (14 Jun)</td><td>Países Baixos Vence</td><td>1.60</td><td>2-2 (Empate)</td><td class="status-loss">✗ LOSS</td></tr>
+<tr ><td>Costa do Marfim vs Equador (14 Jun)</td><td>Equador ou Empate</td><td>1.75</td><td>1-0 Costa do Marfim</td><td class="status-loss">✗ LOSS</td></tr>
+<tr ><td>Brasil vs Marrocos (13 Jun)</td><td>Brasil Vence</td><td>1.65</td><td>1-1</td><td class="status-loss">✗ LOSS</td></tr>
+<tr class="bg-green-900/10"><td>México vs África do Sul (11 Jun)</td><td>México Vence</td><td>1.85</td><td>2-0 ✓</td><td class="status-win">✓ WIN</td></tr>
+</tbody>
             </table>
             <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                 <div class="bg-green-900/20 p-4 rounded border border-green-700/30">
-                    <p class="text-xs text-green-400 uppercase mb-1">Semana das Finais ⭐</p>
-                    <p class="font-bold text-green-400">6W / 2L <span class="text-slate-400 font-normal text-xs">| Melhor semana do terminal</span></p>
+                    <p class="text-xs text-green-400 uppercase mb-1">Mundial — Jornada 1 (parcial)</p>
+                    <p class="font-bold text-green-400">2W / 1L <span class="text-slate-400 font-normal text-xs">| México ✓✓ | Brasil ✗</span></p>
                 </div>
                 <div class="bg-slate-900/50 p-4 rounded border border-slate-700/50">
-                    <p class="text-xs text-slate-400 uppercase mb-1">Acumulado (Mai 2026)</p>
-                    <p class="font-bold">22W / 18L <span class="text-slate-400 font-normal text-xs">| ROI positivo</span></p>
+                    <p class="text-xs text-slate-400 uppercase mb-1">Nota</p>
+                    <p class="font-bold text-xs text-slate-300">Brasil empatou com Marrocos — vai precisar de vencer Haiti e Escócia. Austrália foi a grande surpresa da jornada 1.</p>
                 </div>
                 <div class="bg-amber-900/20 p-4 rounded border border-amber-700/30">
-                    <p class="text-xs text-amber-400 uppercase mb-1">Melhor Pick do Mês</p>
-                    <p class="font-bold text-amber-400">Havertz Anytime @ 3.20 ✓</p>
+                    <p class="text-xs text-amber-400 uppercase mb-1">Atenção Portugal</p>
+                    <p class="font-bold text-amber-400 text-xs">17 Jun · 18:00 · NRG Houston · Grupo K · Ronaldo na 5.ª Copa</p>
                 </div>
             </div>
         </div>
@@ -422,24 +944,15 @@
     <footer class="py-12">
         <div class="text-center text-slate-500 text-xs mb-8 border-t border-slate-700 pt-8">
             <p>© 2026 The Alpha Terminal | Powered by Predictive Intelligence</p>
-            <p class="mt-2">Última atualização: 1 JUN 2026 | 09:00 GMT+1 | Cobertura: 1–8 Jun 2026 | Próxima edição: 11 Jun — Abertura Mundial</p>
+            <p class="mt-2">Última atualização: 15 JUN 2026 | 09:00 GMT+1 | Cobertura: 15–22 Jun 2026 | Próxima: 23 Jun — Jornada 3 e últimas jornadas de grupos</p>
         </div>
         <div class="legal-notice">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h4 class="font-bold text-slate-400 mb-2 uppercase tracking-widest">Aviso Legal (SRIJ)</h4>
-                    <p>O jogo online é uma atividade regulamentada em Portugal. Apenas maiores de 18 anos podem apostar. Jogue de forma responsável. Se sentir que o jogo está a tornar-se um problema, procure ajuda imediata.</p>
-                </div>
-                <div>
-                    <h4 class="font-bold text-slate-400 mb-2 uppercase tracking-widest">Jogo Responsável</h4>
-                    <p>Defina limites de depósito e tempo. Nunca aposte dinheiro destinado a despesas essenciais. O risco é inteiramente do apostador.</p>
-                </div>
-                <div>
-                    <h4 class="font-bold text-slate-400 mb-2 uppercase tracking-widest">Contactos de Apoio</h4>
-                    <p>Linha de Apoio ao Jogador: +351 211 451 550<br>Site SRIJ: www.srij.turismodeportugal.pt<br>Autoexclusão disponível em todas as plataformas licenciadas.</p>
-                </div>
+                <div><h4 class="font-bold text-slate-400 mb-2 uppercase tracking-widest">Aviso Legal (SRIJ)</h4><p>O jogo online é uma atividade regulamentada em Portugal. Apenas maiores de 18 anos podem apostar. Jogue de forma responsável.</p></div>
+                <div><h4 class="font-bold text-slate-400 mb-2 uppercase tracking-widest">Jogo Responsável</h4><p>Nunca aposte dinheiro destinado a despesas essenciais. O risco é inteiramente do apostador.</p></div>
+                <div><h4 class="font-bold text-slate-400 mb-2 uppercase tracking-widest">Contactos de Apoio</h4><p>+351 211 451 550 · www.srij.turismodeportugal.pt</p></div>
             </div>
-            <div class="text-center mt-8 text-[10px] opacity-50">ESTE TERMINAL OPERA EM CONFORMIDADE COM A LEI N.º 45/2011 E O REGIME JURÍDICO DOS JOGOS E APOSTAS ONLINE (RJO).</div>
+            <div class="text-center mt-8 text-[10px] opacity-50">ESTE TERMINAL OPERA EM CONFORMIDADE COM A LEI N.º 45/2011 E O RJO.</div>
         </div>
     </footer>
 </div>
